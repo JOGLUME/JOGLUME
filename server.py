@@ -65,6 +65,40 @@ def google_image_search(query):
                 break
     return found
 
+
+def bing_image_search(query):
+    search_url = 'https://www.bing.com/images/search?q=' + quote(query)
+    request = Request(search_url, headers={
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    })
+    with urlopen(request, timeout=18) as response:
+        page = response.read(8_000_000).decode('utf-8', errors='ignore')
+
+    found = []
+    for match in re.findall(r'\\bm="([^"]+)"', page):
+        try:
+            metadata = json.loads(html.unescape(match))
+            url = metadata.get('murl') or metadata.get('turl')
+        except Exception:
+            continue
+        if isinstance(url, str) and url.startswith(('http://', 'https://')) and url not in found:
+            found.append(url)
+        if len(found) >= 12:
+            break
+    return found
+
+
+def search_cover_images(query):
+    try:
+        images = google_image_search(query)
+        if images:
+            return images
+    except Exception:
+        pass
+    return bing_image_search(query)
+
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
@@ -77,9 +111,10 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             if cached and time.time() - cached[0] < COVER_CACHE_TTL:
                 return self.send_json({'images': cached[1], 'cached': True})
             try:
-                images = google_image_search(query)
-                COVER_CACHE[cache_key] = (time.time(), images)
-                self.send_json({'images': images, 'source': 'Google Imagens'})
+                images = search_cover_images(query)
+                if images:
+                    COVER_CACHE[cache_key] = (time.time(), images)
+                self.send_json({'images': images, 'source': 'Google Imagens ou Bing Imagens'})
             except (URLError, HTTPError, TimeoutError, ValueError) as error:
                 self.send_json({'images': [], 'error': str(error)}, 502)
             except Exception as error:
