@@ -2341,4 +2341,4 @@ async function initializeJoglume() {
     console.log("JOGLUME 3.0 iniciado.");
 }
 
-document.addEventListener("DOMContentLoaded", initializeFlashMania);
+document.addEventListener("DOMContentLoaded", initializeJoglume);
