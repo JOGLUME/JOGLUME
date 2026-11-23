@@ -1,7 +1,7 @@
 JOGLUME — PROJETO ORGANIZADO
 
 ESTRUTURA
-FlashMania/
+Joglume/
   index.html             Página inicial e biblioteca
   css/style.css          CSS compartilhado por todas as páginas
   scripts/app.js         Aplicação e biblioteca principal
@@ -15,7 +15,7 @@ FlashMania/
   paginas/megadrive.html Página exclusiva do emulador Mega Drive
 
 COMO EXECUTAR
-1. Extraia a pasta FlashMania.
+1. Extraia a pasta Joglume.
 2. No Windows, execute INICIAR-JOGLUME.bat para iniciar o servidor local completo.
 3. Acesse http://localhost:8000.
 4. O gerenciador fica em paginas/fontes.html e o GBA em paginas/gba.html.
