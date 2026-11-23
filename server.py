@@ -49,7 +49,7 @@ def google_image_search(query):
     return found
 
 
-class FlashManiaHandler(SimpleHTTPRequestHandler):
+class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         if parsed.path == '/api/covers':
@@ -90,7 +90,7 @@ class FlashManiaHandler(SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     host = os.environ.get('HOST', '127.0.0.1')
     port = int(os.environ.get('PORT', '8000'))
-    server = ThreadingHTTPServer((host, port), FlashManiaHandler)
+    server = ThreadingHTTPServer((host, port), JoglumeHandler)
     print(f'Joglume disponível em http://{host}:{port}')
     print('Capas automáticas: Libretro + Google Imagens.')
     print('PSP e PS2 habilitados com isolamento de origem cruzada.')
