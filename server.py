@@ -29,42 +29,34 @@ def google_image_search(query):
     search_url = 'https://www.google.com/search?tbm=isch&hl=pt-BR&safe=active&q=' + quote(query)
     request = Request(search_url, headers={
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
     })
     with urlopen(request, timeout=18) as response:
         page = response.read(8_000_000).decode('utf-8', errors='ignore')
 
-    patterns = [
-        r'"ou"\s*:\s*"((?:\\.|[^"\\])*)"',
-        r'\\"ou\\"\s*:\s*\\"((?:\\\\.|[^\\"\\\\])*)\\"',
-        r'"murl"\s*:\s*"((?:\\.|[^"\\])*)"',
-        r'"imgurl"\s*:\s*"((?:\\.|[^"\\])*)"'
-    ]
     found = []
+    patterns = [
+        r'"ou"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"',
+        r'"murl"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"',
+        r'"imgurl"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"'
+    ]
     for pattern in patterns:
         for match in re.findall(pattern, page, flags=re.IGNORECASE):
             url = decode_google_url(match)
-            if not url.startswith(('http://', 'https://')):
-                continue
-            if any(part in url.lower() for part in ('google.com/search', 'accounts.google.com', 'gstatic.com/images/branding')):
-                continue
-            if url not in found:
+            if url.startswith(('http://', 'https://')) and url not in found:
                 found.append(url)
-            if len(found) >= 12:
+            if len(found) >= 20:
                 return found
 
     if not found:
-        thumbnail_pattern = r"""<img[^>]+src=["'](https?://[^"']+)["']"""
-        for match in re.findall(thumbnail_pattern, page, flags=re.IGNORECASE):
-            url = decode_google_url(match)
-            if 'gstatic.com' in url or 'googleusercontent.com' in url:
-                if url not in found:
-                    found.append(url)
-            if len(found) >= 8:
+        for match in re.findall(r'<img[^>]+(?:src|data-src)=["\\']([^"\\']+)["\\']', page, flags=re.IGNORECASE):
+            url = decode_google_url(html.unescape(match))
+            if url.startswith(('http://', 'https://')) and url not in found:
+                found.append(url)
+            if len(found) >= 20:
                 break
     return found
-
 
 def bing_image_search(query):
     search_url = 'https://www.bing.com/images/search?q=' + quote(query)
@@ -143,7 +135,7 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', '8000'))
     server = ThreadingHTTPServer((host, port), JoglumeHandler)
     print(f'Joglume disponível em http://{host}:{port}')
-    print('Capas automáticas: Libretro + Google Imagens.')
+    print('Capas automáticas: primeira imagem encontrada no Google Imagens, com Bing como alternativa.')
     print('PSP e PS2 habilitados com isolamento de origem cruzada.')
     if host in ('127.0.0.1', 'localhost'):
         threading.Timer(0.8, lambda: webbrowser.open(f'http://localhost:{port}')).start()
