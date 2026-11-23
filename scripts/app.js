@@ -263,7 +263,7 @@ function coverFallback(cover) {
     const placeholder = cover.querySelector(".game-cover-placeholder");
     const image = cover.querySelector("img");
     if (image) image.remove();
-    if (placeholder) placeholder.hidden = false;
+    if (placeholder) placeholder.hidden = true;
     cover.classList.remove("has-cover");
 }
 
@@ -325,9 +325,10 @@ async function loadGameCover(game, cover, skipCache = false) {
             if (filename) {
                 const url = `${COVER_CONFIG.baseURL}${encodeURIComponent(system)}/Named_Boxarts/${encodeURIComponent(filename)}`;
                 const rawURL = `https://raw.githubusercontent.com/libretro-thumbnails/${encodeURIComponent(system.replace(/\s+/g, "_"))}/master/Named_Boxarts/${encodeURIComponent(filename)}`;
-                if (await showImage(rawURL) || await showImage(url)) {
-                    coverMatches[key] = url;
-                    game.coverUrl = url;
+                const loadedURL = await showImage(rawURL) ? rawURL : await showImage(url) ? url : null;
+                if (loadedURL) {
+                    coverMatches[key] = loadedURL;
+                    game.coverUrl = loadedURL;
                     saveCoverMatches();
                     return;
                 }
@@ -543,7 +544,7 @@ function addGame(game) {
         sourceId: game.sourceId || null,
         path: game.path || null,
         origin: game.origin || (game.local ? "local" : "url"),
-        icon: game.icon || CATEGORY_ICONS[game.category] || getPlatformIcon(game.type),
+        icon: "",
         local: Boolean(game.local),
         fileId: game.fileId || null,
         addedAt: game.addedAt || Date.now()
