@@ -1933,7 +1933,7 @@ function randomGame() {
 
 function exportLibrary() {
     const backup = {
-        format: "FlashManiaBackup",
+        format: "JoglumeBackup",
         version: 3,
         exportedAt: new Date().toISOString(),
         sources,
@@ -1972,7 +1972,7 @@ async function importLibrary(event) {
         const content = await file.text();
         const backup = JSON.parse(content);
 
-        if (!backup || backup.format !== "FlashManiaBackup") {
+        if (!backup || !["JoglumeBackup", "FlashManiaBackup"].includes(backup.format)) {
             throw new Error("Este arquivo não é um backup válido do Joglume.");
         }
 
@@ -2306,7 +2306,7 @@ async function autoUpdateSources() {
 
 /* INITIALIZATION */
 
-async function initializeFlashMania() {
+async function initializeJoglume() {
     addHTML5Options();
     initializeEvents();
 
