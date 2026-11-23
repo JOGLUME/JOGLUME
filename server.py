@@ -55,7 +55,7 @@ def google_image_search(query):
                 return found
 
     if not found:
-        thumbnail_pattern = r"<img[^>]+src=['\\"](https?://[^'\\"]+)['\\"]"
+        thumbnail_pattern = r"""<img[^>]+src=["'](https?://[^"']+)["']"""
         for match in re.findall(thumbnail_pattern, page, flags=re.IGNORECASE):
             url = decode_google_url(match)
             if 'gstatic.com' in url or 'googleusercontent.com' in url:
