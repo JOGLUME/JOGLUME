@@ -50,7 +50,7 @@ def google_image_search(query):
                 return found
 
     if not found:
-        for match in re.findall(r'<img[^>]+(?:src|data-src)=["\\']([^"\\']+)["\\']', page, flags=re.IGNORECASE):
+        for match in re.findall(r"""<img[^>]+(?:src|data-src)=["']([^"']+)["']""", page, flags=re.IGNORECASE):
             url = decode_google_url(html.unescape(match))
             if url.startswith(('http://', 'https://')) and url not in found:
                 found.append(url)
