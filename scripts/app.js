@@ -265,7 +265,7 @@ function coverFallback(cover) {
     if (image) image.remove();
     if (placeholder) {
         placeholder.hidden = false;
-        placeholder.innerHTML = '<span class="cover-loading-mark"></span><small>Buscando capa...</small>';
+        placeholder.innerHTML = '<small>Capa não encontrada</small>';
     }
     cover.classList.remove("has-cover");
 }
