@@ -263,7 +263,10 @@ function coverFallback(cover) {
     const placeholder = cover.querySelector(".game-cover-placeholder");
     const image = cover.querySelector("img");
     if (image) image.remove();
-    if (placeholder) placeholder.hidden = true;
+    if (placeholder) {
+        placeholder.hidden = false;
+        placeholder.innerHTML = '<span class="cover-loading-mark"></span><small>Buscando capa...</small>';
+    }
     cover.classList.remove("has-cover");
 }
 
