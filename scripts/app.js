@@ -271,7 +271,7 @@ function coverFallback(cover) {
 }
 
 async function searchInternetCovers(game) {
-    const query = `"${game.name}" ${getPlatformLabel(game.type)} game cover box art`;
+    const query = `${game.name} ${getPlatformLabel(game.type)} game`;
     const response = await fetch(`/api/covers?q=${encodeURIComponent(query)}`, {
         headers: { Accept: "application/json" },
         cache: "no-store"
@@ -329,32 +329,7 @@ async function loadGameCover(game, cover, skipCache = false) {
     } catch {
     }
 
-    const system = getCoverSystem(game.type);
-    if (system) {
-        let lookup = coverPending.get(key);
-        if (!lookup) {
-            lookup = getCoverIndex(system).then(filenames => findBestCover(game, filenames));
-            coverPending.set(key, lookup);
-        }
 
-        try {
-            const filename = await lookup;
-            if (filename) {
-                const url = `${COVER_CONFIG.baseURL}${encodeURIComponent(system)}/Named_Boxarts/${encodeURIComponent(filename)}`;
-                const rawURL = `https://raw.githubusercontent.com/libretro-thumbnails/${encodeURIComponent(system.replace(/\s+/g, "_"))}/master/Named_Boxarts/${encodeURIComponent(filename)}`;
-                const loadedURL = await showImage(rawURL) ? rawURL : await showImage(url) ? url : null;
-                if (loadedURL) {
-                    coverMatches[key] = loadedURL;
-                    game.coverUrl = loadedURL;
-                    saveCoverMatches();
-                    return;
-                }
-            }
-        } catch {
-        } finally {
-            if (coverPending.get(key) === lookup) coverPending.delete(key);
-        }
-    }
 
     coverFallback(cover);
     cover.dataset.coverLoaded = "false";
