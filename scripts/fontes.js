@@ -177,17 +177,17 @@ async function refreshAll() {
     for (const source of enabled) await updateSource(source);
 }
 function exportSources() {
-    const payload = { format: "FlashManiaSources", version: 1, exportedAt: new Date().toISOString(), sources, games: games.filter(game => game.sourceId) };
+    const payload = { format: "JoglumeSources", version: 1, exportedAt: new Date().toISOString(), sources, games: games.filter(game => game.sourceId) };
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = "flashmania-fontes-backup.json"; anchor.click();
+    const anchor = document.createElement("a"); anchor.href = url; anchor.download = "joglume-fontes-backup.json"; anchor.click();
     URL.revokeObjectURL(url); toast("Backup das fontes exportado.");
 }
 async function importSources(file) {
     if (!file) return;
     try {
         const data = JSON.parse(await file.text());
-        if (data.format !== "FlashManiaSources" || !Array.isArray(data.sources)) throw new Error("Arquivo de backup inválido.");
+        if (!["JoglumeSources", "FlashManiaSources"].includes(data.format) || !Array.isArray(data.sources)) throw new Error("Arquivo de backup inválido.");
         const map = new Map(sources.map(source => [source.id, source]));
         data.sources.forEach(source => map.set(source.id, source));
         sources = [...map.values()];
