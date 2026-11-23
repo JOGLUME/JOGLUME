@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "fm_cover_matches_v2"
+    cacheKey: "joglume_cover_matches_v3"
 };
 
 const coverMatches = (() => {
@@ -190,37 +190,29 @@ function getCoverIndex(system) {
 
     const promise = (async () => {
         const repository = system.replace(/\s+/g, "_");
-        const apiURL = `https://api.github.com/repos/libretro-thumbnails/${encodeURIComponent(repository)}/git/trees/master?recursive=1`;
-
-        try {
-            const response = await fetch(apiURL, {
-                headers: { Accept: "application/vnd.github+json" },
-                cache: "force-cache"
-            });
-            if (!response.ok) throw new Error("Índice do GitHub indisponível");
-            const tree = await response.json();
-            if (!Array.isArray(tree.tree) || tree.truncated) throw new Error("Índice incompleto");
-            const filenames = tree.tree
-                .filter(entry => entry.type === "blob" && entry.path.startsWith("Named_Boxarts/") && entry.path.toLowerCase().endsWith(".png"))
-                .map(entry => entry.path.slice("Named_Boxarts/".length));
-            if (filenames.length) return filenames;
-        } catch {
+        for (const branch of ["master", "main"]) {
+            const filenames = [];
+            let page = 1;
+            try {
+                while (page <= 20) {
+                    const apiURL = `https://api.github.com/repos/libretro-thumbnails/${encodeURIComponent(repository)}/contents/Named_Boxarts?ref=${branch}&per_page=1000&page=${page}`;
+                    const response = await fetch(apiURL, {
+                        headers: { Accept: "application/vnd.github+json" },
+                        cache: "force-cache"
+                    });
+                    if (!response.ok) throw new Error("Índice de capas indisponível");
+                    const entries = await response.json();
+                    if (!Array.isArray(entries)) throw new Error("Resposta inválida do índice de capas");
+                    filenames.push(...entries.filter(entry => entry.type === "file" && /\.png$/i.test(entry.name)).map(entry => entry.name));
+                    if (entries.length < 1000) break;
+                    page++;
+                }
+                if (filenames.length) return filenames;
+            } catch {
+                if (filenames.length) return filenames;
+            }
         }
-
-        const folder = `${COVER_CONFIG.baseURL}${encodeURIComponent(system)}/Named_Boxarts/`;
-        const response = await fetch(folder, { cache: "force-cache" });
-        if (!response.ok) throw new Error("Não foi possível consultar a coleção de capas");
-        const html = await response.text();
-        const parser = new DOMParser();
-        const documentNode = parser.parseFromString(html, "text/html");
-        const filenames = [...documentNode.querySelectorAll("a[href]")]
-            .map(link => {
-                try { return decodeURIComponent(link.getAttribute("href") || ""); }
-                catch { return link.getAttribute("href") || ""; }
-            })
-            .filter(name => name.toLowerCase().endsWith(".png") && !name.includes("/"));
-        if (!filenames.length) throw new Error("Nenhuma capa encontrada para este console");
-        return filenames;
+        throw new Error("Não foi possível carregar o catálogo de capas deste console");
     })();
 
     coverIndexes.set(system, promise);
@@ -342,7 +334,8 @@ async function loadGameCover(game, cover, skipCache = false) {
             const filename = await lookup;
             if (filename) {
                 const url = `${COVER_CONFIG.baseURL}${encodeURIComponent(system)}/Named_Boxarts/${encodeURIComponent(filename)}`;
-                if (await showImage(url)) {
+                const rawURL = `https://raw.githubusercontent.com/libretro-thumbnails/${encodeURIComponent(system.replace(/\s+/g, "_"))}/master/Named_Boxarts/${encodeURIComponent(filename)}`;
+                if (await showImage(url) || await showImage(rawURL)) {
                     coverMatches[key] = url;
                     game.coverUrl = url;
                     saveCoverMatches();
@@ -1233,7 +1226,7 @@ function createGameCard(game) {
     return `
         <article class="game-card" data-game-id="${escapeHTML(game.id)}">
             <div class="game-cover" data-cover-game="${escapeHTML(game.id)}">
-                <div class="game-cover-placeholder">${escapeHTML(game.icon || getPlatformIcon(game.type))}</div>
+                <div class="game-cover-placeholder" aria-label="Capa sendo carregada"><span class="cover-loading-mark"></span></div>
 
                 <span class="game-platform">${escapeHTML(platform)}</span>
 
