@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101116">
+    <meta name="description" content="Joglume - Seu universo de jogos, emuladores e entretenimento digital.">
+
+    <title>Joglume - Jogos Online</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script src="scripts/app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">J</span>
+                <span class="logo-text">FLASH<span>MANIA</span></span>
+            </div>
+
+            <nav class="navigation">
+
+                <div class="nav-section">
+                    <span class="nav-title">MENU PRINCIPAL</span>
+
+                    <button class="nav-item active" data-page="home">
+                        <span>⌂</span>
+                        Início
+                    </button>
+
+                    <button class="nav-item" data-page="library">
+                        <span>▤</span>
+                        Biblioteca
+                    </button>
+
+                    <button class="nav-item" data-page="favorites">
+                        <span>♡</span>
+                        Favoritos
+                    </button>
+
+                    <button class="nav-item" data-page="recent">
+                        <span>◷</span>
+                        Recentemente jogados
+                    </button>
+
+                    <a class="nav-item" href="paginas/fontes.html">
+                        <span>◈</span>
+                        Gerenciador de fontes
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-title">CATEGORIAS</span>
+
+                    <button class="nav-item" data-category="mundo-aberto">
+                        <span>🌍</span>
+                        Mundo aberto
+                    </button>
+
+                    <button class="nav-item" data-category="luta">
+                        <span>🥊</span>
+                        Luta
+                    </button>
+
+                    <button class="nav-item" data-category="acao">
+                        <span>⚔</span>
+                        Ação
+                    </button>
+
+                    <button class="nav-item" data-category="futebol">
+                        <span>⚽</span>
+                        Futebol
+                    </button>
+
+                    <button class="nav-item" data-category="esportes">
+                        <span>🏆</span>
+                        Esportes
+                    </button>
+
+                    <button class="nav-item" data-category="aventura">
+                        <span>🗺</span>
+                        Aventura
+                    </button>
+
+                    <button class="nav-item" data-category="rpg">
+                        <span>🛡</span>
+                        RPG
+                    </button>
+
+                    <button class="nav-item" data-category="corrida">
+                        <span>🏎</span>
+                        Corrida
+                    </button>
+
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-title">EMULADORES</span>
+
+                    <button class="nav-item" data-page="flash">
+                        <span>⚡</span>
+                        Jogos Flash
+                    </button>
+
+                    <a class="nav-item" href="paginas/gba.html">
+                        <span>🕹️</span>
+                        Emulador GBA
+                    </a>
+
+                    <a class="nav-item" href="paginas/gba-multiplayer.html">
+                        <span>👥</span>
+                        GBA Multiplayer
+                    </a>
+
+                    <a class="nav-item" href="paginas/snes.html">
+                        <span>🟣</span>
+                        Emulador SNES
+                    </a>
+
+                    <a class="nav-item" href="paginas/megadrive.html">
+                        <span>🔵</span>
+                        Emulador Mega Drive
+                    </a>
+
+                    <a class="nav-item" href="paginas/psx.html"><span>💿</span>Emulador PS1</a>
+
+                    <a class="nav-item" href="paginas/psp.html"><span>🎮</span>Emulador PSP</a>
+
+                    <a class="nav-item" href="paginas/ps2.html"><span>💿</span>Emulador PS2</a>
+
+                    <a class="nav-item" href="paginas/eaglercraft.html"><span>🧱</span>Eaglercraft</a>
+
+                </div>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button class="nav-item" data-page="add-game">
+                    <span>＋</span>
+                    Adicionar jogo
+                </button>
+
+                <button class="nav-item" data-page="backup">
+                    <span>⇅</span>
+                    Backup da biblioteca
+                </button>
+
+                <div class="sidebar-version">
+                    JOGLUME
+                    <span>VERSÃO 3.0</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menu-toggle">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    <span>JOGLUME</span>
+                    <span>/</span>
+                    <strong id="current-page-name">Início</strong>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Pesquisar jogos..."
+                            autocomplete="off"
+                        >
+                        <kbd>CTRL K</kbd>
+                    </div>
+
+                    <button class="icon-button" id="random-game" title="Jogo aleatório">
+                        ⤨
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <section class="page active" id="page-home">
+
+                <div class="hero">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            ✦ SEU UNIVERSO DE JOGOS
+                        </span>
+
+                        <h1>
+                            A diversão<br>
+                            <span>nunca acaba.</span>
+                        </h1>
+
+                        <p>
+                            Explore jogos clássicos, descubra novas aventuras
+                            e reviva os melhores momentos dos games.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <button class="primary-button" id="explore-games">
+                                Explorar jogos
+                                <span>→</span>
+                            </button>
+
+                            <a class="secondary-button" href="paginas/gba.html">
+                                <span>🎮</span>
+                                Abrir emuladores
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-decoration">
+                        <div class="hero-circle"></div>
+                        <div class="hero-controller">🎮</div>
+                        <div class="hero-floating">✦</div>
+                    </div>
+
+                </div>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-subtitle">EXPLORE</span>
+                            <h2>Categorias</h2>
+                        </div>
+                    </div>
+
+                    <div class="category-grid">
+
+                        <button class="category-card" data-category="mundo-aberto">
+                            <span>🌍</span>
+                            <strong>Mundo aberto</strong>
+                            <small>Exploração e liberdade</small>
+                        </button>
+
+                        <button class="category-card" data-category="luta">
+                            <span>🥊</span>
+                            <strong>Luta</strong>
+                            <small>Combates e batalhas</small>
+                        </button>
+
+                        <button class="category-card" data-category="acao">
+                            <span>⚔️</span>
+                            <strong>Ação</strong>
+                            <small>Aventura e adrenalina</small>
+                        </button>
+
+                        <button class="category-card" data-category="futebol">
+                            <span>⚽</span>
+                            <strong>Futebol</strong>
+                            <small>Entre em campo</small>
+                        </button>
+
+                        <button class="category-card" data-category="esportes">
+                            <span>🏆</span>
+                            <strong>Esportes</strong>
+                            <small>Desafie seus limites</small>
+                        </button>
+
+                        <button class="category-card" data-category="aventura">
+                            <span>🗺️</span>
+                            <strong>Aventura</strong>
+                            <small>Novos mundos</small>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-subtitle">SELEÇÃO ESPECIAL</span>
+                            <h2>Jogos em destaque</h2>
+                        </div>
+
+                        <button class="text-button" data-page="library">
+                            Ver biblioteca →
+                        </button>
+
+                    </div>
+
+                    <div class="game-grid" id="featured-games">
+                        <div class="loading-card">
+                            Carregando jogos...
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-subtitle">FONTES EXTERNAS</span>
+                            <h2>Diretórios online</h2>
+                            <p>
+                                Bibliotecas externas de jogos hospedados online.
+                            </p>
+                        </div>
+
+                        <a class="text-button" href="paginas/fontes.html">
+                            Gerenciar fontes →
+                        </a>
+
+                    </div>
+
+                    <div class="directory-grid" id="directory-grid">
+                        <article class="directory-card" data-directory="gba-roms">
+                            <span class="directory-icon">🎮</span><div><h3>Game Boy Advance ROMs</h3><p>Biblioteca de jogos para o emulador GBA.</p></div><span class="directory-status">Fonte 01</span>
+                        </article>
+                        <article class="directory-card" data-directory="offline-html-games">
+                            <span class="directory-icon">🌐</span><div><h3>Offline HTML Games Pack</h3><p>Jogos HTML5 independentes.</p></div><span class="directory-status">Fonte 02</span>
+                        </article>
+                        <article class="directory-card" data-directory="flash-games-directory">
+                            <span class="directory-icon">⚡</span><div><h3>Flash Games Directory</h3><p>Jogos clássicos em formato SWF.</p></div><span class="directory-status">Fonte 03</span>
+                        </article>
+                    </div>
+                </section>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-subtitle">CONTINUE JOGANDO</span>
+                            <h2>Jogados recentemente</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="game-grid" id="recent-games">
+                        <div class="empty-state">
+                            Seus jogos recentes aparecerão aqui.
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <section class="page" id="page-library">
+
+                <div class="page-header">
+                    <span class="section-subtitle">SUA COLEÇÃO</span>
+                    <h1>Biblioteca de jogos</h1>
+                    <p>Explore todos os jogos disponíveis no Joglume.</p>
+                </div>
+
+                <div class="library-toolbar">
+
+                    <div class="filter-buttons">
+
+                        <button class="filter-button active" data-filter="todos">
+                            Todos
+                        </button>
+
+                        <button class="filter-button" data-filter="flash">
+                            Flash
+                        </button>
+
+                        <button class="filter-button" data-filter="gba">
+                            GBA
+                        </button>
+
+                    </div>
+
+                    <div class="library-extra-filters">
+
+                        <select id="source-filter">
+                            <option value="todos">Todas as origens</option>
+                            <option value="native">Jogos nativos</option>
+                            <option value="github">Fontes GitHub</option>
+                            <option value="url">Adicionados por URL</option>
+                            <option value="local">Arquivos locais</option>
+                        </select>
+
+                        <select id="sort-games">
+                            <option value="default">Padrão</option>
+                            <option value="name">Nome</option>
+                            <option value="recent">Recentes</option>
+                            <option value="platform">Plataforma</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="library-summary" id="library-summary">
+                    <span id="library-game-count">0 jogos</span>
+                    <span id="library-source-count">0 fontes</span>
+                </div>
+
+                <div class="game-grid" id="all-games">
+                    <div class="loading-card">Carregando biblioteca...</div>
+                </div>
+
+                <div class="empty-state hidden" id="library-empty">
+                    Nenhum jogo encontrado.
+                </div>
+
+            </section>
+
+
+            <section class="page" id="page-favorites">
+
+                <div class="page-header">
+                    <span class="section-subtitle">SUA COLEÇÃO PESSOAL</span>
+                    <h1>Favoritos</h1>
+                    <p>Os jogos que você mais gosta.</p>
+                </div>
+
+                <div class="game-grid" id="favorite-games"></div>
+
+                <div class="empty-state" id="favorites-empty">
+                    Você ainda não adicionou jogos aos favoritos.
+                </div>
+
+            </section>
+
+
+            <section class="page" id="page-recent">
+
+                <div class="page-header">
+                    <span class="section-subtitle">HISTÓRICO</span>
+                    <h1>Recentemente jogados</h1>
+                    <p>Continue de onde você parou.</p>
+                </div>
+
+                <div class="game-grid" id="recent-library"></div>
+
+            </section>
+
+
+            <section class="page" id="page-flash">
+
+                <div class="page-header">
+                    <span class="section-subtitle">EMULAÇÃO FLASH</span>
+                    <h1>Jogos Flash</h1>
+                    <p>Reviva os clássicos com o emulador Ruffle.</p>
+                </div>
+
+                <div class="emulator-info">
+                    <div class="emulator-info-icon">⚡</div>
+
+                    <div>
+                        <h3>Ruffle Flash Player</h3>
+                        <p>
+                            Compatibilidade com arquivos SWF diretamente
+                            no navegador.
+                        </p>
+                    </div>
+
+                    <span class="emulator-tag">RUFFLE</span>
+                </div>
+
+                <div class="game-grid" id="flash-games"></div>
+
+            </section>
+
+
+            <section class="page" id="page-sources">
+
+                <div class="page-header">
+                    <span class="section-subtitle">GERENCIAMENTO DE BIBLIOTECAS</span>
+                    <h1>Gerenciador de fontes</h1>
+                    <p>
+                        Adicione repositórios e diretórios para importar
+                        jogos automaticamente para sua biblioteca.
+                    </p>
+                </div>
+
+
+                <div class="sources-overview">
+
+                    <div class="source-stat-card">
+                        <span class="source-stat-icon">◈</span>
+                        <div>
+                            <strong id="total-sources">5</strong>
+                            <span>Fontes cadastradas</span>
+                        </div>
+                    </div>
+
+                    <div class="source-stat-card">
+                        <span class="source-stat-icon">🎮</span>
+                        <div>
+                            <strong id="total-imported-games">0</strong>
+                            <span>Jogos importados</span>
+                        </div>
+                    </div>
+
+                    <div class="source-stat-card">
+                        <span class="source-stat-icon">✓</span>
+                        <div>
+                            <strong id="active-sources">5</strong>
+                            <span>Fontes ativas</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="source-add-panel">
+
+                    <div class="source-panel-heading">
+
+                        <div>
+                            <span class="section-subtitle">NOVA BIBLIOTECA</span>
+                            <h2>Adicionar uma fonte</h2>
+                            <p>
+                                Cole o link de um repositório GitHub
+                                ou de uma pasta específica.
+                            </p>
+                        </div>
+
+                        <div class="source-add-icon">＋</div>
+
+                    </div>
+
+
+                    <form id="add-source-form">
+
+                        <div class="form-group">
+
+                            <label for="source-url">URL do GitHub</label>
+
+                            <input
+                                type="url"
+                                id="source-url"
+                                placeholder="https://github.com/usuario/repositorio"
+                                required
+                            >
+
+                            <small>
+                                Aceita links de repositórios e pastas do GitHub.
+                            </small>
+
+                        </div>
+
+
+                        <div class="source-form-row">
+
+                            <div class="form-group">
+
+                                <label for="source-name">Nome da fonte</label>
+
+                                <input
+                                    type="text"
+                                    id="source-name"
+                                    placeholder="Minha coleção de jogos"
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="source-platform">Plataforma</label>
+
+                                <select id="source-platform">
+
+                                    <option value="auto">Detectar automaticamente</option>
+                                    <option value="flash">Flash (SWF)</option>
+                                    <option value="gba">Game Boy Advance</option>
+                                    <option value="gbc">Game Boy Color</option>
+                                    <option value="gb">Game Boy</option>
+                                    <option value="nes">NES</option>
+                                    <option value="snes">SNES</option>
+                                    <option value="nds">Nintendo DS</option>
+                                    <option value="n64">Nintendo 64</option>
+                                    <option value="segaMD">Mega Drive</option>
+                                    <option value="psx">PlayStation 1</option>
+                                    <option value="arcade">Arcade</option>
+                                    <option value="psp">PSP</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="source-form-row">
+
+                            <div class="form-group">
+
+                                <label for="source-branch">Branch (opcional)</label>
+
+                                <input
+                                    type="text"
+                                    id="source-branch"
+                                    placeholder="main"
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="source-category">Categoria padrão</label>
+
+                                <select id="source-category">
+                                    <option value="auto">Detectar automaticamente</option>
+                                    <option value="acao">Ação</option>
+                                    <option value="aventura">Aventura</option>
+                                    <option value="mundo-aberto">Mundo aberto</option>
+                                    <option value="luta">Luta</option>
+                                    <option value="futebol">Futebol</option>
+                                    <option value="esportes">Esportes</option>
+                                    <option value="rpg">RPG</option>
+                                    <option value="corrida">Corrida</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="source-options">
+
+                            <label class="source-checkbox">
+                                <input type="checkbox" id="source-auto-update" checked>
+                                <span>
+                                    <strong>Atualizar automaticamente</strong>
+                                    <small>
+                                        Verificar novos jogos quando o Joglume abrir.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label class="source-checkbox">
+                                <input type="checkbox" id="source-recursive" checked>
+                                <span>
+                                    <strong>Incluir subpastas</strong>
+                                    <small>
+                                        Procurar arquivos dentro das pastas do repositório.
+                                    </small>
+                                </span>
+                            </label>
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button" id="add-source-button">
+                            ＋ Adicionar e importar jogos
+                        </button>
+
+                    </form>
+
+                    <div class="source-progress hidden" id="source-progress">
+                        <div class="source-progress-info">
+                            <span id="source-progress-text">Analisando repositório...</span>
+                            <span id="source-progress-count">0%</span>
+                        </div>
+                        <div class="source-progress-track">
+                            <div class="source-progress-bar" id="source-progress-bar"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-subtitle">SUAS BIBLIOTECAS</span>
+                            <h2>Fontes cadastradas</h2>
+                            <p>
+                                Gerencie as fontes originais e as que você adicionou.
+                            </p>
+                        </div>
+
+                        <button class="secondary-button" id="refresh-all-sources">
+                            ↻ Atualizar todas
+                        </button>
+
+                    </div>
+
+                    <div class="source-list" id="source-list">
+
+                        <div class="loading-card">
+                            Carregando fontes cadastradas...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-subtitle">INFORMAÇÕES</span>
+                            <h2>Como funciona?</h2>
+                        </div>
+                    </div>
+
+                    <div class="source-help-grid">
+
+                        <article class="source-help-card">
+                            <span>①</span>
+                            <h3>Adicione um link</h3>
+                            <p>
+                                Cole o endereço de um repositório ou pasta do GitHub.
+                            </p>
+                        </article>
+
+                        <article class="source-help-card">
+                            <span>②</span>
+                            <h3>Importação automática</h3>
+                            <p>
+                                O Joglume procura arquivos de jogos
+                                e identifica suas plataformas.
+                            </p>
+                        </article>
+
+                        <article class="source-help-card">
+                            <span>③</span>
+                            <h3>Jogue</h3>
+                            <p>
+                                Os jogos encontrados aparecem na biblioteca
+                                e podem ser abertos pelo emulador correspondente.
+                            </p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <section class="page" id="page-backup">
+
+                <div class="page-header">
+                    <span class="section-subtitle">SEGURANÇA DA BIBLIOTECA</span>
+                    <h1>Importar e exportar</h1>
+                    <p>
+                        Faça backup das suas fontes, configurações e informações
+                        da biblioteca para restaurar depois.
+                    </p>
+                </div>
+
+
+                <div class="backup-grid">
+
+                    <div class="backup-card">
+
+                        <div class="backup-icon">⇧</div>
+
+                        <span class="section-subtitle">SALVAR CÓPIA</span>
+
+                        <h2>Exportar biblioteca</h2>
+
+                        <p>
+                            Salve suas fontes cadastradas, jogos adicionados
+                            por URL, favoritos, histórico e configurações.
+                        </p>
+
+                        <div class="backup-includes">
+                            <span>✓ Fontes cadastradas</span>
+                            <span>✓ Jogos importados</span>
+                            <span>✓ Favoritos e histórico</span>
+                            <span>✓ Configurações</span>
+                            <span>✓ Lista de arquivos locais</span>
+                        </div>
+
+                        <button class="primary-button" id="export-library">
+                            Exportar backup JSON
+                        </button>
+
+                    </div>
+
+
+                    <div class="backup-card">
+
+                        <div class="backup-icon">⇩</div>
+
+                        <span class="section-subtitle">RESTAURAR CÓPIA</span>
+
+                        <h2>Importar biblioteca</h2>
+
+                        <p>
+                            Restaure um backup anterior e recupere suas fontes
+                            e informações cadastradas.
+                        </p>
+
+                        <div class="backup-includes">
+                            <span>✓ Recuperar fontes</span>
+                            <span>✓ Recuperar jogos cadastrados</span>
+                            <span>✓ Recuperar favoritos</span>
+                            <span>✓ Recuperar histórico</span>
+                            <span>✓ Mesclar ou substituir dados</span>
+                        </div>
+
+                        <label class="upload-button" for="import-library-file">
+                            Selecionar backup
+                        </label>
+
+                        <input
+                            type="file"
+                            id="import-library-file"
+                            accept=".json"
+                            hidden
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="backup-warning">
+                    <span>ⓘ</span>
+                    <div>
+                        <strong>Sobre os arquivos locais</strong>
+                        <p>
+                            O backup JSON guarda as informações e referências
+                            dos jogos. Os arquivos enviados diretamente do computador
+                            precisam de uma exportação própria para que seus dados
+                            binários também sejam transferidos.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="backup-actions">
+
+                    <button class="secondary-button" id="clear-imported-games">
+                        Remover jogos importados
+                    </button>
+
+                    <button class="secondary-button" id="reset-sources">
+                        Restaurar fontes originais
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="page" id="page-add-game">
+
+                <div class="page-header">
+                    <span class="section-subtitle">PERSONALIZE SUA BIBLIOTECA</span>
+                    <h1>Adicionar jogo</h1>
+                    <p>Adicione seus próprios jogos ao Joglume.</p>
+                </div>
+
+
+                <div class="add-game-container">
+
+                    <div class="add-game-tabs">
+
+                        <button class="add-tab active" data-add-type="file">
+                            Arquivo local
+                        </button>
+
+                        <button class="add-tab" data-add-type="url">
+                            Link direto
+                        </button>
+
+                    </div>
+
+
+                    <form id="add-file-form" class="add-game-form">
+
+                        <div class="upload-area" id="upload-area">
+
+                            <div class="upload-icon">📁</div>
+
+                            <h3>Selecione seu jogo</h3>
+
+                            <p>
+                                Arraste seu arquivo até aqui ou clique
+                                para procurar.
+                            </p>
+
+                            <span>SWF, GBA, GBC, GB ou ZIP</span>
+
+                            <input
+                                type="file"
+                                id="game-file"
+                                accept=".swf,.gba,.gbc,.gb,.nes,.sfc,.smc,.nds,.z64,.n64,.v64,.bin,.cue,.iso,.zip"
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="game-name">Nome do jogo</label>
+
+                            <input
+                                type="text"
+                                id="game-name"
+                                placeholder="Digite o nome do jogo"
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="game-category">Categoria</label>
+
+                            <select id="game-category">
+
+                                <option value="acao">Ação</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="mundo-aberto">Mundo aberto</option>
+                                <option value="luta">Luta</option>
+                                <option value="futebol">Futebol</option>
+                                <option value="esportes">Esportes</option>
+                                <option value="rpg">RPG</option>
+                                <option value="corrida">Corrida</option>
+                                <option value="outros">Outros</option>
+
+                            </select>
+
+                        </div>
+
+                        <button type="submit" class="primary-button">
+                            Adicionar à biblioteca
+                        </button>
+
+                    </form>
+
+
+                    <form id="add-url-form" class="add-game-form hidden">
+
+                        <div class="form-group">
+
+                            <label for="url-game-name">Nome do jogo</label>
+
+                            <input
+                                type="text"
+                                id="url-game-name"
+                                placeholder="Nome do jogo"
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="game-url">URL direta do arquivo</label>
+
+                            <input
+                                type="url"
+                                id="game-url"
+                                placeholder="https://exemplo.com/jogo.swf"
+                            >
+
+                            <small>
+                                Utilize um endereço direto para um arquivo
+                                de jogo, não uma página de outro site.
+                            </small>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="url-game-type">Formato</label>
+
+                            <select id="url-game-type">
+                                <option value="flash">Flash (SWF)</option>
+                                <option value="gba">Game Boy Advance</option>
+                                <option value="gbc">Game Boy Color</option>
+                                <option value="gb">Game Boy</option>
+                                <option value="nes">NES</option>
+                                <option value="snes">SNES</option>
+                                <option value="nds">Nintendo DS</option>
+                                <option value="n64">Nintendo 64</option>
+                                <option value="segaMD">Mega Drive</option>
+                                <option value="psx">PlayStation 1</option>
+                                <option value="arcade">Arcade</option>
+                                <option value="psp">PSP</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="url-game-category">Categoria</label>
+
+                            <select id="url-game-category">
+                                <option value="acao">Ação</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="mundo-aberto">Mundo aberto</option>
+                                <option value="luta">Luta</option>
+                                <option value="futebol">Futebol</option>
+                                <option value="esportes">Esportes</option>
+                                <option value="rpg">RPG</option>
+                                <option value="corrida">Corrida</option>
+                                <option value="outros">Outros</option>
+                            </select>
+
+                        </div>
+
+                        <button type="submit" class="primary-button">
+                            Adicionar jogo
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <div class="player-modal hidden" id="player-modal">
+
+                <div class="player-window">
+
+                    <div class="player-header">
+
+                        <div class="player-title">
+
+                            <span class="player-indicator"></span>
+
+                            <div>
+                                <strong id="player-game-title">Nome do jogo</strong>
+                                <small id="player-game-platform">FLASH GAME</small>
+                            </div>
+
+                        </div>
+
+                        <div class="player-controls">
+
+                            <button id="fullscreen-button" title="Tela cheia">
+                                ⛶
+                            </button>
+
+                            <button id="close-player" title="Fechar">
+                                ✕
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="player-content" id="player-content">
+
+                        <div class="player-placeholder">
+                            <span>🎮</span>
+                            <p>Selecione um jogo para começar.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="player-footer">
+
+                        <span id="player-status">AGUARDANDO JOGO</span>
+
+                        <div>
+                            <span>JOGLUME</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="toast-container" id="toast-container"></div>
+
+
+            <footer class="footer">
+
+                <div>
+                    <strong>JOGLUME</strong>
+                    <span>Seu universo de jogos clássicos.</span>
+                </div>
+
+                <span>© 2026 JOGLUME</span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

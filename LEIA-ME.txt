@@ -1,0 +1,128 @@
+JOGLUME — PROJETO ORGANIZADO
+
+ESTRUTURA
+FlashMania/
+  index.html             Página inicial e biblioteca
+  css/style.css          CSS compartilhado por todas as páginas
+  scripts/app.js         Aplicação e biblioteca principal
+  scripts/fontes.js      Gerenciador de fontes GitHub independente
+  scripts/gba.js         Lógica do emulador GBA
+  scripts/snes.js         Lógica exclusiva do emulador SNES
+  scripts/megadrive.js    Lógica exclusiva do emulador Mega Drive
+  paginas/fontes.html    Página exclusiva do gerenciador de fontes
+  paginas/gba.html       Página exclusiva do emulador GBA
+  paginas/snes.html      Página exclusiva do emulador SNES
+  paginas/megadrive.html Página exclusiva do emulador Mega Drive
+
+COMO EXECUTAR
+1. Extraia a pasta FlashMania.
+2. No Windows, execute INICIAR-JOGLUME.bat para iniciar o servidor local completo.
+3. Acesse http://localhost:8000.
+4. O gerenciador fica em paginas/fontes.html e o GBA em paginas/gba.html.
+5. O Live Server pode ser usado para testar a biblioteca e as capas Libretro, mas a pesquisa no Google Imagens precisa do server.py ativo.
+
+GERENCIADOR DE FONTES
+- A página de fontes é independente e tem link no menu principal e no menu do GBA.
+- Fontes adicionadas, status e jogos importados usam as mesmas chaves de armazenamento local que a biblioteca principal: fm_sources_v3 e fm_games_v3.
+- Os dados ficam no armazenamento local do navegador e são compartilhados entre as páginas quando abertas pelo mesmo endereço/origem.
+- O gerenciador permite adicionar repositórios públicos, definir plataforma/categoria, atualizar, ativar/desativar e remover fontes personalizadas.
+- Também permite exportar e importar um backup JSON das fontes e dos jogos importados.
+- Depois de importar jogos no gerenciador, volte à biblioteca ou atualize a página inicial para visualizar os novos títulos.
+
+IMPORTANTE SOBRE PERSISTÊNCIA
+LocalStorage não é uma conta na nuvem: os dados ficam neste navegador e neste dispositivo. Use Exportar backup para guardar uma cópia ou transferir os dados. Não abra páginas por origens diferentes (por exemplo, alternando entre file:// e localhost), pois o navegador pode separar os armazenamentos.
+
+DEPENDÊNCIAS
+Ruffle, EmulatorJS, Google Fonts e API do GitHub precisam de internet. A API pública do GitHub tem limite de requisições. Apenas repositórios públicos são pesquisados. O projeto não inclui ROMs; utilize arquivos que você tenha direito de usar.
+
+TESTES
+Os scripts devem passar por verificação de sintaxe JavaScript. O carregamento real de jogos e a disponibilidade de cada repositório dependem do navegador, da conexão e das regras de hospedagem externas.
+
+
+FONTES INICIAIS OBRIGATORIAS
+- GBA: https://github.com/CleberDevOps/roms-gameboy-advanced/tree/master
+- HTML5: https://github.com/CoolDude2349/Offline-HTML-Games-Pack
+- Flash: https://github.com/AmmarSAA/flash-games-directory
+
+A fonte BinBashBanana/gfiles foi removida. As três fontes iniciais são cadastradas automaticamente. O gerenciador e o emulador GBA compartilham fm_sources_v3 e fm_games_v3 no localStorage. A página GBA lista as ROMs salvas e atualiza automaticamente a fonte GBA quando estiver vencida (a cada 6 horas), além de permitir atualização manual. As fontes personalizadas continuam podendo ser adicionadas pelo gerenciador.
+
+OBSERVACAO: a fonte Offline HTML Games Pack contém páginas HTML e a fonte AmmarSAA contém jogos SWF; elas aparecem na biblioteca principal, não na lista de ROMs GBA. A fonte CleberDevOps é a que alimenta o emulador GBA.
+
+
+NOVOS EMULADORES
+- SNES usa o núcleo snes do EmulatorJS e aceita .sfc, .smc e .zip. Arquivos .7z não são listados como ROM jogável porque exigiriam extração adicional.
+- Mega Drive usa o núcleo segaMD do EmulatorJS e aceita .bin, .md, .gen e .smd.
+- As páginas paginas/snes.html e paginas/megadrive.html possuem scripts independentes (scripts/snes.js e scripts/megadrive.js), mas compartilham o gerenciador de fontes e a biblioteca fm_sources_v3 / fm_games_v3.
+- Fontes obrigatórias adicionadas: dolchi21-retroarch/snes-roms (master; .7z/.zip), hacan359/co-op-retro-games (main/roms/snes; .zip/.7z/.sfc/.smc) e retrobrews/md-games (arquivos .bin).
+- O arquivo .dat do Mega Drive não foi adicionado porque é metadado, não ROM; ele não é necessário para jogar.
+- PS1 e PSP continuam sem implementação dedicada nesta versão.
+
+
+SEPARACAO DOS EMULADORES
+- paginas/snes.html carrega somente scripts/snes.js, com núcleo snes e formatos próprios.
+- paginas/megadrive.html carrega somente scripts/megadrive.js, com núcleo segaMD e formatos próprios.
+- O arquivo scripts/console-emulator.js compartilhado foi removido para evitar que as duas páginas dependam da mesma lógica.
+- Cada console possui histórico independente no armazenamento local.
+
+
+GBA MULTIPLAYER (PAGINA INDEPENDENTE)
+- Nova página: paginas/gba-multiplayer.html.
+- Script exclusivo: scripts/gba-multiplayer.js.
+- Estilos exclusivos: css/gba-multiplayer.css.
+- O GBA tradicional permanece em paginas/gba.html e scripts/gba.js; esses arquivos não foram alterados nesta integração.
+- A página incorpora o app WebAssembly público do projeto mGBA Splitscreen: https://spuds0588.github.io/mgba-splitscreen/
+- O app original roda no navegador e oferece link cable local para 2 a 4 instâncias, com uma ROM por instância. A página também expõe o menu Online beta do projeto para convites entre computadores.
+- O modo online é beta e pode apresentar falhas de conexão/latência. A página depende de internet e do serviço GitHub Pages do projeto original.
+- Licença/atribuição do projeto mGBA Splitscreen: MPL-2.0.
+
+
+CAPAS AUTOMATICAS
+-----------------
+A biblioteca tenta localizar capas oficiais (box art) na coleção pública Libretro Thumbnails. A busca considera o nome do jogo e o console, sem misturar versões de plataformas diferentes. As capas são carregadas sob demanda pela internet; o projeto não baixa um pacote com milhares de imagens. Os endereços encontrados ficam registrados no armazenamento local do navegador e as imagens podem ser reutilizadas pelo cache HTTP do próprio navegador.
+
+A cobertura depende dos nomes usados pela base de capas. Jogos Flash, HTML5, hacks, homebrews e títulos sem correspondência podem continuar com o ícone padrão. A primeira busca exige conexão com a internet.
+
+
+EMULADORES ADICIONADOS
+- PlayStation 1: paginas/psx.html (núcleo psx / PCSX-ReARMed do EmulatorJS). Formatos: CHD, ISO, PBP e CUE. Para CUE local, prefira converter para CHD/ISO; um CUE local não consegue localizar automaticamente BINs separados.
+- PSP: paginas/psp.html (núcleo PPSSPP do EmulatorJS). Formatos: ISO, CSO e PBP. O PSP requer SharedArrayBuffer e contexto cross-origin isolated.
+- Para iniciar o PSP no computador, execute INICIAR-JOGLUME.bat e acesse http://localhost:8000. O Live Server comum não envia os cabeçalhos COOP/COEP necessários.
+- Fonte GitHub de homebrew PSP: https://github.com/pspdev/homebrew (catálogo de jogos e aplicativos caseiros; não é uma coleção de jogos comerciais).
+- Não foi encontrada uma fonte GitHub confiável de jogos PS1 prontos e legais para importar automaticamente. Adicione suas próprias fontes de jogos homebrew/arquivos compatíveis pelo gerenciador.
+
+CAPAS AUTOMÁTICAS
+- O índice antigo de capas foi substituído por uma consulta à árvore Git do Libretro Thumbnails, com alternativa ao índice público thumbnails.libretro.com.
+- O cache antigo foi invalidado para não reutilizar endereços quebrados. As capas são consultadas por console e título, sob demanda.
+- Fonte: https://github.com/libretro-thumbnails
+
+
+NOVAS SECOES - PS2 E EAGLERCRAFT
+
+PS2: paginas/ps2.html incorpora o TabStationToo (PCSX2 compilado para WebAssembly). O projeto e experimental e exige BIOS e imagens de jogos fornecidas pelo proprio usuario. Nenhum BIOS ou jogo acompanha o Joglume. Formatos e compatibilidade podem variar. O emulador exige SharedArrayBuffer e isolamento de origem cruzada (cabecalhos COOP/COEP); hospedagens devem configurar esses cabecalhos. Se a incorporacao nao funcionar, use Abrir em nova aba.
+Projeto: https://github.com/TabStationToo/TabStationToo (GPL-3.0).
+PIXR: https://pixr.dev/
+
+EAGLERCRAFT: paginas/eaglercraft.html carrega o cliente web externo dentro de um iframe. A disponibilidade da incorporacao depende das politicas do site de origem e do navegador; ha um botao para abrir em nova aba. O Joglume nao redistribui arquivos de jogo.
+Site: https://eaglercraft.com/
+
+Observacao: essas duas secoes dependem de servicos externos e de conexao com a internet.
+
+
+ATUALIZACAO - FALLBACK EAGLERCRAFT
+A pagina paginas/eaglercraft.html agora tenta, nesta ordem: eaglercraft.com/play, eaglercrafthub.com/26-2 e o cliente local jogos/Eaglercraft-1.12.2.html. Tambem ha controles para avancar manualmente e abrir cada alternativa. O arquivo local foi fornecido pelo usuario. O navegador nao permite identificar de forma confiavel todo bloqueio de iframe; por isso, a troca automatica usa erro/tempo limite e os botoes manuais continuam disponiveis.
+
+
+PESQUISA DE CAPAS NA INTERNET
+- Quando a coleção Libretro não tiver uma correspondência segura para o título e console, o Joglume consulta o endpoint local /api/covers.
+- O servidor pesquisa o nome do jogo no Google Imagens, recupera os endereços diretos das imagens encontradas e testa os resultados em ordem até encontrar uma imagem que carregue.
+- A URL da capa é salva no armazenamento local do navegador e reutilizada nas próximas visitas. As pesquisas são feitas sob demanda quando o cartão do jogo se aproxima da tela.
+- Essa busca Google depende do servidor Python iniciado pelo arquivo INICIAR-JOGLUME.bat. O Google pode alterar o formato da página, limitar requisições ou bloquear consultas; nesses casos, a capa Libretro continua sendo a primeira alternativa e o ícone padrão permanece como último recurso.
+- Para publicar o Joglume na internet, o endpoint /api/covers também precisa ser hospedado em um servidor Python acessível pelo site; hospedagem somente estática não executa esse endpoint.
+
+
+ATUALIZACAO - PESQUISA MAIS ESPECIFICA E HOSPEDAGEM
+- A pesquisa de imagens agora combina o nome do jogo com a plataforma e o termo "game capa". Exemplo: "Avalanche FLASH game capa".
+- O servidor aceita a variável PORT e pode escutar em HOST=0.0.0.0, permitindo hospedagem em plataformas como Railway.
+- Foram adicionados Procfile e railway.json para facilitar a implantação.
+- Para publicar, conecte o repositório do projeto a uma plataforma de hospedagem Python e configure o comando de inicialização como `python server.py`. A plataforma precisa disponibilizar a variável PORT.
+- A hospedagem não é criada automaticamente pelo ZIP: é necessário conectar uma conta/projeto de hospedagem e publicar o código.
