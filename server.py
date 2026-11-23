@@ -37,9 +37,9 @@ def google_image_search(query):
 
     found = []
     patterns = [
-        r'"ou"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"',
-        r'"murl"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"',
-        r'"imgurl"\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"'
+        r'"ou"\s*:\s*"((?:\\.|[^"\\])*)"',
+        r'"murl"\s*:\s*"((?:\\.|[^"\\])*)"',
+        r'"imgurl"\s*:\s*"((?:\\.|[^"\\])*)"'
     ]
     for pattern in patterns:
         for match in re.findall(pattern, page, flags=re.IGNORECASE):
