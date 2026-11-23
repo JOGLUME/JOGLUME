@@ -614,9 +614,23 @@ select:focus-visible {
 }
 
 .game-cover-placeholder {
-    font-size: 50px;
-    opacity: 0.8;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #242632, #171922 55%, #25202a);
 }
+.game-cover-placeholder[hidden] { display: none; }
+.cover-loading-mark {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #ffffff18;
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: cover-spin .9s linear infinite;
+}
+@keyframes cover-spin { to { transform: rotate(360deg); } }
 
 .game-platform {
     position: absolute;
