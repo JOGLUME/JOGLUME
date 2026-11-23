@@ -271,7 +271,7 @@ function coverFallback(cover) {
 }
 
 async function searchInternetCovers(game) {
-    const query = `${game.name} ${getPlatformLabel(game.type)} game`;
+    const query = `"${String(game.name || "").trim()}" ${getPlatformLabel(game.type)} game`;
     const response = await fetch(`/api/covers?q=${encodeURIComponent(query)}`, {
         headers: { Accept: "application/json" },
         cache: "no-store"
