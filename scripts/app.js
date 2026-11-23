@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "joglume_cover_matches_v3"
+    cacheKey: "joglume_cover_matches_v4"
 };
 
 const coverMatches = (() => {
@@ -268,7 +268,7 @@ function coverFallback(cover) {
 }
 
 async function searchInternetCovers(game) {
-    const query = `${game.name} ${getPlatformLabel(game.type)} game capa`;
+    const query = `"${game.name}" ${getPlatformLabel(game.type)} game cover box art`;
     const response = await fetch(`/api/covers?q=${encodeURIComponent(query)}`, {
         headers: { Accept: "application/json" },
         cache: "no-store"
@@ -291,7 +291,7 @@ async function loadGameCover(game, cover, skipCache = false) {
         image.alt = `Capa de ${game.name}`;
         image.loading = "lazy";
         image.decoding = "async";
-        image.referrerPolicy = "no-referrer";
+        image.referrerPolicy = "strict-origin-when-cross-origin";
         image.onload = () => {
             if (placeholder) placeholder.hidden = true;
             cover.classList.add("has-cover");
@@ -310,6 +310,20 @@ async function loadGameCover(game, cover, skipCache = false) {
         delete coverMatches[key];
         delete game.coverUrl;
         saveCoverMatches();
+    }
+
+    try {
+        const candidates = await searchInternetCovers(game);
+        for (const url of candidates) {
+            if (!/^https?:\/\//i.test(url)) continue;
+            if (await showImage(url)) {
+                coverMatches[key] = url;
+                game.coverUrl = url;
+                saveCoverMatches();
+                return;
+            }
+        }
+    } catch {
     }
 
     const system = getCoverSystem(game.type);
@@ -337,20 +351,6 @@ async function loadGameCover(game, cover, skipCache = false) {
         } finally {
             if (coverPending.get(key) === lookup) coverPending.delete(key);
         }
-    }
-
-    try {
-        const candidates = await searchInternetCovers(game);
-        for (const url of candidates) {
-            if (!/^https?:\/\//i.test(url)) continue;
-            if (await showImage(url)) {
-                coverMatches[key] = url;
-                game.coverUrl = url;
-                saveCoverMatches();
-                return;
-            }
-        }
-    } catch {
     }
 
     coverFallback(cover);
