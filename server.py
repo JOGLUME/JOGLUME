@@ -26,7 +26,7 @@ def decode_google_url(value):
 
 
 def google_image_search(query):
-    search_url = 'https://www.google.com/search?tbm=isch&hl=pt-BR&safe=active&q=' + quote(query)
+    search_url = 'https://www.google.com/search?tbm=isch&hl=pt-BR&safe=active&q=' + quote(query, safe='')
     request = Request(search_url, headers={
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
