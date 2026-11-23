@@ -69,7 +69,7 @@ def bing_image_search(query):
         page = response.read(8_000_000).decode('utf-8', errors='ignore')
 
     found = []
-    for match in re.findall(r'\\bm="([^"]+)"', page):
+    for match in re.findall(r'\bm="([^"]+)"', page):
         try:
             metadata = json.loads(html.unescape(match))
             url = metadata.get('murl') or metadata.get('turl')
