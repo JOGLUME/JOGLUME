@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101116">
+<meta name="description" content="Emulador Game Boy Advance do Joglume.">
+<title>Joglume - Emulador GBA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../scripts/gba.js" defer></script>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <a class="logo" href="../index.html"><span class="logo-icon">F</span><span class="logo-text">FLASH<span>MANIA</span></span></a>
+  <nav class="navigation">
+    <div class="nav-section">
+      <span class="nav-title">MENU PRINCIPAL</span>
+      <a class="nav-item" href="../index.html"><span>⌂</span>Início</a>
+      <a class="nav-item" href="../index.html"><span>▤</span>Biblioteca</a>
+      <a class="nav-item" href="fontes.html"><span>◈</span>Gerenciador de fontes</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-title">EMULADORES</span>
+      <a class="nav-item" href="snes.html"><span>🟣</span>Emulador SNES</a>
+      <a class="nav-item" href="megadrive.html"><span>🔵</span>Emulador Mega Drive</a>
+      <a class="nav-item" href="psx.html"><span>💿</span>Emulador PS1</a>
+      <a class="nav-item" href="psp.html"><span>🎮</span>Emulador PSP</a>
+      <a class="nav-item active" href="gba.html"><span>🕹️</span>Emulador GBA</a>
+      <a class="nav-item" href="gba-multiplayer.html"><span>👥</span>GBA Multiplayer</a>
+    </div>
+  </nav>
+  <div class="sidebar-bottom"><div class="sidebar-version">JOGLUME<span>GBA PLAYER · 1.0</span></div></div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+  <div class="breadcrumb"><span>JOGLUME</span><span>/</span><strong>Emulador GBA</strong></div>
+  <div class="topbar-actions"><span class="system-pill"><i></i> GAME BOY ADVANCE</span></div>
+</header>
+
+<section class="page active">
+  <div class="page-heading">
+    <div><span class="section-subtitle">RETRO GAMING · NINTENDO</span><h1>Game Boy <em>Advance.</em></h1>
+    <p>Carregue uma ROM do seu computador, informe um link direto ou explore repositórios públicos do GitHub.</p></div>
+    <div class="gba-mark">GBA<span>32-BIT</span></div>
+  </div>
+
+  <section class="player-card">
+    <div class="player-topline"><div><span class="live-dot"></span><strong id="player-state">EMULADOR PRONTO</strong></div><div class="player-top-actions">
+      <button class="small-control" id="reset-game" title="Reiniciar jogo">↻</button>
+      <button class="small-control" id="fullscreen" title="Tela cheia">⛶</button>
+    </div></div>
+    <div class="screen-wrap" id="screen-wrap">
+      <div class="screen-placeholder" id="screen-placeholder"><div class="placeholder-device">🎮</div><strong>Seu próximo jogo começa aqui.</strong><span>Selecione uma ROM para iniciar o Game Boy Advance.</span></div>
+      <div id="game" class="game-host"></div>
+    </div>
+    <div class="player-bottom"><span id="game-title">NENHUM JOGO CARREGADO</span><span>JOGLUME <b>•</b> GBA</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">CARREGAR JOGO</span><h2>Escolha sua ROM</h2><p>O emulador aceita arquivos no formato .gba.</p></div></div>
+    <div class="load-grid">
+      <article class="load-card">
+        <div class="load-icon">↥</div><h3>Arquivo local</h3><p>Abra uma ROM armazenada no seu computador.</p>
+        <label class="primary-button file-button" for="rom-file">Selecionar arquivo <span>→</span></label>
+        <input id="rom-file" type="file" accept=".gba,application/octet-stream" hidden>
+        <small id="file-name">Nenhum arquivo selecionado</small>
+      </article>
+      <article class="load-card">
+        <div class="load-icon">↗</div><h3>Link direto</h3><p>Use uma URL direta para um arquivo .gba.</p>
+        <form id="url-form" class="inline-form"><input id="rom-url" type="url" placeholder="https://.../jogo.gba" required><button class="primary-button" type="submit">Carregar <span>→</span></button></form>
+        <small>Links raw.githubusercontent.com são aceitos.</small>
+      </article>
+      <article class="load-card">
+        <div class="load-icon">⌘</div><h3>Repositório GitHub</h3><p>Encontre arquivos GBA dentro de um repositório público.</p>
+        <form id="github-form" class="inline-form"><input id="github-url" type="url" placeholder="https://github.com/usuario/repositorio" required><button class="primary-button" type="submit" id="search-repo">Buscar <span>→</span></button></form>
+        <small>Também aceita links de pastas /tree/branch.</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">FONTES DO JOGLUME</span><h2>Biblioteca GBA conectada</h2><p>As ROMs importadas pelo gerenciador de fontes aparecem aqui automaticamente. Suas fontes e jogos permanecem salvos neste navegador.</p></div><button class="secondary-button" id="refresh-saved-gba">↻ Atualizar fontes</button></div>
+    <div class="source-list" id="saved-gba-sources"><div class="loading-card">Carregando fontes GBA...</div></div>
+    <div class="rom-search"><span aria-hidden="true">⌕</span><input id="saved-gba-search" type="search" autocomplete="off" placeholder="Pesquisar jogos GBA importados..." aria-label="Pesquisar jogos GBA"><button type="button" id="clear-saved-gba-search" aria-label="Limpar pesquisa" title="Limpar pesquisa">×</button></div>
+    <div class="rom-list" id="saved-gba-list"><div class="empty-state">Carregando ROMs salvas...</div></div>
+  </section>
+
+  <section class="content-section results-section" id="results-section" hidden>
+    <div class="section-heading"><div><span class="section-subtitle">ARQUIVOS ENCONTRADOS</span><h2>ROMs do repositório</h2><p id="results-description">Selecione um arquivo para carregar.</p></div><button class="text-button" id="clear-results">Limpar lista</button></div>
+    <div class="rom-list" id="rom-list"></div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">SUA COLEÇÃO</span><h2>Jogos recentes</h2><p>Os últimos jogos carregados neste navegador.</p></div><button class="text-button" id="clear-recent">Limpar histórico</button></div>
+    <div class="recent-grid" id="recent-list"><div class="empty-state">Seus jogos recentes aparecerão aqui.</div></div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">CONTROLES</span><h2>Como jogar</h2></div></div>
+    <div class="controls-panel">
+      <div class="key-group"><span class="key">↑</span><span class="key-row"><span class="key">←</span><span class="key">↓</span><span class="key">→</span></span><small>Direcional</small></div>
+      <div class="key-group"><span class="key">Z</span><span class="key">X</span><small>A / B</small></div>
+      <div class="key-group"><span class="key">A</span><span class="key">S</span><small>L / R</small></div>
+      <div class="key-group"><span class="key wide">Enter</span><span class="key wide">Shift</span><small>Start / Select</small></div>
+      <p>No celular, o EmulatorJS disponibiliza controles de toque na tela quando suportados pelo dispositivo.</p>
+    </div>
+  </section>
+  <footer class="footer"><div><strong>JOGLUME</strong><span>Seu universo de jogos clássicos.</span></div><span>© 2026 JOGLUME</span></footer>
+</main>
+</div>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

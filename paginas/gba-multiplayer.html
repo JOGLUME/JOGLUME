@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101116">
+<meta name="description" content="GBA Multiplayer do Joglume: sessões GBA com cabo Link virtual e multiplayer online beta.">
+<title>Joglume - GBA Multiplayer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/gba-multiplayer.css">
+<script src="../scripts/gba-multiplayer.js" defer></script>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <a class="logo" href="../index.html"><span class="logo-icon">F</span><span class="logo-text">FLASH<span>MANIA</span></span></a>
+  <nav class="navigation">
+    <div class="nav-section">
+      <span class="nav-title">MENU PRINCIPAL</span>
+      <a class="nav-item" href="../index.html"><span>⌂</span>Início</a>
+      <a class="nav-item" href="../index.html"><span>▤</span>Biblioteca</a>
+      <a class="nav-item" href="fontes.html"><span>◈</span>Gerenciador de fontes</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-title">EMULADORES</span>
+      <a class="nav-item" href="gba.html"><span>🕹️</span>Emulador GBA</a>
+      <a class="nav-item active" href="gba-multiplayer.html"><span>👥</span>GBA Multiplayer</a>
+      <a class="nav-item" href="snes.html"><span>🟣</span>Emulador SNES</a>
+      <a class="nav-item" href="megadrive.html"><span>🔵</span>Emulador Mega Drive</a>
+      <a class="nav-item" href="psx.html"><span>💿</span>Emulador PS1</a>
+      <a class="nav-item" href="psp.html"><span>🎮</span>Emulador PSP</a>
+    </div>
+  </nav>
+  <div class="sidebar-bottom"><div class="sidebar-version">JOGLUME<span>GBA MULTIPLAYER · BETA</span></div></div>
+</aside>
+<main class="main-content">
+<header class="topbar">
+  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+  <div class="breadcrumb"><span>JOGLUME</span><span>/</span><strong>GBA Multiplayer</strong></div>
+  <div class="topbar-actions"><span class="system-pill"><i></i> LINK CABLE ONLINE</span></div>
+</header>
+<section class="page active gba-multi-page">
+  <div class="page-heading">
+    <div><span class="section-subtitle">RETRO GAMING · MULTIPLAYER</span><h1>GBA <em>Multiplayer.</em></h1>
+    <p>Jogue GBA pela internet em computadores diferentes. O anfitrião executa o jogo e os convidados entram pelo convite da sessão.</p></div>
+    <div class="gba-mark multiplayer-mark">GBA<span>LINK CABLE</span></div>
+  </div>
+
+  <div class="multi-notice">
+    <div class="multi-notice-icon">ⓘ</div>
+    <div><strong>Multiplayer entre computadores</strong><p>O modo Online beta conecta jogadores em dispositivos diferentes. A tela dividida local é apenas um recurso separado do emulador; para jogar pela internet, use o menu Online beta.</p></div>
+  </div>
+
+  <section class="multi-rom-card">
+    <div><span class="section-subtitle">CARREGAR SEM SALVAR NO COMPUTADOR</span><h2>Iniciar jogo por link</h2><p>Informe um endereço direto para um arquivo .gba. O navegador busca a ROM e a carrega na memória; ela não é salva como download no seu computador.</p></div>
+    <form id="multi-rom-form" class="multi-rom-form">
+      <input id="multi-rom-url" type="url" placeholder="https://servidor.com/jogo.gba" autocomplete="url" required>
+      <button class="small-control" type="submit">Carregar ROM por link ↗</button>
+    </form>
+    <small>O link precisa apontar diretamente para o arquivo .gba e permitir CORS. Links de páginas do GitHub não funcionam; use o endereço do arquivo bruto (raw) se o repositório permitir.</small>
+    <p class="multi-rom-feedback" id="multi-rom-feedback" aria-live="polite"></p>
+  </section>
+
+  <section class="multi-player-card">
+    <div class="multi-player-header">
+      <div><span class="live-dot"></span><strong id="multi-status">CONECTANDO AO EMULADOR</strong></div>
+      <div class="multi-actions">
+        <a class="small-control multi-open" id="multi-open" href="https://spuds0588.github.io/mgba-splitscreen/?players=1" target="_blank" rel="noopener noreferrer">Abrir em nova aba ↗</a>
+        <button class="small-control" id="multi-reload" type="button" title="Recarregar emulador">↻</button>
+        <button class="small-control" id="multi-fullscreen" type="button" title="Tela cheia">⛶</button>
+      </div>
+    </div>
+    <div class="multi-frame-wrap" id="multi-frame-wrap">
+      <iframe id="mgba-frame" title="Emulador mGBA Splitscreen" src="https://spuds0588.github.io/mgba-splitscreen/?players=1" allow="autoplay; fullscreen; gamepad; clipboard-read; clipboard-write" allowfullscreen loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="multi-loading" id="multi-loading"><div class="multi-spinner"></div><strong>Carregando mGBA Splitscreen…</strong><span>O emulador e o núcleo WebAssembly são carregados do projeto original.</span></div>
+    </div>
+    <div class="multi-player-footer"><span>mGBA SPLITSCREEN</span><span>JOGLUME <b>•</b> GBA MULTIPLAYER</span></div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">COMO COMEÇAR</span><h2>Jogar em computadores diferentes</h2><p>Use o modo Online beta para criar uma sessão e compartilhar o convite com outra pessoa.</p></div></div>
+    <div class="multi-steps">
+      <article><span>01</span><div><strong>Carregue uma ROM</strong><p>O anfitrião carrega o jogo. Você pode selecionar um arquivo local ou informar um link direto para um arquivo .gba na área abaixo.</p></div></article>
+      <article><span>02</span><div><strong>Ative dois jogadores</strong><p>Para jogar em computadores diferentes, não selecione duas instâncias locais. Abra Online beta e escolha Host Online Session.</p></div></article>
+      <article><span>03</span><div><strong>Teste o Link Cable local</strong><p>O anfitrião mantém o jogo aberto. O convidado acessa o endereço de convite e entra na sessão pelo próprio navegador.</p></div></article>
+      <article><span>04</span><div><strong>Convide seu amigo</strong><p>Abra o emulador em nova aba, entre em Online beta → Host Online Session e compartilhe o convite gerado. O recurso é beta e pode apresentar atraso ou falhas de conexão.</p></div></article>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading"><div><span class="section-subtitle">INFORMAÇÕES IMPORTANTES</span><h2>Antes de jogar</h2></div></div>
+    <div class="multi-info-grid">
+      <article><strong>Arquivo do jogo</strong><p>O anfitrião precisa carregar uma ROM. O convidado da sessão online não precisa baixar uma segunda cópia para entrar no modo de transmissão/controle remoto.</p></article>
+      <article><strong>Multiplayer online beta</strong><p>O anfitrião executa a emulação e compartilha a sessão; os convidados recebem a transmissão e enviam seus comandos. O recurso ainda está em testes.</p></article>
+      <article><strong>Projeto externo</strong><p>O emulador é carregado do GitHub Pages do projeto original. É necessário estar conectado à internet para abrir esta página.</p></article>
+    </div>
+  </section>
+  <footer class="footer"><div><strong>JOGLUME</strong><span>Seu universo de jogos clássicos.</span></div><span>mGBA Splitscreen · MPL-2.0</span></footer>
+</section>
+</main>
+</div>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

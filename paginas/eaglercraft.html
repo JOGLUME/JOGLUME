@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#101116"><link rel="stylesheet" href="../css/style.css"><title>Joglume - Eaglercraft</title><style>.embed-shell{background:#08090e;border:1px solid #34303a;border-radius:13px;overflow:hidden;box-shadow:0 18px 50px #0004}.embed-bar{min-height:48px;background:#191b23;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:9px 14px;gap:12px}.embed-frame{width:100%;height:min(72vh,800px);min-height:470px;border:0;background:#050609;display:block}.embed-actions{display:flex;gap:9px;flex-wrap:wrap}.embed-actions a,.embed-actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #3b3e4b;border-radius:7px;background:#252833;color:#fff;padding:10px 13px;text-decoration:none;font-size:12px;font-weight:700;cursor:pointer}.embed-actions a.primary{background:var(--accent);border-color:var(--accent);color:#101116}.notice-panel{padding:17px 19px;border:1px solid var(--border);border-radius:10px;background:#171820;color:var(--text-secondary);line-height:1.65;font-size:13px}.notice-panel strong{color:#fff}.notice-panel a{color:var(--accent)}@media(max-width:650px){.embed-frame{height:68vh;min-height:400px}.embed-bar{align-items:flex-start;flex-direction:column}}</style></head><body><div class="app"><aside class="sidebar" id="sidebar"><a class="logo" href="../index.html"><span class="logo-icon">F</span><span class="logo-text">FLASH<span>MANIA</span></span></a><nav class="navigation"><div class="nav-section"><span class="nav-title">MENU PRINCIPAL</span><a class="nav-item" href="../index.html"><span>⌂</span>Início</a><a class="nav-item" href="../index.html#biblioteca"><span>▤</span>Biblioteca</a><a class="nav-item" href="fontes.html"><span>◈</span>Gerenciador de fontes</a></div><div class="nav-section"><span class="nav-title">EMULADORES</span><a class="nav-item" href="gba.html"><span>🕹️</span>Emulador GBA</a><a class="nav-item" href="gba-multiplayer.html"><span>👥</span>GBA Multiplayer</a><a class="nav-item" href="snes.html"><span>🟣</span>Emulador SNES</a><a class="nav-item" href="megadrive.html"><span>🔵</span>Emulador Mega Drive</a><a class="nav-item" href="psx.html"><span>💿</span>Emulador PS1</a><a class="nav-item" href="psp.html"><span>🎮</span>Emulador PSP</a><a class="nav-item " href="ps2.html"><span>💿</span>Emulador PS2</a><a class="nav-item active" href="eaglercraft.html"><span>🧱</span>Eaglercraft</a></div></nav><div class="sidebar-bottom"><div class="sidebar-version">JOGLUME<span>RETRO + WEB GAMING</span></div></div></aside><main class="main-content"><header class="topbar"><button class="menu-toggle" id="menu-toggle">☰</button><div class="breadcrumb"><span>JOGLUME</span><span>/</span><strong>Eaglercraft</strong></div><div class="topbar-actions"><span class="system-pill"><i></i> MINECRAFT WEB</span></div></header><section class="page active"><div class="page-heading"><div><span class="section-subtitle">SANDBOX · BROWSER GAMING</span><h1>Eagler<em>craft.</em></h1><p>Jogue Minecraft no navegador, diretamente dentro do Joglume.</p></div><div class="gba-mark">MC<span>WEB</span></div></div><div class="embed-shell"><div class="embed-bar"><strong>Eaglercraft · Minecraft no navegador</strong><div class="embed-actions"><a class="primary" id="open-eagler" href="https://eaglercraft.com/play" target="_blank" rel="noopener">Abrir em nova aba ↗</a><button type="button" id="next-eagler">Tentar próxima fonte ↻</button><button type="button" id="local-eagler">Usar arquivo local</button><button type="button" id="reload-eagler">Recarregar</button></div></div><div id="eagler-status" role="status" style="padding:10px 14px;background:#11131a;color:#c7cad4;font-size:12px;border-bottom:1px solid var(--border)">Conectando à primeira fonte do Eaglercraft…</div><iframe id="eagler-frame" class="embed-frame" src="about:blank" title="Eaglercraft - Minecraft no navegador" allow="autoplay; fullscreen; gamepad; clipboard-read; clipboard-write" allowfullscreen></iframe></div><section class="content-section"><div class="section-heading"><div><span class="section-subtitle">DICAS</span><h2>Sobre o Eaglercraft</h2></div></div><div class="notice-panel"><p>O Eaglercraft é uma implementação de Minecraft para navegador, com versões e recursos próprios. O cliente é carregado dentro do Joglume por uma janela incorporada; o jogo e seus servidores continuam sendo fornecidos pelo projeto externo.</p><p>O Joglume tenta primeiro o cliente hospedado em eaglercraft.com e, se não carregar, tenta o Eaglercraft Hub. Como o navegador não permite detectar com certeza todos os bloqueios de iframe, você também pode avançar manualmente ou usar o arquivo local incluído no projeto. O multiplayer depende de servidores compatíveis. Mundos e progresso podem ficar armazenados no navegador, conforme a versão utilizada.</p><p>O arquivo local é a versão 1.12.2 enviada por você. Ele contém o cliente, mas ainda precisa de conexão com a internet para acessar servidores multiplayer.</p><p><a href="https://eaglercraft.com/play" target="_blank" rel="noopener">Eaglercraft principal</a> · <a href="https://eaglercrafthub.com/26-2" target="_blank" rel="noopener">Eaglercraft Hub (alternativa)</a></p></div></section><footer class="footer"><div><strong>JOGLUME</strong><span>Seu universo de jogos clássicos.</span></div><span>© 2026 JOGLUME</span></footer></section></main></div><script>
+document.getElementById("menu-toggle")?.addEventListener("click",()=>document.getElementById("sidebar")?.classList.toggle("open"));
+(()=>{
+ const frame=document.getElementById("eagler-frame");
+ const status=document.getElementById("eagler-status");
+ const open=document.getElementById("open-eagler");
+ const sources=[
+  {name:"Eaglercraft principal",url:"https://eaglercraft.com/play"},
+  {name:"Eaglercraft Hub",url:"https://eaglercrafthub.com/26-2"},
+  {name:"Arquivo local Eaglercraft 1.12.2",url:"../jogos/Eaglercraft-1.12.2.html",local:true}
+ ];
+ let current=-1,timer=null,attempt=0;
+ function setStatus(message){status.textContent=message;}
+ function loadSource(index){
+  clearTimeout(timer);
+  current=Math.max(0,Math.min(index,sources.length-1));
+  const source=sources[current];
+  attempt++;
+  setStatus("Tentando "+source.name+"… ("+(current+1)+"/"+sources.length+")");
+  open.href=source.url;
+  frame.src=source.url;
+  const thisAttempt=attempt;
+  timer=setTimeout(()=>{
+   if(thisAttempt!==attempt)return;
+   if(current<sources.length-1){
+    setStatus(source.name+" demorou para responder. Tentando a próxima opção…");
+    loadSource(current+1);
+   }else{
+    setStatus("O arquivo local foi aberto, mas o navegador não confirmou se o jogo iniciou. Se a tela ficar vazia, tente recarregar ou abrir em nova aba.");
+   }
+  },15000);
+ }
+ frame.addEventListener("load",()=>{
+  clearTimeout(timer);
+  const source=sources[current];
+  if(source)setStatus(source.name+" foi carregado. Se aparecer uma tela vazia ou bloqueio, use ‘Tentar próxima fonte’ ou ‘Usar arquivo local’.");
+ });
+ frame.addEventListener("error",()=>{
+  clearTimeout(timer);
+  if(current<sources.length-1)loadSource(current+1);
+  else setStatus("Não foi possível carregar o arquivo local. Confira se a pasta jogos está junto do projeto.");
+ });
+ document.getElementById("next-eagler").addEventListener("click",()=>loadSource(Math.min(current+1,sources.length-1)));
+ document.getElementById("local-eagler").addEventListener("click",()=>loadSource(2));
+ document.getElementById("reload-eagler").addEventListener("click",()=>loadSource(current<0?0:current));
+ loadSource(0);
+})();
+</script></body></html>

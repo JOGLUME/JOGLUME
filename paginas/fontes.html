@@ -1,1 +1,62 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101116">
+<meta name="description" content="Gerencie as bibliotecas GitHub do Joglume.">
+<title>Joglume - Gerenciador de fontes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../scripts/fontes.js" defer></script>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <a class="logo" href="../index.html"><span class="logo-icon">F</span><span class="logo-text">FLASH<span>MANIA</span></span></a>
+  <nav class="navigation">
+    <div class="nav-section"><span class="nav-title">MENU PRINCIPAL</span>
+      <a class="nav-item" href="../index.html"><span>⌂</span>Início</a>
+      <a class="nav-item" href="../index.html#biblioteca"><span>▤</span>Biblioteca</a>
+      <a class="nav-item active" href="fontes.html"><span>◈</span>Gerenciador de fontes</a>
+    </div>
+    <div class="nav-section"><span class="nav-title">EMULADORES</span>
+      <a class="nav-item" href="snes.html"><span>🟣</span>Emulador SNES</a>
+      <a class="nav-item" href="megadrive.html"><span>🔵</span>Emulador Mega Drive</a>
+      <a class="nav-item" href="gba.html"><span>🕹️</span>Emulador GBA</a>
+      <a class="nav-item" href="gba-multiplayer.html"><span>👥</span>GBA Multiplayer</a>
+    </div>
+  </nav>
+  <div class="sidebar-bottom"><div class="sidebar-version">JOGLUME<span>GERENCIADOR · 1.0</span></div></div>
+</aside>
+<main class="main-content">
+<header class="topbar"><button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button><div class="breadcrumb"><span>JOGLUME</span><span>/</span><strong>Gerenciador de fontes</strong></div><div class="topbar-actions"><a class="text-button" href="../index.html">Voltar ao início →</a></div></header>
+<section class="page active">
+  <div class="page-header"><span class="section-subtitle">BIBLIOTECAS CONECTADAS</span><h1>Gerenciador de <em>fontes.</em></h1><p>Cadastre repositórios GitHub, importe jogos e mantenha suas fontes salvas para a biblioteca principal.</p></div>
+  <div class="source-stats">
+    <div class="source-stat-card"><span class="source-stat-icon">◈</span><div><strong id="total-sources">0</strong><span>Fontes cadastradas</span></div></div>
+    <div class="source-stat-card"><span class="source-stat-icon">🎮</span><div><strong id="total-imported-games">0</strong><span>Jogos importados</span></div></div>
+    <div class="source-stat-card"><span class="source-stat-icon">✓</span><div><strong id="active-sources">0</strong><span>Fontes ativas</span></div></div>
+  </div>
+  <div class="source-add-panel">
+    <div class="source-panel-heading"><div><span class="section-subtitle">NOVA BIBLIOTECA</span><h2>Adicionar uma fonte</h2><p>Informe um repositório público do GitHub ou o link de uma pasta específica.</p></div><div class="source-add-icon">＋</div></div>
+    <form id="add-source-form">
+      <div class="form-group"><label for="source-url">URL do GitHub</label><input type="url" id="source-url" placeholder="https://github.com/usuario/repositorio" required><small>Aceita links de repositórios e pastas /tree/branch.</small></div>
+      <div class="source-form-row"><div class="form-group"><label for="source-name">Nome da fonte</label><input type="text" id="source-name" placeholder="Minha coleção de jogos"></div><div class="form-group"><label for="source-platform">Plataforma</label><select id="source-platform"><option value="auto">Detectar automaticamente</option><option value="flash">Flash (SWF)</option><option value="html5">HTML5</option><option value="gba">Game Boy Advance</option><option value="gbc">Game Boy Color</option><option value="gb">Game Boy</option><option value="nes">NES</option><option value="snes">SNES</option><option value="nds">Nintendo DS</option><option value="n64">Nintendo 64</option><option value="segaMD">Mega Drive</option><option value="psx">PlayStation 1 (CHD, CUE, ISO, PBP)</option><option value="arcade">Arcade</option><option value="psp">PSP (ISO, CSO, PBP)</option></select></div></div>
+      <div class="source-form-row"><div class="form-group"><label for="source-branch">Branch (opcional)</label><input type="text" id="source-branch" placeholder="Detectar automaticamente"></div><div class="form-group"><label for="source-category">Categoria padrão</label><select id="source-category"><option value="auto">Detectar automaticamente</option><option value="acao">Ação</option><option value="aventura">Aventura</option><option value="mundo-aberto">Mundo aberto</option><option value="luta">Luta</option><option value="futebol">Futebol</option><option value="esportes">Esportes</option><option value="rpg">RPG</option><option value="corrida">Corrida</option><option value="outros">Outros</option></select></div></div>
+      <div class="source-options"><label class="source-checkbox"><input type="checkbox" id="source-auto-update" checked><span><strong>Atualização automática</strong><small>Permite que o Joglume verifique novos jogos ao abrir.</small></span></label><label class="source-checkbox"><input type="checkbox" id="source-recursive" checked><span><strong>Incluir subpastas</strong><small>Pesquisar arquivos dentro das pastas do repositório.</small></span></label></div>
+      <button type="submit" class="primary-button" id="add-source-button">＋ Adicionar e importar jogos</button>
+    </form>
+  </div>
+  <section class="content-section"><div class="section-heading"><div><span class="section-subtitle">SUA COLEÇÃO</span><h2>Fontes cadastradas</h2><p>As alterações são compartilhadas com a biblioteca e o emulador do Joglume neste navegador.</p></div><button class="secondary-button" id="refresh-all-sources">↻ Atualizar todas</button></div><div class="source-list" id="source-list"><div class="loading-card">Carregando fontes...</div></div></section>
+  <section class="content-section"><div class="section-heading"><div><span class="section-subtitle">SEGURANÇA DOS DADOS</span><h2>Backup das fontes</h2><p>Exporte suas fontes e jogos importados para guardar ou transferir para outro navegador.</p></div></div><div class="source-backup-actions"><button class="secondary-button" id="export-sources">⇩ Exportar backup</button><label class="secondary-button" for="import-sources-file">⇧ Importar backup</label><input id="import-sources-file" type="file" accept="application/json,.json" hidden><button class="text-button" id="reset-sources">Restaurar fontes originais</button></div></section>
+  <section class="content-section"><div class="source-help-grid"><article class="source-help-card"><span>①</span><h3>Adicione um link</h3><p>Use o endereço de um repositório público ou de uma pasta do GitHub.</p></article><article class="source-help-card"><span>②</span><h3>Importe os jogos</h3><p>O Joglume identifica os arquivos compatíveis e registra seus links.</p></article><article class="source-help-card"><span>③</span><h3>Abra na biblioteca</h3><p>Os jogos importados ficam disponíveis na biblioteca principal após atualizar a página.</p></article></div></section>
+  <footer class="footer"><div><strong>JOGLUME</strong><span>Seu universo de jogos clássicos.</span></div><span>© 2026 JOGLUME</span></footer>
+</section>
+</main>
+</div>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>
