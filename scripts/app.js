@@ -190,29 +190,19 @@ function getCoverIndex(system) {
 
     const promise = (async () => {
         const repository = system.replace(/\s+/g, "_");
-        for (const branch of ["master", "main"]) {
-            const filenames = [];
-            let page = 1;
-            try {
-                while (page <= 20) {
-                    const apiURL = `https://api.github.com/repos/libretro-thumbnails/${encodeURIComponent(repository)}/contents/Named_Boxarts?ref=${branch}&per_page=1000&page=${page}`;
-                    const response = await fetch(apiURL, {
-                        headers: { Accept: "application/vnd.github+json" },
-                        cache: "force-cache"
-                    });
-                    if (!response.ok) throw new Error("Índice de capas indisponível");
-                    const entries = await response.json();
-                    if (!Array.isArray(entries)) throw new Error("Resposta inválida do índice de capas");
-                    filenames.push(...entries.filter(entry => entry.type === "file" && /\.png$/i.test(entry.name)).map(entry => entry.name));
-                    if (entries.length < 1000) break;
-                    page++;
-                }
-                if (filenames.length) return filenames;
-            } catch {
-                if (filenames.length) return filenames;
-            }
-        }
-        throw new Error("Não foi possível carregar o catálogo de capas deste console");
+        const apiURL = `https://api.github.com/repos/libretro-thumbnails/${encodeURIComponent(repository)}/git/trees/master?recursive=1`;
+        const response = await fetch(apiURL, {
+            headers: { Accept: "application/vnd.github+json" },
+            cache: "force-cache"
+        });
+        if (!response.ok) throw new Error("Índice do GitHub indisponível");
+        const tree = await response.json();
+        if (!Array.isArray(tree.tree) || tree.truncated) throw new Error("Índice incompleto");
+        const filenames = tree.tree
+            .filter(entry => entry.type === "blob" && entry.path.startsWith("Named_Boxarts/") && entry.path.toLowerCase().endsWith(".png"))
+            .map(entry => entry.path.slice("Named_Boxarts/".length));
+        if (!filenames.length) throw new Error("Nenhuma capa encontrada para este console");
+        return filenames;
     })();
 
     coverIndexes.set(system, promise);
@@ -335,7 +325,7 @@ async function loadGameCover(game, cover, skipCache = false) {
             if (filename) {
                 const url = `${COVER_CONFIG.baseURL}${encodeURIComponent(system)}/Named_Boxarts/${encodeURIComponent(filename)}`;
                 const rawURL = `https://raw.githubusercontent.com/libretro-thumbnails/${encodeURIComponent(system.replace(/\s+/g, "_"))}/master/Named_Boxarts/${encodeURIComponent(filename)}`;
-                if (await showImage(url) || await showImage(rawURL)) {
+                if (await showImage(rawURL) || await showImage(url)) {
                     coverMatches[key] = url;
                     game.coverUrl = url;
                     saveCoverMatches();
