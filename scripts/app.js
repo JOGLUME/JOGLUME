@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "joglume_cover_matches_v5"
+    cacheKey: "joglume_cover_matches_v6"
 };
 
 const coverMatches = (() => {
