@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "joglume_cover_matches_v6"
+    cacheKey: "joglume_cover_matches_v7"
 };
 
 const coverMatches = (() => {
@@ -290,7 +290,10 @@ async function loadGameCover(game, cover, skipCache = false) {
     const key = `${game.type}:${normalizeCoverName(game.name)}`;
     const cached = skipCache ? null : (game.coverUrl || coverMatches[key]);
 
-    const showImage = url => new Promise(resolve => {
+    const showImage = candidate => new Promise(resolve => {
+        const item = typeof candidate === "string" ? { url: candidate, source_url: "" } : candidate;
+        const url = item?.url;
+        if (!url) return resolve(false);
         const image = document.createElement("img");
         image.alt = `Capa de ${game.name}`;
         image.loading = "lazy";
@@ -299,6 +302,19 @@ async function loadGameCover(game, cover, skipCache = false) {
         image.onload = () => {
             if (placeholder) placeholder.hidden = true;
             cover.classList.add("has-cover");
+            const oldCredit = cover.querySelector(".cover-credit");
+            if (oldCredit) oldCredit.remove();
+            if (item.source_url) {
+                const credit = document.createElement("a");
+                credit.className = "cover-credit";
+                credit.href = item.source_url;
+                credit.target = "_blank";
+                credit.rel = "noopener noreferrer";
+                credit.textContent = "Fonte";
+                credit.title = item.title ? "Imagem: " + item.title : "Abrir site de origem da imagem";
+                credit.addEventListener("click", event => event.stopPropagation());
+                cover.appendChild(credit);
+            }
             resolve(true);
         };
         image.onerror = () => {
@@ -318,11 +334,12 @@ async function loadGameCover(game, cover, skipCache = false) {
 
     try {
         const candidates = await searchInternetCovers(game);
-        for (const url of candidates) {
-            if (!/^https?:\/\//i.test(url)) continue;
-            if (await showImage(url)) {
-                coverMatches[key] = url;
-                game.coverUrl = url;
+        for (const candidate of candidates) {
+            const url = typeof candidate === "string" ? candidate : candidate?.url;
+            if (!/^https?:\/\//i.test(url || "")) continue;
+            if (await showImage(candidate)) {
+                coverMatches[key] = candidate;
+                game.coverUrl = candidate;
                 saveCoverMatches();
                 return;
             }
