@@ -1,5 +1,5 @@
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs, quote
+from urllib.parse import urlparse, parse_qs, quote, urlencode
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 import threading
@@ -12,7 +12,8 @@ import os
 import unicodedata
 
 COVER_CACHE = {}
-COVER_CACHE_TTL = 60 * 60 * 24
+COVER_CACHE_TTL = 60 * 60 * 12
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 
 def normalize_search_text(value):
@@ -21,52 +22,96 @@ def normalize_search_text(value):
     return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
 
 
-def bing_image_search(query):
-    search_url = "https://www.bing.com/images/search?q=" + quote(query, safe="")
-    request = Request(search_url, headers={
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-    })
-    with urlopen(request, timeout=18) as response:
-        page = response.read(8_000_000).decode("utf-8", errors="ignore")
+def request_text(url, referer=None):
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+        "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+    }
+    if referer:
+        headers["Referer"] = referer
+    request = Request(url, headers=headers)
+    with urlopen(request, timeout=16) as response:
+        return response.read(10_000_000).decode("utf-8", errors="ignore")
 
-    title = normalize_search_text(query.replace('"', "").replace(" game cover", "").replace(" gameplay", ""))
-    terms = [word for word in title.split() if len(word) > 2]
-    if not terms:
+
+def duckduckgo_image_search(query):
+    start_url = "https://duckduckgo.com/?" + urlencode({"q": query, "iax": "images", "ia": "images"})
+    page = request_text(start_url)
+    token_match = re.search(r'vqd=["\']([^"\']+)["\']', page)
+    if not token_match:
+        token_match = re.search(r"vqd=([0-9-]+)", page)
+    if not token_match:
         return []
 
-    found = []
-    seen = set()
+    token = token_match.group(1)
+    api_url = "https://duckduckgo.com/i.js?" + urlencode({
+        "q": query, "o": "json", "l": "br-pt", "vqd": token, "f": ",,,,,"
+    })
+    data = json.loads(request_text(api_url, "https://duckduckgo.com/"))
+    results = []
+    for item in data.get("results", []):
+        image_url = item.get("image") or item.get("thumbnail")
+        source_url = item.get("url") or item.get("source")
+        if image_url and image_url.startswith(("http://", "https://")):
+            results.append({
+                "url": image_url,
+                "source_url": source_url if isinstance(source_url, str) and source_url.startswith(("http://", "https://")) else "",
+                "title": item.get("title") or item.get("title_orig") or ""
+            })
+    return results
+
+
+def bing_image_search(query):
+    search_url = "https://www.bing.com/images/search?" + urlencode({"q": query})
+    page = request_text(search_url)
+    results = []
     for match in re.findall(r'\bm="([^"]+)"', page):
         try:
-            metadata = json.loads(html.unescape(match))
+            item = json.loads(html.unescape(match))
         except (json.JSONDecodeError, TypeError):
             continue
+        image_url = item.get("murl")
+        if image_url and image_url.startswith(("http://", "https://")):
+            results.append({
+                "url": image_url,
+                "source_url": item.get("purl") or "",
+                "title": item.get("t") or item.get("desc") or ""
+            })
+    return results
 
-        image_url = metadata.get("murl")
-        if not isinstance(image_url, str) or not image_url.startswith(("http://", "https://")):
-            continue
 
-        searchable = normalize_search_text(" ".join([
-            str(metadata.get("t") or ""),
-            str(metadata.get("desc") or ""),
-            str(metadata.get("purl") or "")
-        ]))
-        if not all(term in searchable.split() for term in terms):
-            continue
-
-        if image_url not in seen:
-            seen.add(image_url)
-            found.append(image_url)
-        if len(found) >= 20:
-            break
-
-    return found
+def google_image_search(query):
+    search_url = "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": query})
+    page = request_text(search_url)
+    results = []
+    patterns = [
+        r'"ou":"(https?:\\/\\/[^"]+)"',
+        r'"(https?:\\/\\/[^"]+\\.(?:jpg|jpeg|png|webp)(?:\\?[^"]*)?)"'
+    ]
+    for pattern in patterns:
+        for match in re.findall(pattern, page, re.IGNORECASE):
+            image_url = match.replace("\\u003d", "=").replace("\\u0026", "&").replace("\\/", "/")
+            if image_url.startswith(("http://", "https://")):
+                results.append({"url": image_url, "source_url": "", "title": ""})
+    return results
 
 
 def search_cover_images(query):
-    return bing_image_search(query)
+    collected = []
+    seen = set()
+    for searcher in (duckduckgo_image_search, google_image_search, bing_image_search):
+        try:
+            for item in searcher(query):
+                url = item.get("url", "")
+                if url and url not in seen:
+                    seen.add(url)
+                    collected.append(item)
+                if len(collected) >= 35:
+                    return collected
+        except Exception:
+            continue
+    return collected
 
 
 class JoglumeHandler(SimpleHTTPRequestHandler):
@@ -82,20 +127,13 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             if cached and time.time() - cached[0] < COVER_CACHE_TTL:
                 return self.send_json({"images": cached[1], "cached": True})
 
-            try:
-                images = search_cover_images(query)
-                COVER_CACHE[cache_key] = (time.time(), images)
-                self.send_json({
-                    "images": images,
-                    "source": "Bing Imagens",
-                    "matched_title": query.replace('"', ""),
-                    "verified_results": True
-                })
-            except (URLError, HTTPError, TimeoutError, ValueError) as error:
-                self.send_json({"images": [], "error": str(error)}, 502)
-            except Exception as error:
-                self.send_json({"images": [], "error": str(error)}, 502)
-            return
+            images = search_cover_images(query)
+            COVER_CACHE[cache_key] = (time.time(), images)
+            return self.send_json({
+                "images": images,
+                "query": query.replace('"', ""),
+                "sources": ["DuckDuckGo Imagens", "Google Imagens", "Bing Imagens"]
+            })
         return super().do_GET()
 
     def send_json(self, payload, status=200):
@@ -119,7 +157,7 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8000"))
     server = ThreadingHTTPServer((host, port), JoglumeHandler)
     print(f"Joglume disponível em http://{host}:{port}")
-    print("Capas: resultados do Bing filtrados pelo título do jogo.")
+    print("Capas: pesquisa em múltiplos mecanismos de imagens.")
     print("PSP e PS2 habilitados com isolamento de origem cruzada.")
     if host in ("127.0.0.1", "localhost"):
         threading.Timer(0.8, lambda: webbrowser.open(f"http://localhost:{port}")).start()
