@@ -82,36 +82,61 @@ def bing_image_search(query):
 
 
 def google_image_search(query):
-    search_url = "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": query})
+    search_url = "https://www.google.com/search?" + urlencode({
+        "tbm": "isch",
+        "q": query,
+        "ijn": "0"
+    })
     page = request_text(search_url)
+    page = html.unescape(page)
+
+    def decode_google_url(value):
+        value = value.replace("\\u003d", "=").replace("\\u0026", "&")
+        value = value.replace("\\/", "/").replace("\\\\", "")
+        return value
+
+    image_urls = []
+    source_urls = []
+    for pattern in (r'"ou":"([^"]+)"', r'"imgurl":"([^"]+)"'):
+        image_urls.extend(re.findall(pattern, page, re.IGNORECASE))
+    for pattern in (r'"ru":"([^"]+)"', r'"page_url":"([^"]+)"'):
+        source_urls.extend(re.findall(pattern, page, re.IGNORECASE))
+
     results = []
-    patterns = [
-        r'"ou":"(https?:\\/\\/[^"]+)"',
-        r'"(https?:\\/\\/[^"]+\\.(?:jpg|jpeg|png|webp)(?:\\?[^"]*)?)"'
-    ]
-    for pattern in patterns:
-        for match in re.findall(pattern, page, re.IGNORECASE):
-            image_url = match.replace("\\u003d", "=").replace("\\u0026", "&").replace("\\/", "/")
-            if image_url.startswith(("http://", "https://")):
-                results.append({"url": image_url, "source_url": "", "title": ""})
+    seen = set()
+    for index, raw_url in enumerate(image_urls):
+        image_url = decode_google_url(raw_url)
+        if not image_url.startswith(("http://", "https://")):
+            continue
+        host = urlparse(image_url).netloc.lower()
+        if not host or any(domain in host for domain in ("google.com", "gstatic.com", "googleusercontent.com")):
+            continue
+        if image_url in seen:
+            continue
+        seen.add(image_url)
+
+        source_url = ""
+        if index < len(source_urls):
+            candidate_source = decode_google_url(source_urls[index])
+            if candidate_source.startswith(("http://", "https://")):
+                source_url = candidate_source
+
+        results.append({
+            "url": image_url,
+            "source_url": source_url,
+            "title": ""
+        })
+        if len(results) >= 50:
+            break
     return results
 
 
 def search_cover_images(query):
-    collected = []
-    seen = set()
-    for searcher in (duckduckgo_image_search, google_image_search, bing_image_search):
-        try:
-            for item in searcher(query):
-                url = item.get("url", "")
-                if url and url not in seen:
-                    seen.add(url)
-                    collected.append(item)
-                if len(collected) >= 35:
-                    return collected
-        except Exception:
-            continue
-    return collected
+    try:
+        return google_image_search(query)
+    except Exception:
+        return []
+
 
 
 class JoglumeHandler(SimpleHTTPRequestHandler):
@@ -132,7 +157,7 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             return self.send_json({
                 "images": images,
                 "query": query.replace('"', ""),
-                "sources": ["DuckDuckGo Imagens", "Google Imagens", "Bing Imagens"]
+                "sources": ["Google Imagens — páginas e sites originais"]
             })
         return super().do_GET()
 
