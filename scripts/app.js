@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "joglume_cover_matches_v4"
+    cacheKey: "joglume_cover_matches_v5"
 };
 
 const coverMatches = (() => {
@@ -271,7 +271,8 @@ function coverFallback(cover) {
 }
 
 async function searchInternetCovers(game) {
-    const query = `"${String(game.name || "").trim()}" ${getPlatformLabel(game.type)} game`;
+    const title = String(game.name || "").trim().replace(/["\\]/g, " ");
+    const query = `"${title}"`;
     const response = await fetch(`/api/covers?q=${encodeURIComponent(query)}`, {
         headers: { Accept: "application/json" },
         cache: "no-store"
