@@ -84,12 +84,12 @@ def bing_image_search(query):
 
 def search_cover_images(query):
     try:
-        images = google_image_search(query)
+        images = bing_image_search(query)
         if images:
             return images
     except Exception:
         pass
-    return bing_image_search(query)
+    return google_image_search(query)
 
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
