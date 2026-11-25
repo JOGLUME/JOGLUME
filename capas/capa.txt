@@ -1,1 +1,4 @@
-# Adicione uma capa por linha no formato: Nome do jogo: URL da capa
+Toxic: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/c4dc35d7d05f6cee8745267a43edfc12/toxic-logo.png
+Achiviement Unlocked: https://jayisgames.com/images/psychotronic_achievementunlocked_title.gif
+Achiviement unlocked 2: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT23CyNjELv_ZoIb7cistQHO2pBk03788oW2o4IeRZFqNoi5Li0j79gXps&s=10
+Achiviement Unlocked 3: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr4jRT357c-gpxuP0426RP6KSJF3NaHsNSGi05Yxb6LaVorInvBNMrICQ&s=10
