@@ -270,16 +270,14 @@ function coverFallback(cover) {
     cover.classList.remove("has-cover");
 }
 
-async function searchInternetCovers(game) {
-    const title = String(game.name || "").trim().replace(/["\\]/g, " ");
-    const query = `"${title}"`;
-    const response = await fetch(`/api/covers?q=${encodeURIComponent(query)}`, {
+async function getManualCover(game) {
+    const response = await fetch("/api/covers?q=" + encodeURIComponent(game.name || ""), {
         headers: { Accept: "application/json" },
         cache: "no-store"
     });
-    if (!response.ok) throw new Error("Pesquisa de imagens indisponível");
+    if (!response.ok) throw new Error("Lista manual de capas indisponível");
     const data = await response.json();
-    return Array.isArray(data.images) ? data.images : [];
+    return data.image || null;
 }
 
 async function loadGameCover(game, cover, skipCache = false) {
@@ -287,34 +285,18 @@ async function loadGameCover(game, cover, skipCache = false) {
     cover.dataset.coverLoaded = "true";
 
     const placeholder = cover.querySelector(".game-cover-placeholder");
-    const key = `${game.type}:${normalizeCoverName(game.name)}`;
-    const cached = skipCache ? null : (game.coverUrl || coverMatches[key]);
 
     const showImage = candidate => new Promise(resolve => {
-        const item = typeof candidate === "string" ? { url: candidate, source_url: "" } : candidate;
-        const url = item?.url;
-        if (!url) return resolve(false);
+        const url = typeof candidate === "string" ? candidate : candidate?.url;
+        if (!url || !/^https?:\/\//i.test(url)) return resolve(false);
         const image = document.createElement("img");
-        image.alt = `Capa de ${game.name}`;
+        image.alt = "Capa de " + game.name;
         image.loading = "lazy";
         image.decoding = "async";
         image.referrerPolicy = "strict-origin-when-cross-origin";
         image.onload = () => {
             if (placeholder) placeholder.hidden = true;
             cover.classList.add("has-cover");
-            const oldCredit = cover.querySelector(".cover-credit");
-            if (oldCredit) oldCredit.remove();
-            if (item.source_url) {
-                const credit = document.createElement("a");
-                credit.className = "cover-credit";
-                credit.href = item.source_url;
-                credit.target = "_blank";
-                credit.rel = "noopener noreferrer";
-                credit.textContent = "Fonte";
-                credit.title = item.title ? "Imagem: " + item.title : "Abrir site de origem da imagem";
-                credit.addEventListener("click", event => event.stopPropagation());
-                cover.appendChild(credit);
-            }
             resolve(true);
         };
         image.onerror = () => {
@@ -325,29 +307,14 @@ async function loadGameCover(game, cover, skipCache = false) {
         cover.insertBefore(image, placeholder);
     });
 
-    if (cached && await showImage(cached)) return;
-    if (cached) {
-        delete coverMatches[key];
-        delete game.coverUrl;
-        saveCoverMatches();
-    }
-
     try {
-        const candidates = await searchInternetCovers(game);
-        for (const candidate of candidates) {
-            const url = typeof candidate === "string" ? candidate : candidate?.url;
-            if (!/^https?:\/\//i.test(url || "")) continue;
-            if (await showImage(candidate)) {
-                coverMatches[key] = candidate;
-                game.coverUrl = candidate;
-                saveCoverMatches();
-                return;
-            }
+        const candidate = await getManualCover(game);
+        if (candidate && await showImage(candidate)) {
+            game.coverUrl = candidate.url;
+            return;
         }
     } catch {
     }
-
-
 
     coverFallback(cover);
     cover.dataset.coverLoaded = "false";
