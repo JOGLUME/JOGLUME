@@ -157,7 +157,7 @@ const COVER_CONFIG = {
         psp: "Sony - PlayStation Portable",
         arcade: "MAME"
     },
-    cacheKey: "joglume_cover_matches_v7"
+    cacheKey: "joglume_cover_matches_v8"
 };
 
 const coverMatches = (() => {
@@ -270,14 +270,80 @@ function coverFallback(cover) {
     cover.classList.remove("has-cover");
 }
 
+let manualCoverEntriesPromise = null;
+
+function coverEditDistance(a, b) {
+    const previous = Array.from({ length: b.length + 1 }, (_, index) => index);
+    for (let i = 1; i <= a.length; i++) {
+        const current = [i];
+        for (let j = 1; j <= b.length; j++) {
+            current[j] = Math.min(
+                current[j - 1] + 1,
+                previous[j] + 1,
+                previous[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+            );
+        }
+        for (let j = 0; j <= b.length; j++) previous[j] = current[j];
+    }
+    return previous[b.length];
+}
+
 async function getManualCover(game) {
-    const response = await fetch("/api/covers?q=" + encodeURIComponent(game.name || ""), {
-        headers: { Accept: "application/json" },
-        cache: "no-store"
-    });
-    if (!response.ok) throw new Error("Lista manual de capas indisponível");
-    const data = await response.json();
-    return data.image || null;
+    if (!manualCoverEntriesPromise) {
+        manualCoverEntriesPromise = fetch(
+            "https://raw.githubusercontent.com/JOGLUME/JOGLUME/main/capas/capa.txt?cache=" + Date.now(),
+            { headers: { Accept: "text/plain" }, cache: "no-store" }
+        ).then(response => {
+            if (!response.ok) throw new Error("Não foi possível ler capas/capa.txt");
+            return response.text();
+        }).then(text => text.split(/\\r?\\n/).map(line => {
+            const separator = line.indexOf(":");
+            if (separator < 1) return null;
+            const name = line.slice(0, separator).trim();
+            const url = line.slice(separator + 1).trim();
+            if (!name || !/^https?:\\/\\//i.test(url)) return null;
+            return { name, url, normalized: normalizeCoverName(name) };
+        }).filter(Boolean)).catch(error => {
+            manualCoverEntriesPromise = null;
+            throw error;
+        });
+    }
+
+    const entries = await manualCoverEntriesPromise;
+    const target = normalizeCoverName(game?.name);
+    if (!target) return null;
+
+    const exact = entries.find(entry => entry.normalized === target);
+    if (exact) return { name: exact.name, url: exact.url, match: "exact" };
+
+    const targetWords = target.split(" ").filter(Boolean);
+    let best = null;
+    let bestScore = 0;
+    let secondScore = 0;
+
+    for (const entry of entries) {
+        const candidate = entry.normalized;
+        if (!candidate) continue;
+        const candidateWords = candidate.split(" ").filter(Boolean);
+        const overlap = targetWords.filter(word => candidateWords.some(other =>
+            word === other || (Math.max(word.length, other.length) >= 5 &&
+            coverEditDistance(word, other) <= 1)
+        )).length;
+        const wordScore = (2 * overlap) / (targetWords.length + candidateWords.length || 1);
+        const nameScore = 1 - coverEditDistance(target, candidate) / Math.max(target.length, candidate.length, 1);
+        const score = Math.max(wordScore, nameScore);
+
+        if (score > bestScore) {
+            secondScore = bestScore;
+            bestScore = score;
+            best = entry;
+        } else if (score > secondScore) {
+            secondScore = score;
+        }
+    }
+
+    if (!best || bestScore < 0.72 || (bestScore < 0.92 && bestScore - secondScore < 0.04)) return null;
+    return { name: best.name, url: best.url, match: "approximate", score: Number(bestScore.toFixed(3)) };
 }
 
 async function loadGameCover(game, cover, skipCache = false) {
@@ -293,7 +359,7 @@ async function loadGameCover(game, cover, skipCache = false) {
         image.alt = "Capa de " + game.name;
         image.loading = "lazy";
         image.decoding = "async";
-        image.referrerPolicy = "strict-origin-when-cross-origin";
+        image.referrerPolicy = "no-referrer";
         image.onload = () => {
             if (placeholder) placeholder.hidden = true;
             cover.classList.add("has-cover");
