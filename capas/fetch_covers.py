@@ -77,7 +77,7 @@ def sitemap_urls():
             if locs and all(urlparse(x).path.lower().endswith(".xml") for x in locs[:10]):
                 pending.extend(locs)
             else:
-                urls.update(x for x in locs if "/g/" in urlparse(x).path)
+                urls.update(x for x in locs if any(marker in urlparse(x).path for marker in markers))
         except Exception as exc:
             print(f"Sitemap ignorado: {current}: {exc}")
     return urls
@@ -134,7 +134,7 @@ def main():
         if slug:
             by_slug.setdefault(slug, url)
     matches = [(slug, title, by_slug[slug]) for slug, title in games.items() if slug in by_slug]
-    print(f"Correspondências exatas no catálogo Poki: {len(matches)}")
+    print(f"Correspondências exatas nos catálogos Poki/CrazyGames: {len(matches)}")
     results = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
         jobs = {pool.submit(image_from_page, url): (slug, title) for slug, title, url in matches}
