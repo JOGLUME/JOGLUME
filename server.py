@@ -10,6 +10,7 @@ import html
 import time
 import os
 import unicodedata
+import difflib
 
 COVER_CACHE = {}
 COVER_CACHE_TTL = 60 * 60 * 12
@@ -131,11 +132,61 @@ def google_image_search(query):
     return results
 
 
-def search_cover_images(query):
+def load_manual_covers():
+    covers_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "capas", "capa.txt")
+    entries = []
     try:
-        return google_image_search(query)
-    except Exception:
+        with open(covers_path, "r", encoding="utf-8-sig") as file:
+            for line in file:
+                line = line.strip()
+                if not line or line.startswith("#") or ":" not in line:
+                    continue
+                name, url = line.split(":", 1)
+                name = name.strip()
+                url = url.strip()
+                if not name or not re.match(r"^https?://", url, re.IGNORECASE):
+                    continue
+                entries.append({"name": name, "url": url})
+    except (OSError, UnicodeError):
         return []
+    return entries
+
+
+def find_manual_cover(game_name):
+    target = normalize_search_text(game_name)
+    if not target:
+        return None
+
+    target_words = set(target.split())
+    ranked = []
+    for entry in load_manual_covers():
+        candidate = normalize_search_text(entry["name"])
+        if not candidate:
+            continue
+        if candidate == target:
+            return {"name": entry["name"], "url": entry["url"], "match": "exact"}
+
+        candidate_words = set(candidate.split())
+        sequence_score = difflib.SequenceMatcher(None, target, candidate).ratio()
+        if target_words and candidate_words:
+            overlap = len(target_words & candidate_words)
+            word_score = (2 * overlap) / (len(target_words) + len(candidate_words))
+            coverage = overlap / len(target_words)
+            score = max(sequence_score, word_score * 0.85 + coverage * 0.15)
+        else:
+            score = sequence_score
+        ranked.append((score, entry))
+
+    if not ranked:
+        return None
+
+    ranked.sort(key=lambda item: item[0], reverse=True)
+    best_score, best = ranked[0]
+    second_score = ranked[1][0] if len(ranked) > 1 else 0
+    threshold = 0.68 if len(target_words) <= 1 else 0.60
+    if best_score < threshold or (best_score < 0.92 and best_score - second_score < 0.035):
+        return None
+    return {"name": best["name"], "url": best["url"], "match": "approximate", "score": round(best_score, 3)}
 
 
 
@@ -145,20 +196,9 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
         if parsed.path == "/api/covers":
             query = parse_qs(parsed.query).get("q", [""])[0].strip()
             if not query:
-                return self.send_json({"images": []})
-
-            cache_key = query.casefold()
-            cached = COVER_CACHE.get(cache_key)
-            if cached and time.time() - cached[0] < COVER_CACHE_TTL:
-                return self.send_json({"images": cached[1], "cached": True})
-
-            images = search_cover_images(query)
-            COVER_CACHE[cache_key] = (time.time(), images)
-            return self.send_json({
-                "images": images,
-                "query": query.replace('"', ""),
-                "sources": ["Google Imagens — páginas e sites originais"]
-            })
+                return self.send_json({"image": None})
+            cover = find_manual_cover(query)
+            return self.send_json({"image": cover, "query": query, "source": "capas/capa.txt"})
         return super().do_GET()
 
     def send_json(self, payload, status=200):
@@ -182,7 +222,7 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8000"))
     server = ThreadingHTTPServer((host, port), JoglumeHandler)
     print(f"Joglume disponível em http://{host}:{port}")
-    print("Capas: pesquisa em múltiplos mecanismos de imagens.")
+    print("Capas: lista manual em capas/capa.txt.")
     print("PSP e PS2 habilitados com isolamento de origem cruzada.")
     if host in ("127.0.0.1", "localhost"):
         threading.Timer(0.8, lambda: webbrowser.open(f"http://localhost:{port}")).start()
