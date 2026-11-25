@@ -8,11 +8,9 @@
 1.8 WASM
 10 minutes till dawn
 12 mini battles
-1v1.lol
 2048 cupcakes
 34027 flash game
 3D flight simulator
-3d free kick
 8 ball classic
 9007199254740992
 Alpha 1.2.6
@@ -20,7 +18,6 @@ Beta 1.3
 Indev
 agar io lite
 age of defense 8
-age of war 2
 ages of conflict
 alien hominid
 among us
@@ -29,92 +26,53 @@ angry birds showdown
 angry birds space
 animator
 animator 2
-awesome tanks
-awesome tanks 2
 backrooms
 bad ice cream 3 boysplaygame
 bad parenting
 bad piggies
 bad time simulator
-baldis basics
 bank robbery 2
 bank robbery 3
 baseball bros
 basket bros
-basket random
 basketball legends
 big ice tower tiny square
 big neon tower tiny square
 bit planes
 bitlife
 blocky snakes
-bloons
 bloons TD 2
-bloons TD 3
-bloons TD 4
-bloons TD 5
 bloons super monkey
 bloons tower defence
 bloons tower defence 2
 bloons tower defence 3
 bloons tower defence 4
 bloons tower defence 5
-bloxorz
-bob the robber
-bob the robber 2
-bob the robber 5
-bouncy motors
 bow masters
 boxel rebound
 boxhead 2play rooms
-boxhead the zombie wars
-boxing random
-bubble shooter
-bubble tanks
-bubble tanks 2
 build the bridge
 burrito bison launcha libre
-canabalt
 candy crush
-capybara clicker
 car drawing
 car king arena
-chaos faction 2
-checkers
 chess
 choppy orc
-circloO 2
-clash of vikings
 cleanup io
 cluster rush
-commando
-commando 2
 commando 2 by miniclip
-cookie clicker
 coreball
 crazy cattle 3D
 crazy crash landing
-crazy motorcycle
-crush the castle
-crush the castle 2
 crush the castle players pack
-cursed treasure
-cut the rope
-cut the rope 2
 cut the rope holiday gift
 cut the rope time travel
 dad n me
 deadly descent
 death run 3D
-demolition city 2
 desktop tower defense
-dont escape
-dont escape 2
-dont escape 3
 dont shoot the puppy
-doodle jump
 doom
-draw climber
 drift hunters pro
 duck life 1
 duck life 2
@@ -123,47 +81,34 @@ duck life 3
 duck life 3 evolution
 duck life 4
 duck life 5
-earn to die
 earn to die 2
-elastic face
 electricman 2
 elephant quest
 empires of arkeia
-epic battle fantasy
 escape road
 escape road 2
 escape road 3
 evil glitch
-exit path
 extreme pamplona
 factory balls
 fancy pants adventure
 fancy pants adventure 2
 fireblob
-fireboy and watergirl
-fireboy and watergirl 2
-fireboy and watergirl 3
-fireboy and watergirl 4
 fish tales 2
 fish tales deluxe edition
-flappy bird
 flash sonic
 flood runner 2
 flood runner 3
 flood runner 4
 fnaf
-fnaf 2
 fnaf 3
 fnaf 4
 fnaf sister location
 football bros
-fragger
 free rider 3
 funny battle
 funny battle 2
 funny mad racing
-gemcraft
-geometry dash lite
 geometry vibes
 gladi hoppers
 google baseball
@@ -171,15 +116,9 @@ google dino
 gotham city rush
 granny
 granny 2
-gravity duck
-guess their answer
-hanger 2
-helix jump
 henry stickmin breaking the bank
 henry stickmin escaping the prison
 henry stickmin stealing the diamond
-highway traffic
-hobo
 hobo 2
 hobo 3
 hover racer drive
@@ -187,16 +126,10 @@ ice dodo
 idle dice
 interactive buddy
 jelly go
-johnny trigger
-johnny upgrade
 karate bros
 kart bros
-kingdom rush
 kittytoy
 learn 2 fly
-learn to fly
-learn to fly 2
-learn to fly 3
 learn to fly idle
 line rider
 mad arrow
@@ -204,15 +137,11 @@ madalin stunt cars 2
 madness interactive
 madness project nexus
 melon playground
-minesweeper
-monster slayers
 motherload
 moto x3m 2
 moto x3m 3
-moto x3m pool party
 moto x3m winter
 nanaca crash
-noitcelfer
 noob miner
 openTTD
 opposite day
@@ -222,31 +151,19 @@ ovo 3 dimensions
 pac man
 pacman
 pandemic 2
-papas hot doggeria
-paper io 2
 parking fury
 parking fury 2
-parking fury 3
 pc breakdown
-penguin diner
-penguin diner 2
 picos school
 ping pong chaos
-pipe riders
 pixel speedrun
-plants vs zombies
 pocket fighter nova
 pocket fighter nova updated
 portal flash
-pou
 ragdoll archers
-raze
-raze 2
 red ball 4 vol 1
 red ball 4 vol 2
 red ball 4 vol 3
-red remover
-retro ping pong
 riddle school
 riddle school 2
 riddle school 3
@@ -256,66 +173,29 @@ riddle school transfer
 riddle school transfer 2
 riddle transfer
 riddle transfer 2
-rollercoaster creator
-rooftop run
 rubiks cube
-run
 run 2
 sand game
-sandbox city
-scrap metal heroes
-shift
-shift 2
-shift 3
-shift 4
-shopping cart hero
 shopping cart hero 3
 showdown
 six cats under
-slope
 slope 2 player
 slope 3
-slow roads
 sm 63
 sm 64
-snail bob
-snail bob 2
 snail bob 3
 snail bob 4
-snail bob 5
-snail bob 6
-snail bob 7
-snail bob 8
 snake
 snow rider
 snow road
-snowball io
 soccer bros
-soccer random
-sonny
-sonny 2
-space is key
-space is key 2
 space waves
-stack
 state io
-steambirds
 stick archers battle
 stick rpg
-storm the house
-storm the house 2
-strike force heroes
-strikeforce kitty
-strikeforce kitty 2
-strikeforce kitty last stand
-strikeforce kitty league
 subway surfers beijing
 subway surfers havana
 subway surfers san francisco
-sugar sugar
-sugar sugar 2
-sugar sugar 3
-summon the hero
 super mario 63
 super mario bros crossover 3
 super mario flash 2
@@ -324,61 +204,29 @@ super mario flash by povetpu games
 super mario flash by smf creator
 super smash flash
 superhot
-table tennis world tour
 tanuki sunset
 tap road
 territorial io
-tetris
 tetrominoes
 the fancy pants adventure 1
 the fancy pants adventure 2
 the fancy pants adventure 3
-the last stand
-the last stand 2
 the world's hardest game
 the world's hardest game 2
 there is no g
-they are coming
-thing thing
-thing thing 2
-thing thing arena
-this is the only level
-this is the only level too
 time shooter 2
 time shooter 3
 tomb of the mask
 toxic 2
-trap the cat
 truck loader 2
 truck loader 3
-truck loader 5
 turtle
-upgrade complete
 vex
-vex 4
-vex 5
-vex 6
-vex 7
-vex 8
-vex x3m
 vex x3m 2
 volley random
-wake up the box 4
-war the knights
-warfare 1917
-wheelie bike
-wheely
-wheely 2
-wheely 3
 wheely 4
 wheely 5
 wheely 6
-wheely 7
-wheely 8
-wonderputt
-wordle unlimited
 worlds hardest game 2
 worlds hardest game 3
 wrestle bros
-zombotron
-zrist
