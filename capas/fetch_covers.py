@@ -59,8 +59,7 @@ def source_games():
             found.setdefault(slug, title)
     return found
 
-def sitemap_urls():
-    root = "https://poki.com/br/sitemaps/index.xml"
+def sitemap_urls(root, markers):
     pending = [root]
     urls = set()
     seen = set()
@@ -127,9 +126,15 @@ def put_file(path, content, sha, message):
 def main():
     games = source_games()
     print(f"Jogos únicos encontrados: {len(games)}")
-    sitemap = sitemap_urls()
+    sitemap = set()
+    catalogs = [
+        ("https://poki.com/br/sitemaps/index.xml", ["/g/"]),
+        ("https://www.crazygames.com/sitemap-index.xml", ["/game/"]),
+    ]
+    for root, markers in catalogs:
+        sitemap.update(sitemap_urls(root, markers))
     by_slug = {}
-    for url in sitemap:
+    for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
         slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
         if slug:
             by_slug.setdefault(slug, url)
@@ -152,10 +157,10 @@ def main():
                 entries[norm(name)] = (name.strip(), url.strip())
     added = 0
     for slug, (title, image) in results.items():
-        if slug not in entries:
+        if slug not in entries or "jogos360.com.br" in entries[slug][1].lower():
             entries[slug] = (title, image)
             added += 1
-    new_content = "\n".join(f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())) + "\n"
+    new_content = "\\n".join(f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())) + "\\n"
     if added:
         put_file("capas/capa.txt", new_content, sha, f"Add {added} automatically verified game covers")
     pending = sorted(title for slug, title in games.items() if slug not in entries)
@@ -163,14 +168,14 @@ def main():
         old_pending, pending_sha = github_file("capas/sem-capa.txt")
     except Exception:
         old_pending, pending_sha = "", None
-    pending_content = "# Jogos ainda sem capa verificada\n" + "\n".join(pending) + "\n"
+    pending_content = "# Jogos ainda sem capa verificada\\n" + "\\n".join(pending) + "\\n"
     if pending_content != old_pending:
         if pending_sha:
             put_file("capas/sem-capa.txt", pending_content, pending_sha, "Update games without verified covers")
         else:
             payload = {"message": "Add list of games without verified covers", "content": base64.b64encode(pending_content.encode()).decode(), "branch": BRANCH}
             requests.put(f"{API}/contents/capas/sem-capa.txt", headers=HEADERS, json=payload, timeout=40).raise_for_status()
-    print(json.dumps({"games": len(games), "poki_catalog_urls": len(sitemap), "exact_matches": len(matches), "verified_images": len(results), "new_covers": added, "without_cover": len(pending)}, ensure_ascii=False))
+    print(json.dumps({"games": len(games), "catalog_urls": len(sitemap), "exact_matches": len(matches), "verified_images": len(results), "new_covers": added, "without_cover": len(pending)}, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
