@@ -60,7 +60,7 @@ def source_games():
     return found
 
 def sitemap_urls():
-    root = "https://poki.com/sitemap.xml"
+    root = "https://poki.com/br/sitemaps/index.xml"
     pending = [root]
     urls = set()
     seen = set()
