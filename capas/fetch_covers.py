@@ -16,7 +16,7 @@ TOKEN = os.environ["GITHUB_TOKEN"]
 API = f"https://api.github.com/repos/{OWNER}/{REPO}"
 HEADERS = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "Joglume-CoverCollector/1.0.1"})
+SESSION.headers.update({"User-Agent": "Joglume-CoverCollector/1.0.2"})
 SOURCES = [
     ("CoolDude2349/Offline-HTML-Games-Pack", "master", "offline/"),
     ("AmmarSAA/flash-games-directory", "main", ""),
