@@ -160,7 +160,7 @@ def main():
         if slug not in entries or "jogos360.com.br" in entries[slug][1].lower():
             entries[slug] = (title, image)
             added += 1
-    new_content = "\\n".join(f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())) + "\\n"
+    new_content = "\n".join(f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())) + "\n"
     if added:
         put_file("capas/capa.txt", new_content, sha, f"Add {added} automatically verified game covers")
     pending = sorted(title for slug, title in games.items() if slug not in entries)
@@ -168,7 +168,7 @@ def main():
         old_pending, pending_sha = github_file("capas/sem-capa.txt")
     except Exception:
         old_pending, pending_sha = "", None
-    pending_content = "# Jogos ainda sem capa verificada\\n" + "\\n".join(pending) + "\\n"
+    pending_content = "# Jogos ainda sem capa verificada\n" + "\n".join(pending) + "\n"
     if pending_content != old_pending:
         if pending_sha:
             put_file("capas/sem-capa.txt", pending_content, pending_sha, "Update games without verified covers")
