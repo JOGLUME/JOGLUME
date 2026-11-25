@@ -296,12 +296,12 @@ async function getManualCover(game) {
         ).then(response => {
             if (!response.ok) throw new Error("Não foi possível ler capas/capa.txt");
             return response.text();
-        }).then(text => text.split(/\\r?\\n/).map(line => {
+        }).then(text => text.split(/\r?\n/).map(line => {
             const separator = line.indexOf(":");
             if (separator < 1) return null;
             const name = line.slice(0, separator).trim();
             const url = line.slice(separator + 1).trim();
-            if (!name || !/^https?:\\/\\//i.test(url)) return null;
+            if (!name || !/^https?:\/\//i.test(url)) return null;
             return { name, url, normalized: normalizeCoverName(name) };
         }).filter(Boolean)).catch(error => {
             manualCoverEntriesPromise = null;
