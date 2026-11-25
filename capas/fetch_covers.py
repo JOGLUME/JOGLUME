@@ -63,7 +63,7 @@ def sitemap_urls(root, markers):
     pending = [root]
     urls = set()
     seen = set()
-    while pending and len(seen) < 100:
+    while pending and len(seen) < 150:
         current = pending.pop()
         if current in seen:
             continue
@@ -71,15 +71,55 @@ def sitemap_urls(root, markers):
         try:
             r = SESSION.get(current, timeout=35)
             r.raise_for_status()
-            doc = ET.fromstring(r.content)
+            content = r.content
+            if current.lower().endswith(".gz") or r.headers.get("Content-Type", "").lower() in {"application/gzip", "application/x-gzip"}:
+                import gzip
+                content = gzip.decompress(content)
+            doc = ET.fromstring(content)
             locs = [node.text.strip() for node in doc.iter() if node.tag.endswith("loc") and node.text]
-            if locs and all(urlparse(x).path.lower().endswith(".xml") for x in locs[:10]):
-                pending.extend(locs)
+            sitemap_locs = [x for x in locs if re.search(r"\\.(xml|xml\\.gz)(?:$|\\?)", urlparse(x).path, re.I)]
+            if sitemap_locs:
+                pending.extend(sitemap_locs)
             else:
-                urls.update(x for x in locs if any(marker in urlparse(x).path for marker in markers))
+                urls.update(x for x in locs if any(marker in urlparse(x).path.lower() for marker in markers))
         except Exception as exc:
             print(f"Sitemap ignorado: {current}: {exc}")
     return urls
+
+def discover_catalog_urls():
+    catalogs = [
+        ("poki.com", ["/g/"], ["https://poki.com/br/sitemaps/index.xml"]),
+        ("crazygames.com", ["/game/"], ["https://www.crazygames.com/sitemap-index.xml"]),
+        ("y8.com", ["/games/", "/game/"], ["https://www.y8.com/sitemap.xml", "https://www.y8.com/sitemap_index.xml"]),
+        ("lagged.com", ["/game/", "/games/", "/en/g/"], ["https://lagged.com/sitemap.xml", "https://lagged.com/sitemap_index.xml"]),
+        ("hackedfreegames.com", ["/game/"], ["https://www.hackedfreegames.com/sitemap.xml", "https://www.hackedfreegames.com/sitemap_index.xml"]),
+        ("gamedistribution.com", ["/game/"], ["https://gamedistribution.com/sitemap.xml", "https://gamedistribution.com/sitemap_index.xml"]),
+        ("gamemonetize.com", ["/game/"], ["https://gamemonetize.com/sitemap.xml", "https://gamemonetize.com/sitemap_index.xml"]),
+        ("friv.com", ["/"], ["https://www.friv.com/sitemap.xml"]),
+        ("kongregate.com", ["/games/"], ["https://www.kongregate.com/sitemap.xml"]),
+        ("armorgames.com", ["/play/"], ["https://armorgames.com/sitemap.xml", "https://armorgames.com/sitemap_index.xml"]),
+        ("newgrounds.com", ["/portal/view/"], ["https://www.newgrounds.com/sitemap.xml"]),
+        ("miniplay.com", ["/game/"], ["https://www.miniplay.com/sitemap.xml", "https://www.miniplay.com/sitemap_index.xml"]),
+    ]
+    discovered = []
+    for domain, markers, fallbacks in catalogs:
+        roots = []
+        try:
+            robots = SESSION.get(f"https://{domain}/robots.txt", timeout=20)
+            if robots.status_code == 200:
+                roots.extend(re.findall(r"(?im)^\\s*Sitemap:\\s*(https?://\\S+)", robots.text))
+        except Exception:
+            pass
+        roots.extend(fallbacks)
+        unique_roots = list(dict.fromkeys(roots))
+        domain_urls = set()
+        for root in unique_roots:
+            domain_urls.update(sitemap_urls(root, markers))
+            if len(domain_urls) >= 50000:
+                break
+        print(f"{domain}: {len(domain_urls)} páginas de catálogo")
+        discovered.extend(domain_urls)
+    return set(discovered)
 
 def image_from_page(url):
     try:
@@ -126,20 +166,14 @@ def put_file(path, content, sha, message):
 def main():
     games = source_games()
     print(f"Jogos únicos encontrados: {len(games)}")
-    sitemap = set()
-    catalogs = [
-        ("https://poki.com/br/sitemaps/index.xml", ["/g/"]),
-        ("https://www.crazygames.com/sitemap-index.xml", ["/game/"]),
-    ]
-    for root, markers in catalogs:
-        sitemap.update(sitemap_urls(root, markers))
+    sitemap = discover_catalog_urls()
     by_slug = {}
     for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
         slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
         if slug:
             by_slug.setdefault(slug, url)
     matches = [(slug, title, by_slug[slug]) for slug, title in games.items() if slug in by_slug]
-    print(f"Correspondências exatas nos catálogos Poki/CrazyGames: {len(matches)}")
+    print(f"Correspondências exatas em todos os catálogos: {len(matches)}")
     results = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
         jobs = {pool.submit(image_from_page, url): (slug, title) for slug, title, url in matches}
