@@ -77,7 +77,7 @@ def sitemap_urls(root, markers):
                 content = gzip.decompress(content)
             doc = ET.fromstring(content)
             locs = [node.text.strip() for node in doc.iter() if node.tag.endswith("loc") and node.text]
-            sitemap_locs = [x for x in locs if re.search(r"\\.(xml|xml\\.gz)(?:$|\\?)", urlparse(x).path, re.I)]
+            sitemap_locs = [x for x in locs if re.search(r"\.(xml|xml\.gz)(?:$|\?)", urlparse(x).path, re.I)]
             if sitemap_locs:
                 pending.extend(sitemap_locs)
             else:
@@ -95,7 +95,7 @@ def discover_catalog_urls():
         ("hackedfreegames.com", ["/game/"], ["https://www.hackedfreegames.com/sitemap.xml", "https://www.hackedfreegames.com/sitemap_index.xml"]),
         ("gamedistribution.com", ["/game/"], ["https://gamedistribution.com/sitemap.xml", "https://gamedistribution.com/sitemap_index.xml"]),
         ("gamemonetize.com", ["/game/"], ["https://gamemonetize.com/sitemap.xml", "https://gamemonetize.com/sitemap_index.xml"]),
-        ("friv.com", ["/"], ["https://www.friv.com/sitemap.xml"]),
+        ("friv.com", ["/games/", "/game/"], ["https://www.friv.com/sitemap.xml"]),
         ("kongregate.com", ["/games/"], ["https://www.kongregate.com/sitemap.xml"]),
         ("armorgames.com", ["/play/"], ["https://armorgames.com/sitemap.xml", "https://armorgames.com/sitemap_index.xml"]),
         ("newgrounds.com", ["/portal/view/"], ["https://www.newgrounds.com/sitemap.xml"]),
@@ -107,7 +107,7 @@ def discover_catalog_urls():
         try:
             robots = SESSION.get(f"https://{domain}/robots.txt", timeout=20)
             if robots.status_code == 200:
-                roots.extend(re.findall(r"(?im)^\\s*Sitemap:\\s*(https?://\\S+)", robots.text))
+                roots.extend(re.findall(r"(?im)^\s*Sitemap:\s*(https?://\S+)", robots.text))
         except Exception:
             pass
         roots.extend(fallbacks)
