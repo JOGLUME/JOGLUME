@@ -10,7 +10,6 @@
 12 mini battles
 2048 cupcakes
 34027 flash game
-3D flight simulator
 8 ball classic
 9007199254740992
 Alpha 1.2.6
@@ -19,11 +18,6 @@ Indev
 agar io lite
 age of defense 8
 ages of conflict
-alien hominid
-among us
-angry birds
-angry birds showdown
-angry birds space
 animator
 animator 2
 backrooms
@@ -31,16 +25,11 @@ bad ice cream 3 boysplaygame
 bad parenting
 bad piggies
 bad time simulator
-bank robbery 2
-bank robbery 3
 baseball bros
 basket bros
-basketball legends
-big ice tower tiny square
 big neon tower tiny square
 bit planes
 bitlife
-blocky snakes
 bloons TD 2
 bloons super monkey
 bloons tower defence
@@ -51,49 +40,30 @@ bloons tower defence 5
 bow masters
 boxel rebound
 boxhead 2play rooms
-build the bridge
-burrito bison launcha libre
 candy crush
 car drawing
 car king arena
 chess
 choppy orc
-cleanup io
-cluster rush
 commando 2 by miniclip
 coreball
 crazy cattle 3D
-crazy crash landing
-crush the castle players pack
 cut the rope holiday gift
-cut the rope time travel
-dad n me
-deadly descent
 death run 3D
 desktop tower defense
 dont shoot the puppy
-doom
 drift hunters pro
 duck life 1
-duck life 2
 duck life 2 world champion
-duck life 3
 duck life 3 evolution
-duck life 4
 duck life 5
 earn to die 2
-electricman 2
 elephant quest
-empires of arkeia
 escape road
 escape road 2
-escape road 3
 evil glitch
-extreme pamplona
-factory balls
 fancy pants adventure
 fancy pants adventure 2
-fireblob
 fish tales 2
 fish tales deluxe edition
 flash sonic
@@ -104,120 +74,83 @@ fnaf
 fnaf 3
 fnaf 4
 fnaf sister location
-football bros
 free rider 3
 funny battle
 funny battle 2
 funny mad racing
-geometry vibes
 gladi hoppers
 google baseball
 google dino
 gotham city rush
-granny
 granny 2
 henry stickmin breaking the bank
 henry stickmin escaping the prison
 henry stickmin stealing the diamond
 hobo 2
 hobo 3
-hover racer drive
 ice dodo
 idle dice
 interactive buddy
-jelly go
-karate bros
-kart bros
 kittytoy
 learn 2 fly
 learn to fly idle
-line rider
 mad arrow
-madalin stunt cars 2
 madness interactive
-madness project nexus
 melon playground
 motherload
-moto x3m 2
 moto x3m 3
 moto x3m winter
 nanaca crash
 noob miner
 openTTD
-opposite day
-ovo
 ovo 2
 ovo 3 dimensions
-pac man
 pacman
 pandemic 2
 parking fury
 parking fury 2
 pc breakdown
 picos school
-ping pong chaos
 pixel speedrun
-pocket fighter nova
 pocket fighter nova updated
 portal flash
-ragdoll archers
 red ball 4 vol 1
 red ball 4 vol 2
 red ball 4 vol 3
 riddle school
 riddle school 2
-riddle school 3
 riddle school 4
-riddle school 5
 riddle school transfer
 riddle school transfer 2
 riddle transfer
 riddle transfer 2
-rubiks cube
 run 2
 sand game
-shopping cart hero 3
 showdown
-six cats under
 slope 2 player
-slope 3
 sm 63
 sm 64
-snail bob 3
 snail bob 4
 snake
 snow rider
-snow road
-soccer bros
-space waves
-state io
 stick archers battle
 stick rpg
 subway surfers beijing
 subway surfers havana
 subway surfers san francisco
-super mario 63
 super mario bros crossover 3
-super mario flash 2
 super mario flash 4
 super mario flash by povetpu games
 super mario flash by smf creator
 super smash flash
 superhot
 tanuki sunset
-tap road
-territorial io
 tetrominoes
 the fancy pants adventure 1
 the fancy pants adventure 2
 the fancy pants adventure 3
-the world's hardest game
-the world's hardest game 2
 there is no g
-time shooter 2
 time shooter 3
-tomb of the mask
-toxic 2
 truck loader 2
 truck loader 3
 turtle
@@ -226,7 +159,6 @@ vex x3m 2
 volley random
 wheely 4
 wheely 5
-wheely 6
 worlds hardest game 2
 worlds hardest game 3
 wrestle bros
