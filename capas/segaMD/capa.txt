@@ -1,1 +1,842 @@
-# Capas verificadas de jogos SEGAMD
+# Capas por plataforma - segaMD
+1304016236 Undeadline w800 h800: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/1304016236_Undeadline_w800_h800.jpg
+3 ninjas kick back: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/3_ninjas_kick_back_usa.jpg
+688 attack sub usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/688_attack_sub_usa_europe.jpg
+Fido Dido: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/Fido%20Dido.jpg
+Flink: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/Flink.jpg
+Grind Stormer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/Grind%20Stormer.jpg
+Sonic the hedgehog: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/Sonic%20the%20hedgehog.jpg
+Streets of rage: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/Streets%20of%20rage.jpg
+aa harimanada: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aa_harimanada_japan.jpg
+aaahh real monsters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aaahh_real_monsters_usa.jpg
+action 52 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/action_52_usa_unl.jpg
+addams family the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/addams_family_the_usa_europe.jpg
+addams family values: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/addams_family_values_europe.jpg
+advanced busterhawk gleylancer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/advanced_busterhawk_gleylancer_japan.jpg
+advanced daisenryaku - deutsch dengeki sakusen japan rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/advanced_daisenryaku_-_deutsch_dengeki_sakusen_japan_rev_a.jpg
+adventures of batman & robin the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/adventures_of_batman_%26_robin_the_usa.jpg
+adventures of mighty max the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/adventures_of_mighty_max_the_usa.jpg
+adventures of rocky and bullwinkle and friends the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/adventures_of_rocky_and_bullwinkle_and_friends_the_usa.jpg
+aero the acro-bat 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aero_the_acro-bat_2_usa.jpg
+aero the acro-bat: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aero_the_acro-bat_usa.jpg
+aerobiz supersonic: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aerobiz_supersonic_usa.jpg
+aerobiz: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aerobiz_usa.jpg
+after burner ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/after_burner_ii_usa_europe.jpg
+air buster: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/air_buster_usa.jpg
+air diver: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/air_diver_usa.jpg
+aladdin: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aladdin_usa.jpg
+alex kidd in the enchanted castle: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/alex_kidd_in_the_enchanted_castle_usa.jpg
+alien 3 usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/alien_3_usa_europe_rev_a.jpg
+alien soldier: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/alien_soldier_europe.jpg
+alien storm: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/alien_storm_world.jpg
+alisia dragoon: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/alisia_dragoon_usa.jpg
+altered beast usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/altered_beast_usa_europe.jpg
+american gladiators: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/american_gladiators_usa.jpg
+andre agassi tennis usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/andre_agassi_tennis_usa_beta.jpg
+animaniacs: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/animaniacs_usa.jpg
+aquatic games starring james pond and the aquabats the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aquatic_games_starring_james_pond_and_the_aquabats_the_usa_europe.jpg
+arcade classics usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/arcade_classics_usa_europe.jpg
+arch rivals - the arcade game usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/arch_rivals_-_the_arcade_game_usa_europe.jpg
+arcus odyssey: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/arcus_odyssey_usa.jpg
+ariel the little mermaid usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ariel_the_little_mermaid_usa_europe.jpg
+arnold palmer tournament golf usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/arnold_palmer_tournament_golf_usa_europe.jpg
+arrow flash usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/arrow_flash_usa_europe.jpg
+art alive: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/art_alive_world.jpg
+art of fighting: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/art_of_fighting_usa.jpg
+asterix and the great rescue: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/asterix_and_the_great_rescue_usa.jpg
+asterix and the power of the gods europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/asterix_and_the_power_of_the_gods_europe_beta.jpg
+atomic robo-kid: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/atomic_robo-kid_usa.jpg
+atomic runner: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/atomic_runner_usa.jpg
+atp tour championship tennis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/atp_tour_championship_tennis_usa.jpg
+australian rugby league: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/australian_rugby_league_europe.jpg
+awesome possum kicks dr machinos butt usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/awesome_possum_kicks_dr_machinos_butt_usa_beta.jpg
+aws pro moves soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/aws_pro_moves_soccer_usa.jpg
+ayrton sennas super monaco gp ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ayrton_sennas_super_monaco_gp_ii_usa.jpg
+back to the future part iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/back_to_the_future_part_iii_usa.jpg
+ball jacks japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ball_jacks_japan_europe.jpg
+ballz 3d - fighting at its ballziest usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ballz_3d_-_fighting_at_its_ballziest_usa_europe.jpg
+barbie super model: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/barbie_super_model_usa.jpg
+barbie vacation adventure usa proto: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/barbie_vacation_adventure_usa_proto.jpg
+bare knuckle - ikari no tetsuken ~ streets of rage world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bare_knuckle_-_ikari_no_tetsuken_~_streets_of_rage_world_rev_a.jpg
+bare knuckle iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bare_knuckle_iii_japan.jpg
+barkley shut up and jam 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/barkley_shut_up_and_jam_2_usa_beta.jpg
+barkley shut up and jam usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/barkley_shut_up_and_jam_usa_europe.jpg
+barneys hide & seek game: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/barneys_hide_%26_seek_game_usa.jpg
+bass masters classic - pro edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bass_masters_classic_-_pro_edition_usa.jpg
+bass masters classic: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bass_masters_classic_usa.jpg
+batman - revenge of the joker: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/batman_-_revenge_of_the_joker_usa.jpg
+batman forever: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/batman_forever_world.jpg
+batman returns: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/batman_returns_world.jpg
+batman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/batman_usa.jpg
+battle-frenzy-cover: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battle-frenzy-cover.jpg
+battle mania daiginjou japan korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battle_mania_daiginjou_japan_korea.jpg
+battle squadron usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battle_squadron_usa_europe.jpg
+battlemaster: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battlemaster_usa.jpg
+battletech - a game of armored combat: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battletech_-_a_game_of_armored_combat_usa.jpg
+battletoads & double dragon: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battletoads_%26_double_dragon_usa.jpg
+battletoads: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/battletoads_world.jpg
+beast wrestler: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/beast_wrestler_usa.jpg
+beauty and the beast - belles quest: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/beauty_and_the_beast_-_belles_quest_usa.jpg
+beauty and the beast - roar of the beast: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/beauty_and_the_beast_-_roar_of_the_beast_usa.jpg
+beavis and butt-head usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/beavis_and_butt-head_usa_beta.jpg
+berenstain bears camping adventure the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/berenstain_bears_camping_adventure_the_usa.jpg
+best of the best - championship karate: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/best_of_the_best_-_championship_karate_usa.jpg
+beyond oasis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/beyond_oasis_usa.jpg
+bible adventures usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bible_adventures_usa_unl.jpg
+bill walsh college football 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bill_walsh_college_football_95_usa.jpg
+bill walsh college football usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bill_walsh_college_football_usa_europe.jpg
+bimini run: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bimini_run_usa.jpg
+bio hazard battle usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bio_hazard_battle_usa_beta.jpg
+bishoujo senshi sailor moon: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bishoujo_senshi_sailor_moon_japan.jpg
+blades of vengeance usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/blades_of_vengeance_usa_europe.jpg
+blaster master 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/blaster_master_2_usa_beta.jpg
+blockout: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/blockout_world.jpg
+bob usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bob_usa_beta.jpg
+body count europe enfrdeesit: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/body_count_europe_enfrdeesit_beta.jpg
+bonanza bros japan europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bonanza_bros_japan_europe_rev_a.jpg
+bonkers usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bonkers_usa_europe.jpg
+boogerman - a pick and flick adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/boogerman_-_a_pick_and_flick_adventure_usa.jpg
+boxing legends of the ring: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/boxing_legends_of_the_ring_usa.jpg
+bram stokers dracula: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bram_stokers_dracula_usa.jpg
+brett hull hockey 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/brett_hull_hockey_95_usa.jpg
+brian lara cricket 96: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/brian_lara_cricket_96_europe.jpg
+brian lara cricket: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/brian_lara_cricket_europe.jpg
+brutal - paws of fury: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/brutal_-_paws_of_fury_usa.jpg
+bubbanstix - a strategy adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bubbanstix_-_a_strategy_adventure_usa.jpg
+bubble and squeak: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bubble_and_squeak_usa.jpg
+bubsy ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bubsy_ii_usa_europe.jpg
+bubsy in claws encounters of the furred kind usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bubsy_in_claws_encounters_of_the_furred_kind_usa_europe.jpg
+buck rogers - countdown to doomsday usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/buck_rogers_-_countdown_to_doomsday_usa_europe.jpg
+budokan - the martial spirit: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/budokan_-_the_martial_spirit_usa.jpg
+bugs bunny in double trouble: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bugs_bunny_in_double_trouble_usa.jpg
+bugs life: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bugs_life.jpg
+bulls versus blazers and the nba playoffs usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bulls_versus_blazers_and_the_nba_playoffs_usa_europe.jpg
+bulls vs lakers and the nba playoffs usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/bulls_vs_lakers_and_the_nba_playoffs_usa_europe.jpg
+burning force: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/burning_force_usa.jpg
+cadash usa asia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cadash_usa_asia.jpg
+caesars palace: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/caesars_palace_usa.jpg
+cal ripken jr baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cal_ripken_jr_baseball_usa.jpg
+caliber50: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/caliber50_usa.jpg
+california games usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/california_games_usa_europe.jpg
+cannon fodder: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cannon_fodder_europe.jpg
+captain america and the avengers usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/captain_america_and_the_avengers_usa_beta.jpg
+captain planet and the planeteers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/captain_planet_and_the_planeteers_usa.jpg
+castle of illusion starring mickey mouse usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/castle_of_illusion_starring_mickey_mouse_usa_europe.jpg
+castlevania - bloodlines: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/castlevania_-_bloodlines_usa.jpg
+centurion - defender of rome usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/centurion_-_defender_of_rome_usa_europe.jpg
+chakan usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chakan_usa_europe.jpg
+champions world class soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/champions_world_class_soccer_world.jpg
+championship bowling: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/championship_bowling_usa.jpg
+championship pool: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/championship_pool_usa.jpg
+championship pro-am: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/championship_pro-am_usa.jpg
+chase hq ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chase_hq_ii_usa.jpg
+chavez ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chavez_ii_usa.jpg
+cheese cat-astrophe starring speedy gonzales: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cheese_cat-astrophe_starring_speedy_gonzales_europe.jpg
+chester cheetah - too cool to fool: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chester_cheetah_-_too_cool_to_fool_usa.jpg
+chester cheetah - wild wild quest: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chester_cheetah_-_wild_wild_quest_usa.jpg
+chi chis pro challenge golf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chi_chis_pro_challenge_golf_usa.jpg
+chiki chiki boys usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chiki_chiki_boys_usa_europe.jpg
+chuck rock ii - son of chuck usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chuck_rock_ii_-_son_of_chuck_usa_beta.jpg
+chuck rock: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/chuck_rock_usa.jpg
+clay fighter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/clay_fighter_usa.jpg
+cliffhanger: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cliffhanger_usa.jpg
+clue: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/clue_usa.jpg
+coach k college basketball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/coach_k_college_basketball_usa.jpg
+college football usa 96: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/college_football_usa_96_usa.jpg
+college football usa 97: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/college_football_usa_97_usa.jpg
+college footballs national championship ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/college_footballs_national_championship_ii_usa.jpg
+college footballs national championship: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/college_footballs_national_championship_usa.jpg
+college slam: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/college_slam_usa.jpg
+columns iii - revenge of columns: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/columns_iii_-_revenge_of_columns_usa.jpg
+columns: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/columns_world.jpg
+combat cars usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/combat_cars_usa_europe.jpg
+comix zone usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/comix_zone_usa_beta.jpg
+contra - hard corps usa korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/contra_-_hard_corps_usa_korea.jpg
+cool spot usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cool_spot_usa_beta.jpg
+cosmic spacehead usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cosmic_spacehead_usa_europe.jpg
+crack down: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/crack_down_usa.jpg
+crayon shin-chan - arashi o yobu enji: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/crayon_shin-chan_-_arashi_o_yobu_enji_japan.jpg
+cross fire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cross_fire_usa.jpg
+crue ball - heavy metal pinball usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/crue_ball_-_heavy_metal_pinball_usa_europe.jpg
+crusader of centy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/crusader_of_centy_usa.jpg
+crystals pony tale: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/crystals_pony_tale_usa.jpg
+curse: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/curse_japan.jpg
+cutie suzuki no ringside angel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cutie_suzuki_no_ringside_angel_japan.jpg
+cutthroat island usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cutthroat_island_usa_europe.jpg
+cyber-cop: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cyber-cop_usa.jpg
+cyberball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cyberball_world.jpg
+cyborg justice usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/cyborg_justice_usa_europe.jpg
+daffy duck in hollywood europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/daffy_duck_in_hollywood_europe_beta.jpg
+dahna megami tanjou: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dahna_megami_tanjou_japan.jpg
+daisenpuu ~ twin hawk japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/daisenpuu_~_twin_hawk_japan_europe.jpg
+dangerous seed: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dangerous_seed_japan.jpg
+dark castle usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dark_castle_usa_europe.jpg
+darwin 4081 japan korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/darwin_4081_japan_korea.jpg
+dashin desperadoes usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dashin_desperadoes_usa_beta.jpg
+david cranes amazing tennis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/david_cranes_amazing_tennis_usa.jpg
+david robinsons supreme court usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/david_robinsons_supreme_court_usa_europe.jpg
+davis cup world tour usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/davis_cup_world_tour_usa_europe.jpg
+daze before christmas australia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/daze_before_christmas_australia_beta.jpg
+deadly moves: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/deadly_moves_usa.jpg
+death and return of superman the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/death_and_return_of_superman_the_usa.jpg
+death duel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/death_duel_usa.jpg
+decapattack usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/decapattack_usa_europe.jpg
+demolition man usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/demolition_man_usa_beta.jpg
+desert demolition starring road runner and wile e coyote usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/desert_demolition_starring_road_runner_and_wile_e_coyote_usa_europe.jpg
+desert strike - return to the gulf usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/desert_strike_-_return_to_the_gulf_usa_europe.jpg
+devilish - the next possession: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/devilish_-_the_next_possession_usa.jpg
+dick tracy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dick_tracy_world.jpg
+dick vitales awesome baby college hoops: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dick_vitales_awesome_baby_college_hoops_usa.jpg
+dino dinis soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dino_dinis_soccer_europe.jpg
+dino land: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dino_land_usa.jpg
+dinosaurs for hire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dinosaurs_for_hire_usa.jpg
+dinosaurs tale a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dinosaurs_tale_a_usa.jpg
+dj boy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dj_boy_usa.jpg
+donald in maui mallard: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/donald_in_maui_mallard_europe.jpg
+doom troopers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/doom_troopers_usa.jpg
+double clutch: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_clutch_europe.jpg
+double dragon 3 - the arcade game usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_dragon_3_-_the_arcade_game_usa_europe.jpg
+double dragon ii - the revenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_dragon_ii_-_the_revenge_japan.jpg
+double dragon usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_dragon_usa_europe.jpg
+double dragon v - the shadow falls: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_dragon_v_-_the_shadow_falls_usa.jpg
+double dribble - the playoff edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/double_dribble_-_the_playoff_edition_usa.jpg
+dr robotniks mean bean machine usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dr_robotniks_mean_bean_machine_usa_beta.jpg
+dragon - the bruce lee story: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dragon_-_the_bruce_lee_story_usa.jpg
+dragon ball z - buyuu retsuden: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dragon_ball_z_-_buyuu_retsuden_japan.jpg
+dragons-eye-plus: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dragons-eye-plus.jpg
+dragons fury usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dragons_fury_usa_europe.jpg
+dragons revenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dragons_revenge_usa_europe.jpg
+dream team usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dream_team_usa_japan.jpg
+duke nukem 3d: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/duke%20nukem%203d.jpg
+dune - the battle for arrakis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dune_-_the_battle_for_arrakis_usa.jpg
+dungeons & dragons - warriors of the eternal sun usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dungeons_%26_dragons_-_warriors_of_the_eternal_sun_usa_europe.jpg
+dynamite duke world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dynamite_duke_world_rev_a.jpg
+dynamite headdy usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/dynamite_headdy_usa_europe.jpg
+earnest evans: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/earnest_evans_usa.jpg
+earth defense usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/earth_defense_usa_unl.jpg
+earthworm jim 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/earthworm_jim_2_usa.jpg
+earthworm jim: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/earthworm_jim_usa.jpg
+ecco - the tides of time usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ecco_-_the_tides_of_time_usa_beta.jpg
+ecco jr usa australia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ecco_jr_usa_australia.jpg
+ecco the dolphin usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ecco_the_dolphin_usa_europe.jpg
+el viento: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/el_viento_usa.jpg
+elemental master: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/elemental_master_usa.jpg
+eliminate down: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/eliminate%20down.jpg
+espn baseball tonight: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/espn_baseball_tonight_usa.jpg
+espn national hockey night usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/espn_national_hockey_night_usa_beta.jpg
+espn speed world usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/espn_speed_world_usa_beta.jpg
+espn sunday night nfl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/espn_sunday_night_nfl_usa.jpg
+eswat - city under siege usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/eswat_-_city_under_siege_usa_europe.jpg
+eternal champions: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/eternal_champions_usa.jpg
+evander holyfields real deal boxing: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/evander_holyfields_real_deal_boxing_world.jpg
+ex-mutants usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ex-mutants_usa_europe.jpg
+exile: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/exile_usa.jpg
+exo squad usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/exo_squad_usa_beta.jpg
+exodus - journey to the promised land usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/exodus_-_journey_to_the_promised_land_usa_unl.jpg
+f-117 night storm usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/f-117_night_storm_usa_europe.jpg
+f-15 strike eagle ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/f-15_strike_eagle_ii_usa_beta.jpg
+f-22 interceptor usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/f-22_interceptor_usa_beta.jpg
+f1 - world championship edition europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/f1_-_world_championship_edition_europe_beta.jpg
+f1 circus md: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/f1_circus_md_japan.jpg
+faery tale adventure the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/faery_tale_adventure_the_usa_europe.jpg
+family feud: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/family_feud_usa.jpg
+fantasia world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fantasia_world_rev_a.jpg
+fantastic dizzy usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fantastic_dizzy_usa_europe.jpg
+fastest 1: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fastest_1_japan.jpg
+fatal fury 2 usa korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fatal_fury_2_usa_korea.jpg
+fatal fury: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fatal_fury_usa.jpg
+fatal labyrinth usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fatal_labyrinth_usa_europe.jpg
+fatal rewind usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fatal_rewind_usa_europe.jpg
+ferrari grand prix challenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ferrari_grand_prix_challenge_usa.jpg
+fifa 98 - road to world cup: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fifa_98_-_road_to_world_cup_europe.jpg
+fifa international soccer usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fifa_international_soccer_usa_europe.jpg
+fifa soccer 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fifa_soccer_95_usa_europe.jpg
+fifa soccer 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fifa_soccer_96_usa_europe.jpg
+fifa soccer 97 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fifa_soccer_97_usa_europe.jpg
+fighting masters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fighting_masters_usa.jpg
+final zone japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/final_zone_japan_usa.jpg
+fire mustang: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fire_mustang_japan.jpg
+fire shark: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fire_shark_usa.jpg
+flashback - the quest for identity usa alt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/flashback_-_the_quest_for_identity_usa_alt.jpg
+flicky usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/flicky_usa_europe.jpg
+flintstones the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/flintstones_the_usa.jpg
+foreman for real: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/foreman_for_real_world.jpg
+forgotten worlds world v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/forgotten_worlds_world_v11.jpg
+formula one: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/formula_one_usa.jpg
+frank thomas big hurt baseball usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/frank_thomas_big_hurt_baseball_usa_europe.jpg
+frogger: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/frogger_usa.jpg
+fun n games: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/fun_n_games_usa.jpg
+funny world & balloon boy usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/funny_world_%26_balloon_boy_usa_unl.jpg
+g-loc air battle world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/g-loc_air_battle_world_beta.jpg
+gadget twins: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gadget_twins_usa.jpg
+gaiares japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gaiares_japan_usa.jpg
+gain ground world alt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gain_ground_world_alt.jpg
+galaxy force ii world rev b: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/galaxy_force_ii_world_rev_b.jpg
+garfield - caught in the act usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/garfield_-_caught_in_the_act_usa_europe.jpg
+gargoyles: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gargoyles_usa.jpg
+garry kitchens super battletank - war in the gulf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/garry_kitchens_super_battletank_-_war_in_the_gulf_usa.jpg
+gauntlet iv usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gauntlet_iv_usa_europe.jpg
+gemfire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gemfire_usa.jpg
+general chaos usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/general_chaos_usa_europe.jpg
+generations lost usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/generations_lost_usa_europe.jpg
+genghis khan ii - clan of the gray wolf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/genghis_khan_ii_-_clan_of_the_gray_wolf_usa.jpg
+george foremans ko boxing: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/george_foremans_ko_boxing_usa.jpg
+ghostbusters world v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ghostbusters_world_v11.jpg
+ghouls n ghosts usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ghouls_n_ghosts_usa_europe_rev_a.jpg
+gods usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gods_usa_beta.jpg
+golden axe ii world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/golden_axe_ii_world_beta.jpg
+golden axe iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/golden_axe_iii_japan.jpg
+golden axe world v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/golden_axe_world_v11.jpg
+goofys hysterical history tour: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/goofys_hysterical_history_tour_usa.jpg
+gouketsuji ichizoku: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gouketsuji_ichizoku_japan.jpg
+granada japan usa v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/granada_japan_usa_v11.jpg
+great circus mystery starring mickey & minnie the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/great_circus_mystery_starring_mickey_%26_minnie_the_usa.jpg
+great waldo search the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/great_waldo_search_the_usa.jpg
+greatest heavyweights: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/greatest_heavyweights_usa.jpg
+greendog - the beached surfer dude usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/greendog_-_the_beached_surfer_dude_usa_europe.jpg
+growl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/growl_usa.jpg
+gunship: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gunship_europe.jpg
+gunstar heroes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/gunstar_heroes_usa.jpg
+hard drivin: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hard_drivin_world.jpg
+hardball 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hardball_94_usa_europe.jpg
+hardball 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hardball_95_usa.jpg
+hardball iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hardball_iii_usa.jpg
+hardball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hardball_usa.jpg
+haunting starring polterguy usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/haunting_starring_polterguy_usa_europe.jpg
+head-on soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/head-on_soccer_usa.jpg
+heavy nova: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/heavy_nova_usa.jpg
+heavy unit - mega drive special: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/heavy_unit_-_mega_drive_special_japan.jpg
+hellfire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hellfire_usa.jpg
+herzog zwei - 100 year war edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/herzog_zwei_-_100_year_war_edition.jpg
+high seas havoc: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/high_seas_havoc_usa.jpg
+hit the ice: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hit_the_ice_usa.jpg
+home alone 2 - lost in new york: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/home_alone_2_-_lost_in_new_york_usa.jpg
+home alone usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/home_alone_usa_beta.jpg
+honoo no toukyuuji dodge danpei: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/honoo_no_toukyuuji_dodge_danpei_japan.jpg
+hook: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hook_usa.jpg
+humans the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/humans_the_usa.jpg
+hurricanes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/hurricanes_europe.jpg
+img international tour tennis usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/img_international_tour_tennis_usa_europe.jpg
+immortal the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/immortal_the_usa_europe.jpg
+incredible crash dummies the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/incredible_crash_dummies_the_usa_beta.jpg
+incredible hulk the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/incredible_hulk_the_usa_europe.jpg
+indiana jones and the last crusade: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/indiana_jones_and_the_last_crusade_usa.jpg
+insector x: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/insector_x_usa.jpg
+instruments of chaos starring young indiana jones usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/instruments_of_chaos_starring_young_indiana_jones_usa_beta.jpg
+international rugby: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/international_rugby_europe.jpg
+international superstar soccer deluxe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/international_superstar_soccer_deluxe_europe.jpg
+ishido - the way of stones: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ishido_-_the_way_of_stones_usa.jpg
+it came from the desert usa proto: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/it_came_from_the_desert_usa_proto.jpg
+itchy and scratchy game box 1: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/itchy%20and%20scratchy%20game%20box%201.jpg
+itchy and scratchy game box 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/itchy%20and%20scratchy%20game%20box%202.jpg
+izzys quest for the olympic rings usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/izzys_quest_for_the_olympic_rings_usa_europe.jpg
+jack nicklaus power challenge golf usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jack_nicklaus_power_challenge_golf_usa_europe.jpg
+james bond 007 - the duel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/james_bond_007_-_the_duel_usa.jpg
+james buster douglas knockout boxing usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/james_buster_douglas_knockout_boxing_usa_europe.jpg
+james pond - underwater agent usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/james_pond_-_underwater_agent_usa_europe.jpg
+james pond 3 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/james_pond_3_usa_europe.jpg
+james pond ii - codename robocod usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/james_pond_ii_-_codename_robocod_usa_europe.jpg
+jammit: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jammit_usa.jpg
+jennifer capriati tennis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jennifer_capriati_tennis_usa.jpg
+jeopardy - deluxe edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jeopardy_-_deluxe_edition_usa.jpg
+jeopardy - sports edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jeopardy_-_sports_edition_usa.jpg
+jeopardy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jeopardy_usa.jpg
+jerry glanvilles pigskin footbrawl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jerry_glanvilles_pigskin_footbrawl_usa.jpg
+jewel master usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jewel_master_usa_europe_rev_a.jpg
+jimmy whites whirlwind snooker: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jimmy_whites_whirlwind_snooker_europe.jpg
+joe & mac: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/joe_%26_mac_usa.jpg
+joe montana football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/joe_montana_football_world.jpg
+joe montana ii sports talk football world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/joe_montana_ii_sports_talk_football_world_rev_a.jpg
+john madden football - championship edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/john_madden_football_-_championship_edition_usa.jpg
+john madden football 92 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/john_madden_football_92_usa_europe.jpg
+john madden football 93 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/john_madden_football_93_usa_europe.jpg
+john madden football usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/john_madden_football_usa_europe.jpg
+jordan vs bird usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jordan_vs_bird_usa_europe_v11.jpg
+joshua & the battle of jericho usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/joshua_%26_the_battle_of_jericho_usa_unl.jpg
+judge dredd: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/judge_dredd_world.jpg
+juju densetsu ~ toki - going ape spit world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/juju_densetsu_~_toki_-_going_ape_spit_world_rev_a.jpg
+junction japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/junction_japan_usa.jpg
+jungle book the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jungle_book_the_usa.jpg
+jungle strike usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jungle_strike_usa_beta.jpg
+jurassic park - rampage edition usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jurassic_park_-_rampage_edition_usa_europe.jpg
+jurassic park usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/jurassic_park_usa_beta.jpg
+justice league task force: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/justice_league_task_force_world.jpg
+ka-ge-ki - fists of steel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ka-ge-ki_-_fists_of_steel_usa.jpg
+kawasaki superbike challenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/kawasaki_superbike_challenge_usa_beta.jpg
+kick off 3 - european challenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/kick_off_3_-_european_challenge_europe.jpg
+kid chameleon usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/kid_chameleon_usa_europe.jpg
+killing game show the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/killing_game_show_the_japan.jpg
+king of fighters 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/king_of_fighters_98.jpg
+king of the monsters 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/king_of_the_monsters_2_usa.jpg
+king of the monsters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/king_of_the_monsters_usa.jpg
+king salmon - the big catch: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/king_salmon_-_the_big_catch_usa.jpg
+kings bounty - the conquerors quest usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/kings_bounty_-_the_conquerors_quest_usa_europe.jpg
+klax usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/klax_usa_europe.jpg
+krustys super fun house usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/krustys_super_fun_house_usa_europe_v11.jpg
+la russa baseball 95 usa australia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/la_russa_baseball_95_usa_australia.jpg
+lakers versus celtics and the nba playoffs: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lakers_versus_celtics_and_the_nba_playoffs_usa.jpg
+landstalker: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/landstalker_usa.jpg
+langrisser ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/langrisser_ii_japan.jpg
+last action hero usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/last_action_hero_usa_europe.jpg
+last battle usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/last_battle_usa_europe.jpg
+lawnmower man the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lawnmower_man_the_usa_europe.jpg
+legend of galahad the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/legend_of_galahad_the_usa_europe.jpg
+lemmings 2 - the tribes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lemmings_2_-_the_tribes_usa.jpg
+lemmings japan usa v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lemmings_japan_usa_v11.jpg
+lethal enforcers ii - gun fighters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lethal_enforcers_ii_-_gun_fighters_usa.jpg
+lethal enforcers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lethal_enforcers_usa.jpg
+lhx attack chopper usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lhx_attack_chopper_usa_europe.jpg
+liberty or death: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/liberty_or_death_usa.jpg
+light crusader: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/light_crusader_usa.jpg
+lightening force - quest for the darkstar: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lightening_force_-_quest_for_the_darkstar_usa.jpg
+lion king the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lion_king_the_world.jpg
+lost vikings the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lost_vikings_the_usa.jpg
+lost world the - jurassic park usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lost_world_the_-_jurassic_park_usa_europe.jpg
+lotus ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lotus_ii_usa_beta.jpg
+lotus turbo challenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/lotus_turbo_challenge_usa_europe.jpg
+m-1 abrams battle tank usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/m-1_abrams_battle_tank_usa_europe.jpg
+madden nfl 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/madden_nfl_94_usa_europe.jpg
+madden nfl 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/madden_nfl_95_usa_europe.jpg
+madden nfl 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/madden_nfl_96_usa_europe.jpg
+madden nfl 97 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/madden_nfl_97_usa_europe.jpg
+madden nfl 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/madden_nfl_98_usa.jpg
+magic school bus the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/magic_school_bus_the_usa.jpg
+magical taruruuto-kun: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/magical_taruruuto-kun_japan.jpg
+mamono hunter youko - dai 7 no keishou: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mamono_hunter_youko_-_dai_7_no_keishou_japan.jpg
+man overboard: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/man_overboard_europe.jpg
+marble madness usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/marble_madness_usa_europe.jpg
+mario andretti racing usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mario_andretti_racing_usa_europe.jpg
+mario lemieux hockey usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mario_lemieux_hockey_usa_europe.jpg
+marko: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/marko_usa.jpg
+marsupilami: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/marsupilami_usa.jpg
+marvel land: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/marvel_land_usa.jpg
+mary shelleys frankenstein: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mary_shelleys_frankenstein_usa.jpg
+master of monsters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/master_of_monsters_usa.jpg
+master of weapon: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/master_of_weapon_japan.jpg
+math blaster - episode 1: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/math_blaster_-_episode_1_usa.jpg
+mazin saga - mutant fighter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mazin_saga_-_mutant_fighter_usa.jpg
+mcdonalds treasure land adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mcdonalds_treasure_land_adventure_usa.jpg
+mega bomberman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mega_bomberman_usa.jpg
+mega man - the wily wars: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mega_man_-_the_wily_wars_europe.jpg
+mega swiv: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mega_swiv_europe.jpg
+mega turrican: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mega_turrican_usa.jpg
+megapanel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/megapanel_japan.jpg
+menacer 6-game cartridge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/menacer_6-game_cartridge_usa_europe.jpg
+michael jacksons moonwalker world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/michael_jacksons_moonwalker_world_rev_a.jpg
+mick & mack as the global gladiators usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mick_%26_mack_as_the_global_gladiators_usa_beta.jpg
+mickey mania - the timeless adventures of mickey mouse usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mickey_mania_-_the_timeless_adventures_of_mickey_mouse_usa_beta.jpg
+mickeys ultimate challenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mickeys_ultimate_challenge_usa.jpg
+micro machines 2 - turbo tournament europe j-cart alt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/micro_machines_2_-_turbo_tournament_europe_j-cart_alt.jpg
+micro machines military europe j-cart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/micro_machines_military_europe_j-cart.jpg
+micro machines turbo tournament 96 europe j-cart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/micro_machines_turbo_tournament_96_europe_j-cart.jpg
+micro machines usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/micro_machines_usa_europe.jpg
+midnight resistance: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/midnight_resistance_usa.jpg
+mig-29 fighter pilot: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mig-29_fighter_pilot_usa.jpg
+might and magic - gates to another world usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/might_and_magic_-_gates_to_another_world_usa_europe.jpg
+mighty morphin power rangers - the movie: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mighty_morphin_power_rangers_-_the_movie_usa.jpg
+mighty morphin power rangers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mighty_morphin_power_rangers_usa.jpg
+mike ditka power football usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mike_ditka_power_football_usa_europe.jpg
+minnesota fats - pool legend: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/minnesota_fats_-_pool_legend_usa.jpg
+miracle piano teaching system the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/miracle_piano_teaching_system_the_usa.jpg
+mlbpa baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mlbpa_baseball_usa.jpg
+monopoly: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/monopoly_usa.jpg
+monster world iv: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/monster_world_iv_japan.jpg
+mortal kombat 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mortal_kombat_3_usa.jpg
+mortal kombat [enhancement]: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mortal_kombat_%5Benhancement%5D.jpg
+mortal kombat ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mortal_kombat_ii_world.jpg
+mr nutz: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mr_nutz_europe.jpg
+ms pac-man usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ms_pac-man_usa_europe.jpg
+muhammad ali heavyweight boxing usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/muhammad_ali_heavyweight_boxing_usa_beta.jpg
+musha - metallic uniframe super hybrid armor: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/musha_-_metallic_uniframe_super_hybrid_armor_usa.jpg
+mutant league football usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mutant_league_football_usa_europe.jpg
+mutant league hockey usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mutant_league_hockey_usa_europe.jpg
+mystic defender usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mystic_defender_usa_europe_rev_a.jpg
+mystical fighter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/mystical_fighter_usa.jpg
+nba action 94: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_action_94_usa.jpg
+nba action 95 starring david robinson usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_action_95_starring_david_robinson_usa_europe.jpg
+nba all-star challenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_all-star_challenge_usa_europe.jpg
+nba hang time: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_hang_time_usa.jpg
+nba jam: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_jam_japan.jpg
+nba jam tournament edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_jam_tournament_edition_world.jpg
+nba live 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_live_95_usa_europe.jpg
+nba live 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_live_96_usa_europe.jpg
+nba live 97 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_live_97_usa_europe.jpg
+nba live 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_live_98_usa.jpg
+nba showdown 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nba_showdown_94_usa_beta.jpg
+ncaa final four basketball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ncaa_final_four_basketball_usa.jpg
+ncaa football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ncaa_football_usa.jpg
+new horizons: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/new_horizons_usa.jpg
+new zealand story the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/new_zealand_story_the_japan.jpg
+newman haas indy car featuring nigel mansell: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/newman_haas_indy_car_featuring_nigel_mansell_world.jpg
+nfl 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_95_usa_europe.jpg
+nfl 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_98_usa.jpg
+nfl football 94 starring joe montana: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_football_94_starring_joe_montana_usa.jpg
+nfl quarterback club 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_quarterback_club_96_usa_europe.jpg
+nfl quarterback club: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_quarterback_club_world.jpg
+nfl sports talk football 93 starring joe montana usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nfl_sports_talk_football_93_starring_joe_montana_usa_europe.jpg
+nhl 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_94_usa_europe.jpg
+nhl 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_95_usa_europe.jpg
+nhl 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_96_usa_europe.jpg
+nhl 97 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_97_usa_europe.jpg
+nhl 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_98_usa.jpg
+nhl all-star hockey 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_all-star_hockey_95_usa.jpg
+nhl hockey: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhl_hockey_usa.jpg
+nhlpa hockey 93 usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nhlpa_hockey_93_usa_europe_v11.jpg
+nigel mansells world championship racing: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nigel_mansells_world_championship_racing_usa.jpg
+nightmare circus brazil: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nightmare_circus_brazil_beta.jpg
+no escape: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/no_escape_usa.jpg
+nobunagas ambition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/nobunagas_ambition_usa.jpg
+normys beach babe-o-rama usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/normys_beach_babe-o-rama_usa_europe.jpg
+olympic gold usa alt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/olympic_gold_usa_alt.jpg
+olympic summer games usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/olympic_summer_games_usa_europe.jpg
+onslaught usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/onslaught_usa_europe.jpg
+ooze the japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ooze_the_japan_usa.jpg
+operation europe - path to victory 1939-45: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/operation_europe_-_path_to_victory_1939-45_usa.jpg
+osomatsu-kun hachamecha gekijou: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/osomatsu-kun_hachamecha_gekijou_japan.jpg
+ottifants the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ottifants_the_europe.jpg
+out of this world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/out_of_this_world_usa.jpg
+outlander: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/outlander_usa.jpg
+outrun 2019 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/outrun_2019_usa_beta.jpg
+outrun usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/outrun_usa_europe.jpg
+outrunners: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/outrunners_usa.jpg
+pac-attack: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pac-attack_usa.jpg
+pac-man 2 - the new adventures: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pac-man_2_-_the_new_adventures_usa.jpg
+pac-mania usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pac-mania_usa_europe.jpg
+pagemaster the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pagemaster_the_usa_beta.jpg
+panorama cotton: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/panorama_cotton_japan.jpg
+paperboy 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/paperboy_2_usa_europe.jpg
+paperboy usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/paperboy_usa_europe.jpg
+pat riley basketball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pat_riley_basketball_usa.jpg
+pebble beach golf links: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pebble_beach_golf_links_usa.jpg
+pele ii - world tournament soccer usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pele_ii_-_world_tournament_soccer_usa_europe.jpg
+pele usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pele_usa_europe.jpg
+pepenga pengo: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pepenga%20pengo.jpg
+pete sampras tennis usa europe j-cart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pete_sampras_tennis_usa_europe_j-cart.jpg
+pga european tour usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pga_european_tour_usa_europe.jpg
+pga tour 96 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pga_tour_96_usa_europe.jpg
+pga tour golf ii usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pga_tour_golf_ii_usa_europe_v11.jpg
+pga tour golf iii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pga_tour_golf_iii_usa_europe.jpg
+pga tour golf usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pga_tour_golf_usa_europe_v11.jpg
+phantasy star ii - annes adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phantasy_star_ii_-_annes_adventure.jpg
+phantasy star ii - evil overload: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phantasy_star_ii_-_evil_overload.jpg
+phantasy star iii - generations of doom usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phantasy_star_iii_-_generations_of_doom_usa_europe.jpg
+phantasy star iv - arranged version: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phantasy_star_iv_-_arranged_version.jpg
+phantom 2040: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phantom_2040_usa.jpg
+phelios: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/phelios_usa.jpg
+picapaugame: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/picapaugame.jpg
+pink goes to hollywood usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pink_goes_to_hollywood_usa_beta.jpg
+pirates gold usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pirates_gold_usa_beta.jpg
+pit-fighter world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pit-fighter_world_rev_a.jpg
+pitfall - the mayan adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pitfall_-_the_mayan_adventure_usa.jpg
+pocahontas: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pocahontas_usa.jpg
+pocket monster i: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pocket_monster_i.jpg
+populous: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/populous_usa.jpg
+power drive: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/power_drive_europe.jpg
+power monger usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/power_monger_usa_europe.jpg
+powerball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/powerball_usa.jpg
+predator 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/predator_2_usa_europe.jpg
+premier manager 97: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/premier_manager_97_europe.jpg
+premier manager: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/premier_manager_europe.jpg
+primal rage usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/primal_rage_usa_europe.jpg
+prime time nfl starring deion sanders: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/prime_time_nfl_starring_deion_sanders_usa.jpg
+prince of persia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/prince_of_persia_usa.jpg
+pro quarterback: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pro_quarterback_usa.jpg
+psycho pinball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/psycho_pinball_europe.jpg
+pto - pacific theater of operations: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pto_-_pacific_theater_of_operations_usa.jpg
+puggsy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/puggsy_usa.jpg
+pulseman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/pulseman_japan.jpg
+punisher the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/punisher_the_usa.jpg
+puyo puyo 2 japan v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/puyo_puyo_2_japan_v11.jpg
+puyo puyo: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/puyo_puyo_japan.jpg
+quackshot starring donald duck world v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/quackshot_starring_donald_duck_world_v11.jpg
+quad challenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/quad_challenge_usa.jpg
+race drivin: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/race_drivin_usa.jpg
+radical rex: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/radical_rex_usa.jpg
+raiden trad japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/raiden_trad_japan_usa.jpg
+rainbow islands extra: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rainbow_islands_extra_japan.jpg
+rambo iii world v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rambo_iii_world_v11.jpg
+rampart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rampart_usa.jpg
+ranger x: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ranger_x_usa.jpg
+rastan saga ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rastan_saga_ii_usa.jpg
+rbi baseball 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rbi_baseball_3_usa.jpg
+rbi baseball 4: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rbi_baseball_4_usa.jpg
+rbi baseball 93: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rbi_baseball_93_usa.jpg
+rbi baseball 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rbi_baseball_94_usa_europe.jpg
+red zone usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/red_zone_usa_europe.jpg
+ren & stimpy show presents stimpys invention the usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ren_%26_stimpy_show_presents_stimpys_invention_the_usa_beta.jpg
+revenge of shinobi the usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/revenge_of_shinobi_the_usa_europe_rev_a.jpg
+revolution x usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/revolution_x_usa_europe.jpg
+richard scarrys busytown: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/richard_scarrys_busytown_usa.jpg
+rings of power usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rings_of_power_usa_europe.jpg
+rise of the robots: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rise_of_the_robots_europe.jpg
+risk: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/risk_usa.jpg
+risky woods usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/risky_woods_usa_europe.jpg
+ristar usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ristar_usa_europe.jpg
+road rash 3 usa alpha: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/road_rash_3_usa_alpha.jpg
+road rash ii usa europe v12: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/road_rash_ii_usa_europe_v12.jpg
+road rash usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/road_rash_usa_europe.jpg
+roadblasters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/roadblasters_usa.jpg
+robocop 3 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/robocop_3_usa_europe.jpg
+robocop versus the terminator: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/robocop_versus_the_terminator_usa.jpg
+rock n roll racing: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rock_n_roll_racing_usa.jpg
+rocket knight adventures: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rocket_knight_adventures_usa.jpg
+rockman x3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rockman_x3.jpg
+roger clemens mvp baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/roger_clemens_mvp_baseball_usa.jpg
+rolling thunder 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rolling_thunder_2_usa.jpg
+rolling thunder 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rolling_thunder_3_usa.jpg
+rolo to the rescue usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rolo_to_the_rescue_usa_europe.jpg
+romance of the three kingdoms ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/romance_of_the_three_kingdoms_ii_usa.jpg
+romance of the three kingdoms iii - dragon of destiny: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/romance_of_the_three_kingdoms_iii_-_dragon_of_destiny_usa.jpg
+rugby world cup 95 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/rugby_world_cup_95_usa_europe.jpg
+sagaia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sagaia_usa.jpg
+saint sword: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/saint_sword_usa.jpg
+sampras tennis 96 europe j-cart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sampras_tennis_96_europe_j-cart.jpg
+samurai shodown: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/samurai_shodown_usa.jpg
+saturday night slammasters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/saturday_night_slammasters_usa.jpg
+scooby-doo mystery: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/scooby-doo_mystery_usa.jpg
+seaquest dsv: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/seaquest_dsv_usa.jpg
+second samurai: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/second_samurai_europe.jpg
+senjou no ookami ii ~ mercs: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/senjou_no_ookami_ii_~_mercs_world.jpg
+sensible soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sensible_soccer_europe.jpg
+sesame street counting cafe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sesame_street_counting_cafe_usa.jpg
+shadow blasters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shadow_blasters_usa.jpg
+shadow dancer - the secret of shinobi: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shadow_dancer_-_the_secret_of_shinobi_world.jpg
+shadow of the beast ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shadow_of_the_beast_ii_usa_europe.jpg
+shadow of the beast usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shadow_of_the_beast_usa_europe.jpg
+shadowrun - weapons mod: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shadowrun_-_weapons_mod.jpg
+shanghai ii - dragons eye usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shanghai_ii_-_dragons_eye_usa_beta.jpg
+shaq-fu usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shaq-fu_usa_europe.jpg
+shining force ii - challenge mode: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shining_force_ii_-_challenge_mode.jpg
+shining force usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shining_force_usa_beta.jpg
+shining in the darkness usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shining_in_the_darkness_usa_europe.jpg
+shinobi iii - return of the ninja master: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shinobi_iii_-_return_of_the_ninja_master_usa.jpg
+shove it the warehouse game: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shove_it_the_warehouse_game_usa.jpg
+shui hu - feng yun zhuan china: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/shui_hu_-_feng_yun_zhuan_china_unl.jpg
+side pocket: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/side_pocket_usa.jpg
+simpsons the - bart vs the space mutants usa europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/simpsons_the_-_bart_vs_the_space_mutants_usa_europe_rev_a.jpg
+simpsons the - barts nightmare usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/simpsons_the_-_barts_nightmare_usa_europe.jpg
+skeleton krew: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/skeleton_krew_usa.jpg
+skitchin usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/skitchin_usa_europe.jpg
+slap fight md: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/slap_fight_md_japan.jpg
+slaughter sport: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/slaughter_sport_usa.jpg
+smurfs the europe rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/smurfs_the_europe_rev_a.jpg
+smurfs travel the world the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/smurfs_travel_the_world_the_europe.jpg
+snake rattle n roll: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/snake_rattle_n_roll_europe.jpg
+snow bros - nick & tom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/snow_bros_-_nick_%26_tom_japan.jpg
+socket: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/socket_usa.jpg
+sol-deace: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sol-deace_usa.jpg
+soldiers of fortune: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/soldiers_of_fortune_usa.jpg
+sonic & knuckles - sonic the hedgehog 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_%26_knuckles_-_sonic_the_hedgehog_2_world.jpg
+sonic & knuckles - sonic the hedgehog 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_%26_knuckles_-_sonic_the_hedgehog_3_world.jpg
+sonic & knuckles: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_%26_knuckles_world.jpg
+sonic - the lost land ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_-_the_lost_land_ii.jpg
+sonic 3d blast usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_3d_blast_usa_europe.jpg
+sonic spinball usa alt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sonic_spinball_usa_alt.jpg
+sorcerers kingdom usa v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sorcerers_kingdom_usa_v11.jpg
+soul blade: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/soul_blade.jpg
+space harrier ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/space_harrier_ii_world.jpg
+space invaders 91: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/space_invaders_91_usa.jpg
+sparkster: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sparkster_usa.jpg
+speedball 2 - brutal deluxe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/speedball_2_-_brutal_deluxe_usa.jpg
+spider-man and venom - maximum carnage: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spider-man_and_venom_-_maximum_carnage_world.jpg
+spider-man and x-men - arcades revenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spider-man_and_x-men_-_arcades_revenge_usa_europe.jpg
+spider-man usa acclaim: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spider-man_usa_acclaim_beta.jpg
+spider-man world sega: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spider-man_world_sega.jpg
+spiritual warfare usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spiritual_warfare_usa_unl.jpg
+spirou: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spirou_europe.jpg
+splatterhouse 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/splatterhouse_2_usa.jpg
+splatterhouse 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/splatterhouse_3_usa.jpg
+sports talk baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sports_talk_baseball_usa.jpg
+spot goes to hollywood: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/spot_goes_to_hollywood_usa.jpg
+squirrel king china: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/squirrel_king_china_unl.jpg
+star control: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/star_control_usa.jpg
+star trek - deep space nine - crossroads of time: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/star_trek_-_deep_space_nine_-_crossroads_of_time_usa.jpg
+star trek - the next generation - echoes from the past usa v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/star_trek_-_the_next_generation_-_echoes_from_the_past_usa_v11.jpg
+starflight usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/starflight_usa_europe_v11.jpg
+stargate usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/stargate_usa_europe.jpg
+steel empire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/steel_empire_usa.jpg
+steel talons usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/steel_talons_usa_beta.jpg
+stormlord: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/stormlord_usa.jpg
+street fighter ii - special champion edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/street_fighter_ii_-_special_champion_edition_usa.jpg
+street racer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/street_racer_europe.jpg
+street smart japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/street_smart_japan_usa.jpg
+streets of rage 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/streets_of_rage_2_usa.jpg
+streets of rage 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/streets_of_rage_3_usa.jpg
+strider returns - journey from darkness: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/strider_returns_-_journey_from_darkness_usa.jpg
+strider usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/strider_usa_europe.jpg
+striker europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/striker_europe_beta.jpg
+sub-terrania usa beta earlier: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sub-terrania_usa_beta_earlier.jpg
+summer challenge usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/summer_challenge_usa_europe.jpg
+sunset riders: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sunset_riders_usa.jpg
+super baseball 2020 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_baseball_2020_usa_europe.jpg
+super battleship: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_battleship_usa.jpg
+super fantasy zone: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_fantasy_zone_europe.jpg
+super hang-on world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_hang-on_world_rev_a.jpg
+super high impact: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_high_impact_usa.jpg
+super hydlide: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_hydlide_usa.jpg
+super kick off: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_kick_off_europe.jpg
+super monaco gp: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_monaco_gp_usa.jpg
+super off road usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_off_road_usa_europe.jpg
+super skidmarks europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_skidmarks_europe_beta.jpg
+super smash tv usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_smash_tv_usa_europe.jpg
+super street fighter ii - the new challengers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_street_fighter_ii_-_the_new_challengers_usa.jpg
+super thunder blade: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_thunder_blade_world.jpg
+super volley ball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/super_volley_ball_usa.jpg
+superman usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/superman_usa_beta.jpg
+sword of sodan usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sword_of_sodan_usa_europe.jpg
+sword of vermilion usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sword_of_vermilion_usa_europe.jpg
+syd of valis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/syd_of_valis_usa.jpg
+sylvester and tweety in cagey capers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/sylvester_and_tweety_in_cagey_capers_usa.jpg
+syndicate usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/syndicate_usa_europe.jpg
+t2 - terminator 2 - judgment day usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/t2_-_terminator_2_-_judgment_day_usa_europe.jpg
+t2 - the arcade game usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/t2_-_the_arcade_game_usa_beta.jpg
+talespin usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/talespin_usa_europe.jpg
+target earth: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/target_earth_usa.jpg
+task force harrier ex: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/task_force_harrier_ex_usa.jpg
+tatsujin ~ truxton: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tatsujin_~_truxton_world.jpg
+taz-mania: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/taz-mania_world.jpg
+taz in escape from mars: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/taz_in_escape_from_mars_usa.jpg
+team usa basketball usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/team_usa_basketball_usa_europe.jpg
+techno clash usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/techno_clash_usa_europe.jpg
+technocop: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/technocop_usa.jpg
+tecmo cup football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_cup_football.jpg
+tecmo super baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_baseball_usa.jpg
+tecmo super bowl ii - special edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_bowl_ii_-_special_edition_usa.jpg
+tecmo super bowl iii - final edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_bowl_iii_-_final_edition_usa.jpg
+tecmo super bowl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_bowl_usa.jpg
+tecmo super hockey: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_hockey_usa.jpg
+tecmo super nba basketball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_super_nba_basketball_usa.jpg
+tecmo world cup: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tecmo_world_cup_usa.jpg
+teenage mutant ninja turtles - the hyperstone heist: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/teenage_mutant_ninja_turtles_-_the_hyperstone_heist_usa.jpg
+teenage mutant ninja turtles - tournament fighters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/teenage_mutant_ninja_turtles_-_tournament_fighters_usa.jpg
+terminator the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/terminator_the_usa.jpg
+test drive ii - the duel usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/test_drive_ii_-_the_duel_usa_europe.jpg
+tetris-cover: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tetris-cover.jpg
+tetris-gen: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tetris-gen.jpg
+theme park usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/theme_park_usa_europe.jpg
+thomas the tank engine & friends: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/thomas_the_tank_engine_%26_friends_usa.jpg
+thunder force ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/thunder_force_ii_usa_europe.jpg
+thunder force iii japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/thunder_force_iii_japan_usa.jpg
+thunder fox: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/thunder_fox_usa.jpg
+thunder pro wrestling retsuden: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/thunder_pro_wrestling_retsuden_japan.jpg
+tick the: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tick_the_usa.jpg
+time domi: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/time%20domi.jpg
+time killers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/time_killers_usa.jpg
+tinhead: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tinhead_usa.jpg
+tintin au tibet: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tintin_au_tibet_europe.jpg
+tiny toon adventures - acme all-stars usa korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tiny_toon_adventures_-_acme_all-stars_usa_korea.jpg
+tiny toon adventures - busters hidden treasure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tiny_toon_adventures_-_busters_hidden_treasure_usa.jpg
+tnn bass tournament of champions: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tnn_bass_tournament_of_champions_usa.jpg
+tnn outdoors bass tournament 96: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tnn_outdoors_bass_tournament_96_usa.jpg
+todds adventures in slime world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/todds_adventures_in_slime_world_usa.jpg
+toejam & earl in panic on funkotron: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toejam_%26_earl_in_panic_on_funkotron_usa.jpg
+toejam & earl world rev a: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toejam_%26_earl_world_rev_a.jpg
+tom and jerry - frantic antics: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tom_and_jerry_-_frantic_antics_usa.jpg
+tommy lasorda baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tommy_lasorda_baseball_usa.jpg
+tony la russa baseball usa australia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tony_la_russa_baseball_usa_australia.jpg
+top fighter 2000 mk viii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/top_fighter_2000_mk_viii.jpg
+top gear 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/top_gear_2_usa.jpg
+top pro golf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/top_pro_golf_japan.jpg
+total football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/total_football_europe.jpg
+toughman contest usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toughman_contest_usa_europe.jpg
+tougiou king colossus: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tougiou_king_colossus_japan.jpg
+toxic crusaders: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toxic_crusaders_usa.jpg
+toy story: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toy_story_usa.jpg
+toys: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/toys_usa.jpg
+trampoline terror: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/trampoline_terror_usa.jpg
+traysia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/traysia_usa.jpg
+triple play - gold edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/triple_play_-_gold_edition_usa.jpg
+triple play 96: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/triple_play_96_usa.jpg
+trouble shooter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/trouble_shooter_usa.jpg
+troy aikman nfl football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/troy_aikman_nfl_football_usa.jpg
+true lies: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/true_lies_world.jpg
+turbo outrun japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/turbo_outrun_japan_europe.jpg
+turrican usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/turrican_usa_europe.jpg
+twin cobra - desert attack helicopter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/twin_cobra_-_desert_attack_helicopter_usa.jpg
+twinkle tale: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/twinkle_tale_japan.jpg
+two crude dudes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/two_crude_dudes_usa.jpg
+two tribes - populous ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/two_tribes_-_populous_ii_europe.jpg
+tyrants - fight through time: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/tyrants_-_fight_through_time_usa.jpg
+uchuu senkan gomora: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/uchuu_senkan_gomora_japan.jpg
+ultimate mortal kombat trilogy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ultimate_mortal_kombat_trilogy.jpg
+ultimate qix: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ultimate_qix_usa.jpg
+ultimate soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ultimate_soccer_europe.jpg
+ultraman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ultraman_japan.jpg
+uncharted waters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/uncharted_waters_usa.jpg
+undead-line-cover: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/undead-line-cover.jpg
+universal soldier usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/universal_soldier_usa_europe.jpg
+unnecessary roughness 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/unnecessary_roughness_95_usa.jpg
+urban strike usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/urban_strike_usa_europe.jpg
+valis iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/valis_iii_usa.jpg
+valis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/valis_usa.jpg
+vapor trail: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/vapor_trail_usa.jpg
+vectorman 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/vectorman_2_usa_beta.jpg
+vectorman usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/vectorman_usa_beta.jpg
+venom  spider-man - separation anxiety usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/venom__spider-man_-_separation_anxiety_usa_europe.jpg
+verytex: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/verytex_japan.jpg
+viewpoint usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/viewpoint_usa_beta.jpg
+virtua fighter 2 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/virtua_fighter_2_usa_europe.jpg
+virtua racing: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/virtua_racing_usa.jpg
+virtual bart: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/virtual_bart_world.jpg
+virtual pinball usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/virtual_pinball_usa_europe.jpg
+vr troopers usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/vr_troopers_usa_europe.jpg
+wacky worlds creativity studio: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wacky_worlds_creativity_studio_usa.jpg
+wani wani world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wani_wani_world_japan.jpg
+wardner: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wardner_usa.jpg
+warlock usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warlock_usa_beta.jpg
+warpspeed: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warpspeed_usa.jpg
+warrior of rome ii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warrior_of_rome_ii_usa.jpg
+warrior of rome: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warrior_of_rome_usa.jpg
+warsong - graphics hack: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warsong_-_graphics_hack.jpg
+warsong: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/warsong_usa.jpg
+wayne gretzky and the nhlpa all-stars usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wayne_gretzky_and_the_nhlpa_all-stars_usa_europe.jpg
+waynes world: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/waynes_world_usa.jpg
+weaponlord: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/weaponlord_usa.jpg
+whac-a-critter usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/whac-a-critter_usa_unl.jpg
+wheel of fortune: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wheel_of_fortune_usa.jpg
+where in the world is carmen sandiego usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/where_in_the_world_is_carmen_sandiego_usa_europe.jpg
+where in time is carmen sandiego usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/where_in_time_is_carmen_sandiego_usa_europe.jpg
+whip rush: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/whip_rush_usa.jpg
+williams arcades greatest hits: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/williams_arcades_greatest_hits_usa.jpg
+wimbledon championship tennis usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wimbledon_championship_tennis_usa_beta.jpg
+wings of wor: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wings_of_wor_usa.jpg
+winter challenge usa europe rev 1: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/winter_challenge_usa_europe_rev_1.jpg
+winter olympic games: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/winter_olympic_games_usa.jpg
+wiznliz: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wiznliz_usa.jpg
+wolfchild: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wolfchild_usa.jpg
+wolverine - adamantium rage usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wolverine_-_adamantium_rage_usa_europe.jpg
+wonder boy iii - monster lair japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wonder_boy_iii_-_monster_lair_japan_europe.jpg
+wonder boy in monster world usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wonder_boy_in_monster_world_usa_europe.jpg
+world championship soccer ii usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_championship_soccer_ii_usa_beta.jpg
+world championship soccer japan usa v12: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_championship_soccer_japan_usa_v12.jpg
+world class leaderboard golf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_class_leaderboard_golf_usa.jpg
+world cup usa 94 usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_cup_usa_94_usa_europe.jpg
+world heroes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_heroes_usa.jpg
+world of illusion starring mickey mouse and donald duck usa korea: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_of_illusion_starring_mickey_mouse_and_donald_duck_usa_korea.jpg
+world series baseball 95: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_series_baseball_95_usa.jpg
+world series baseball 96: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_series_baseball_96_usa.jpg
+world series baseball 98: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_series_baseball_98_usa.jpg
+world series baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_series_baseball_usa.jpg
+world trophy soccer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/world_trophy_soccer_usa.jpg
+worms europe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/worms_europe_beta.jpg
+wrestle war japan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wrestle_war_japan_beta.jpg
+wwf raw: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wwf_raw_world.jpg
+wwf royal rumble: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wwf_royal_rumble_world.jpg
+wwf super wrestlemania usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wwf_super_wrestlemania_usa_europe.jpg
+wwf wrestlemania - the arcade game usa alpha: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/wwf_wrestlemania_-_the_arcade_game_usa_alpha.jpg
+x-men 2 - clone wars usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/x-men_2_-_clone_wars_usa_europe.jpg
+x-men: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/x-men_usa.jpg
+x-perts: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/x-perts_usa.jpg
+xdr - x-dazedly-ray: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/xdr_-_x-dazedly-ray_japan.jpg
+xenon 2 - megablast: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/xenon_2_-_megablast_europe.jpg
+yogi bear - cartoon capers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/yogi_bear_-_cartoon_capers_europe.jpg
+ys iii: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/ys_iii_usa.jpg
+yuu yuu hakusho - makyou toitsusen: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/yuu_yuu_hakusho_-_makyou_toitsusen_japan.jpg
+zany golf usa europe v11: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zany_golf_usa_europe_v11.jpg
+zero the kamikaze squirrel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zero_the_kamikaze_squirrel_usa.jpg
+zero tolerance usa: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zero_tolerance_usa_europe.jpg
+zero wing clean version: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zero_wing_clean_version.jpg
+zombies ate my neighbors: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zombies_ate_my_neighbors_usa.jpg
+zool - ninja of the nth dimension: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zool_-_ninja_of_the_nth_dimension_usa.jpg
+zoom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zoom_world.jpg
+zoop: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/genesis/zoop_usa.jpg
