@@ -659,10 +659,18 @@ function loadSavedSources() {
 
         const savedById = new Map(saved.map(source => [source.id, source]));
 
-        sources = getInitialSources().map(initial => ({
-            ...initial,
-            ...(savedById.get(initial.id) || {})
-        }));
+        sources = getInitialSources().map(initial => {
+            const savedSource = savedById.get(initial.id) || {};
+            return {
+                ...initial,
+                ...savedSource,
+                url: initial.url,
+                ...(initial.path ? { path: initial.path } : {}),
+                enabled: savedSource.enabled ?? initial.enabled,
+                autoUpdate: savedSource.autoUpdate ?? initial.autoUpdate,
+                recursive: savedSource.recursive ?? initial.recursive
+            };
+        });
 
         saved.forEach(source => {
             if (source.custom && !sources.some(item => item.id === source.id)) {
