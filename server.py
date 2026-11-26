@@ -17,6 +17,7 @@ COVER_CACHE = {}
 CATALOG_CACHE = {}
 CATALOG_CACHE_TTL = 6 * 60 * 60
 CATALOG_LOCK = threading.RLock()
+CATALOG_SOURCE_LOCKS = {}
 COVER_CACHE_TTL = 60 * 60 * 12
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
@@ -365,23 +366,52 @@ def fetch_catalog_from_source(source):
 
 def get_source_catalog(source, force=False):
     key = catalog_cache_key(source)
-    now = time.time()
     with CATALOG_LOCK:
-        cached = CATALOG_CACHE.get(key)
-        if cached and not force and now - cached["cachedAt"] < CATALOG_CACHE_TTL:
-            return {**cached["data"], "cached": True, "stale": False}
+        source_lock = CATALOG_SOURCE_LOCKS.setdefault(key, threading.Lock())
 
-    try:
-        data = fetch_catalog_from_source(source)
-        with CATALOG_LOCK:
-            CATALOG_CACHE[key] = {"data": data, "cachedAt": time.time()}
-        return {**data, "cached": False, "stale": False}
-    except Exception as error:
+    with source_lock:
+        now = time.time()
         with CATALOG_LOCK:
             cached = CATALOG_CACHE.get(key)
-        if cached:
-            return {**cached["data"], "cached": True, "stale": True, "warning": str(error)}
-        raise
+            if cached and not force and now - cached["cachedAt"] < CATALOG_CACHE_TTL:
+                return {**cached["data"], "cached": True, "stale": False}
+
+        try:
+            data = fetch_catalog_from_source(source)
+            with CATALOG_LOCK:
+                CATALOG_CACHE[key] = {
+                    "data": data,
+                    "cachedAt": time.time(),
+                    "lastAttemptAt": time.time(),
+                    "source": dict(source)
+                }
+            return {**data, "cached": False, "stale": False}
+        except Exception as error:
+            with CATALOG_LOCK:
+                cached = CATALOG_CACHE.get(key)
+                if cached:
+                    cached["lastAttemptAt"] = time.time()
+            if cached:
+                return {**cached["data"], "cached": True, "stale": True, "warning": str(error)}
+            raise
+
+
+def refresh_catalogs_forever():
+    while True:
+        time.sleep(60)
+        now = time.time()
+        with CATALOG_LOCK:
+            expired_sources = [
+                dict(entry["source"])
+                for entry in CATALOG_CACHE.values()
+                if now - entry["cachedAt"] >= CATALOG_CACHE_TTL
+                and now - entry.get("lastAttemptAt", 0) >= 15 * 60
+            ]
+        for source in expired_sources:
+            try:
+                get_source_catalog(source, force=True)
+            except Exception:
+                pass
 
 
 
@@ -518,6 +548,7 @@ if __name__ == "__main__":
     host = os.environ.get("HOST", "127.0.0.1")
     port = int(os.environ.get("PORT", "8000"))
     server = ThreadingHTTPServer((host, port), JoglumeHandler)
+    threading.Thread(target=refresh_catalogs_forever, daemon=True).start()
     print(f"Joglume disponível em http://{host}:{port}")
     print("Capas: lista manual em capas/capa.txt.")
     print("PSP e PS2 habilitados com isolamento de origem cruzada.")
