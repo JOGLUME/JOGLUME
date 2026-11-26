@@ -375,43 +375,43 @@ function normalizeName(name) {
 function guessCategory(name) {
     const value = String(name || "")
         .normalize("NFKD")
-        .replace(/[\\u0300-\\u036f]/g, "")
+        .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
         .replace(/[_-]+/g, " ")
-        .replace(/\\.[^.]+$/, "")
-        .replace(/\\s+/g, " ")
+        .replace(/\.[^.]+$/, "")
+        .replace(/\s+/g, " ")
         .trim();
 
-    if (/\\b(minecraft|grand theft auto|gta|terraria|roblox|lego worlds|sandbox|open world|survival|starbound|no man s sky|red dead redemption|motherload)\\b/.test(value)) {
+    if (/\b(minecraft|grand theft auto|gta|terraria|roblox|lego worlds|sandbox|open world|survival|starbound|no man s sky|red dead redemption|motherload)\b/.test(value)) {
         return "mundo-aberto";
     }
 
-    if (/\\b(fifa|pro evolution soccer|pes \\d*|winning eleven|international superstar soccer|iss deluxe|super soccer|sensible soccer|virtua striker|captain tsubasa|soccer|futebol|penalty shootout|world cup soccer|football manager)\\b/.test(value) ||
-        (/\\bfootball\\b/.test(value) && !/\\b(american football|college football|nfl|madden|ncaa|bill walsh)\\b/.test(value))) {
+    if (/\b(fifa|pro evolution soccer|pes \d*|winning eleven|international superstar soccer|iss deluxe|super soccer|sensible soccer|virtua striker|captain tsubasa|soccer|futebol|penalty shootout|world cup soccer|football manager)\b/.test(value) ||
+        (/\bfootball\b/.test(value) && !/\b(american football|college football|nfl|madden|ncaa|bill walsh)\b/.test(value))) {
         return "futebol";
     }
 
-    if (/\\b(street fighter|mortal kombat|tekken|king of fighters|fatal fury|samurai shodown|killer instinct|virtua fighter|soul calibur|boxing|wrestling|fighter|fighting|smash|combat|brawl|super fighters)\\b/.test(value)) {
+    if (/\b(street fighter|mortal kombat|tekken|king of fighters|fatal fury|samurai shodown|killer instinct|virtua fighter|soul calibur|boxing|wrestling|fighter|fighting|smash|combat|brawl|super fighters)\b/.test(value)) {
         return "luta";
     }
 
-    if (/\\b(racing|race|kart|drift|rally|grand prix|formula one|formula 1|f1|moto gp|motogp|motocross|motoracer|need for speed|top gear|road rash|excitebike|v rally|gt advance|diddy kong racing|mario kart|cruis n)\\b/.test(value)) {
+    if (/\b(racing|race|kart|drift|rally|grand prix|formula one|formula 1|f1|moto gp|motogp|motocross|motoracer|need for speed|top gear|road rash|excitebike|v rally|gt advance|diddy kong racing|mario kart|cruis n)\b/.test(value)) {
         return "corrida";
     }
 
-    if (/\\b(final fantasy|chrono trigger|chrono cross|dragon quest|pokemon|fire emblem|golden sun|tales of|breath of fire|earthbound|mother 2|suikoden|secret of mana|sword of mana|lunar|wild arms|shining force|phantasy star|disgaea|rpg|role playing)\\b/.test(value)) {
+    if (/\b(final fantasy|chrono trigger|chrono cross|dragon quest|pokemon|fire emblem|golden sun|tales of|breath of fire|earthbound|mother 2|suikoden|secret of mana|sword of mana|lunar|wild arms|shining force|phantasy star|disgaea|rpg|role playing)\b/.test(value)) {
         return "rpg";
     }
 
-    if (/\\b(basketball|tennis|golf|skate|snowboard|surf|olympic|bowling|baseball|hockey|volleyball|cricket|rugby|nfl|madden|american football|college football|bill walsh|nba|nhl|mlb|pga|tony hawk)\\b/.test(value)) {
+    if (/\b(basketball|tennis|golf|skate|snowboard|surf|olympic|bowling|baseball|hockey|volleyball|cricket|rugby|nfl|madden|american football|college football|bill walsh|nba|nhl|mlb|pga|tony hawk)\b/.test(value)) {
         return "esportes";
     }
 
-    if (/\\b(zelda|tomb raider|metroid|castlevania|indiana jones|monkey island|broken sword|another world|flashback|prince of persia|adventure)\\b/.test(value)) {
+    if (/\b(zelda|tomb raider|metroid|castlevania|indiana jones|monkey island|broken sword|another world|flashback|prince of persia|adventure)\b/.test(value)) {
         return "aventura";
     }
 
-    if (/\\b(sonic|mario|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense|contra|metal slug|mega man|megaman|beat em up)\\b/.test(value)) {
+    if (/\b(sonic|mario|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense|contra|metal slug|mega man|megaman|beat em up)\b/.test(value)) {
         return "acao";
     }
 
