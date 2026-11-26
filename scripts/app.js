@@ -260,7 +260,7 @@ async function loadGameCover(game, cover, skipCache = false) {
     }
 
     try {
-        const response = await fetch("/api/covers?q=" + encodeURIComponent(game.name), {
+        const response = await fetch("/api/covers?q=" + encodeURIComponent(game.name) + "&platform=" + encodeURIComponent(game.type || "html5"), {
             headers: { Accept: "application/json" },
             cache: "no-store"
         });
