@@ -555,7 +555,7 @@ if __name__ == "__main__":
     server = ThreadingHTTPServer((host, port), JoglumeHandler)
     threading.Thread(target=refresh_catalogs_forever, daemon=True).start()
     print(f"Joglume disponível em http://{host}:{port}")
-    print("Capas: lista manual em capas/capa.txt.")
+    print("Capas: listas manuais separadas por plataforma em capas/<plataforma>/capa.txt.")
     print("PSP e PS2 habilitados com isolamento de origem cruzada.")
     if host in ("127.0.0.1", "localhost"):
         threading.Timer(0.8, lambda: webbrowser.open(f"http://localhost:{port}")).start()
