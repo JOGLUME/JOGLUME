@@ -1,0 +1,139 @@
+# Jogos HTML5 ainda sem capa verificada
+1 on 1 soccer
+1 on 1 tennis
+1.12
+1.12 WASM
+1.5
+1.8
+1.8 WASM
+12 mini battles
+2048 cupcakes
+34027 flash game
+8 ball classic
+9007199254740992
+Alpha 1.2.6
+Beta 1.3
+Indev
+agar io lite
+age of defense 8
+ages of conflict
+animator
+animator 2
+bad ice cream 3 boysplaygame
+bad parenting
+bad piggies
+bad time simulator
+baseball bros
+basket bros
+big neon tower tiny square
+bit planes
+bitlife
+bloons TD 2
+bloons super monkey
+bloons tower defence
+bloons tower defence 2
+bloons tower defence 3
+bloons tower defence 4
+bloons tower defence 5
+bow masters
+boxel rebound
+boxhead 2play rooms
+candy crush
+car drawing
+car king arena
+chess
+choppy orc
+commando 2 by miniclip
+coreball
+crazy cattle 3D
+cut the rope holiday gift
+desktop tower defense
+dont shoot the puppy
+drift hunters pro
+duck life 1
+duck life 2 world champion
+duck life 3 evolution
+duck life 5
+earn to die 2
+elephant quest
+escape road
+escape road 2
+evil glitch
+fancy pants adventure
+fancy pants adventure 2
+fish tales 2
+fish tales deluxe edition
+flood runner 2
+flood runner 3
+flood runner 4
+funny battle
+funny battle 2
+funny mad racing
+gladi hoppers
+google baseball
+google dino
+gotham city rush
+granny 2
+henry stickmin breaking the bank
+henry stickmin escaping the prison
+henry stickmin stealing the diamond
+hobo 2
+hobo 3
+ice dodo
+idle dice
+interactive buddy
+kittytoy
+learn 2 fly
+mad arrow
+madness interactive
+melon playground
+moto x3m 3
+moto x3m winter
+nanaca crash
+noob miner
+openTTD
+ovo 2
+ovo 3 dimensions
+pandemic 2
+parking fury
+pc breakdown
+picos school
+pixel speedrun
+pocket fighter nova updated
+portal flash
+red ball 4 vol 1
+red ball 4 vol 3
+run 2
+sand game
+showdown
+slope 2 player
+sm 63
+sm 64
+snail bob 4
+snake
+snow rider
+stick rpg
+subway surfers beijing
+subway surfers havana
+subway surfers san francisco
+super mario bros crossover 3
+super mario flash 4
+super mario flash by povetpu games
+super mario flash by smf creator
+superhot
+tanuki sunset
+tetrominoes
+the fancy pants adventure 1
+the fancy pants adventure 2
+the fancy pants adventure 3
+there is no g
+time shooter 3
+truck loader 2
+truck loader 3
+turtle
+vex
+volley random
+wheely 4
+wheely 5
+worlds hardest game 2
+worlds hardest game 3
