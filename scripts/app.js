@@ -26,6 +26,8 @@ const DIRECTORIES = [
         owner: "CoolDude2349",
         repo: "Offline-HTML-Games-Pack",
         branch: "master",
+        path: "offline",
+        url: "https://github.com/CoolDude2349/Offline-HTML-Games-Pack/tree/master/offline",
         category: "acao",
         platform: "html5",
         origin: "native"
