@@ -214,7 +214,16 @@ def put_file(path, content, sha, message):
 def main():
     games = source_games()
     print(f"Jogos únicos encontrados: {len(games)}")
-    sitemap = discover_catalog_urls(games)
+    old, sha = github_file("capas/capa.txt")
+    entries = {}
+    for line in old.splitlines():
+        if ":" in line:
+            name, url = line.split(":", 1)
+            if url.strip().startswith("https://"):
+                entries[norm(name)] = (name.strip(), url.strip())
+    uncovered_games = {slug: title for slug, title in games.items() if slug not in entries}
+    print(f"Jogos que realmente precisam de capa: {len(uncovered_games)}")
+    sitemap = discover_catalog_urls(uncovered_games)
     by_slug = {}
     for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
         slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
@@ -230,13 +239,6 @@ def main():
             image = future.result()
             if image:
                 results[slug] = (title, image)
-    old, sha = github_file("capas/capa.txt")
-    entries = {}
-    for line in old.splitlines():
-        if ":" in line:
-            name, url = line.split(":", 1)
-            if url.strip().startswith("https://"):
-                entries[norm(name)] = (name.strip(), url.strip())
     added = 0
     for slug, (title, image) in results.items():
         if slug not in entries or "jogos360.com.br" in entries[slug][1].lower():
