@@ -945,9 +945,12 @@ async function loadDirectory(source, options = {}) {
     updateDirectoryStatus(source, "Carregando...", "#ffb347");
 
     try {
-        const repositoryURL = `${CONFIG.githubAPI}${source.owner}/${source.repo}`;
-        const repoInfo = await githubFetch(repositoryURL);
-        const branch = source.branch || repoInfo.default_branch;
+        let branch = source.branch;
+        if (!branch) {
+            const repositoryURL = `${CONFIG.githubAPI}${source.owner}/${source.repo}`;
+            const repoInfo = await githubFetch(repositoryURL);
+            branch = repoInfo.default_branch;
+        }
 
         const files = await getRepositoryFiles(
             source.owner,
