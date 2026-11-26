@@ -424,7 +424,7 @@ def refresh_catalogs_forever():
 
 
 def load_manual_covers(platform):
-    allowed_platforms = {"html5", "flash", "gba", "gbc", "gb", "nes", "snes", "nds", "n64", "segaMD", "psx", "arcade", "psp"}
+    allowed_platforms = {"html5", "flash", "gba", "gb", "nes", "snes", "segaMD", "psx", "arcade", "psp"}
     if platform not in allowed_platforms:
         return []
 
@@ -457,24 +457,27 @@ def find_manual_cover(game_name, platform):
     if not target:
         return None
 
-    target_words = set(target.split())
-    ranked = []
+    def cover_key(value):
+        value = re.sub(r"\\([^)]*\\)|\\[[^]]*\\]", " ", str(value or ""))
+        return normalize_search_text(value)
+
+    target_key = cover_key(game_name)
     entries = load_manual_covers(platform)
     normalized_entries = [
-        (normalize_search_text(entry["name"]), entry)
+        (cover_key(entry["name"]), entry)
         for entry in entries
     ]
 
     for candidate, entry in normalized_entries:
-        if candidate == target:
-            return {"name": entry["name"], "url": entry["url"], "match": "exact"}
+        if candidate and candidate == target_key:
+            return {"name": entry["name"], "url": entry["url"], "match": "normalized-exact"}
 
     family_matches = [
         (candidate, entry)
         for candidate, entry in normalized_entries
         if len(candidate) >= 5
         and len(candidate.split()) >= 2
-        and target.startswith(candidate + " ")
+        and target_key.startswith(candidate + " ")
     ]
     if family_matches:
         candidate, entry = max(family_matches, key=lambda item: len(item[0]))
