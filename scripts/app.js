@@ -2216,7 +2216,7 @@ function addHTML5Options() {
             ["html5", "HTML5"],
             ...Object.entries(PLATFORM_INFO).map(([type, info]) => [type, info.label])
         ];
-        const allButton = filterButtons.querySelector('[data-filter="todos"]');
+        let anchor = filterButtons.querySelector('[data-filter="todos"]');
 
         filterOrder.forEach(([type, label]) => {
             let button = filterButtons.querySelector(`[data-filter="${type}"]`);
@@ -2228,8 +2228,9 @@ function addHTML5Options() {
                 button.textContent = label;
             }
 
-            if (allButton) {
-                allButton.after(button);
+            if (anchor) {
+                anchor.after(button);
+                anchor = button;
             } else {
                 filterButtons.appendChild(button);
             }
