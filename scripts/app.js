@@ -970,6 +970,19 @@ async function loadDirectory(source, options = {}) {
             .filter(path => !/(^|\/)(readme|license|changelog|contributing)\.(html?|md)$/i.test(path))
             .slice(0, CONFIG.maxGamesPerSource);
 
+        const currentSourcePaths = new Set(supportedFiles);
+        const staleGameIds = games
+            .filter(game => game.sourceId === source.id && !currentSourcePaths.has(game.path))
+            .map(game => game.id);
+
+        if (staleGameIds.length) {
+            games = games.filter(game => !staleGameIds.includes(game.id));
+            favorites = favorites.filter(id => !staleGameIds.includes(id));
+            recentGames = recentGames.filter(id => !staleGameIds.includes(id));
+            saveFavorites();
+            saveRecent();
+        }
+
         let added = 0;
         let updated = 0;
 
