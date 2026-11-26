@@ -474,12 +474,14 @@ function showToast(message, type = "success") {
 }
 
 function normalizeName(name) {
-    return String(name || "")
+    const cleaned = String(name || "")
         .replace(/\.[^.]+$/, "")
         .replace(/[_-]/g, " ")
         .replace(/\s+/g, " ")
-        .trim()
-        .replace(/\b\w/g, letter => letter.toUpperCase());
+        .trim();
+    const minecraftVersion = cleaned.match(/^minecraft\s*(\d+(?:\.\d+){1,2})$/i);
+    if (minecraftVersion) return `Minecraft — Versão ${minecraftVersion[1]}`;
+    return cleaned.replace(/\b\w/g, letter => letter.toUpperCase());
 }
 
 function guessCategory(name) {
