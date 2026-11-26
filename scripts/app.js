@@ -316,6 +316,19 @@ async function getManualCover(game) {
     const exact = entries.find(entry => entry.normalized === target);
     if (exact) return { name: exact.name, url: exact.url, match: "exact" };
 
+    const familyMatches = entries
+        .filter(entry =>
+            entry.normalized.length >= 5 &&
+            entry.normalized.split(" ").length >= 2 &&
+            target.startsWith(entry.normalized + " ")
+        )
+        .sort((a, b) => b.normalized.length - a.normalized.length);
+
+    if (familyMatches.length) {
+        const family = familyMatches[0];
+        return { name: family.name, url: family.url, match: "series-fallback" };
+    }
+
     const targetWords = target.split(" ").filter(Boolean);
     let best = null;
     let bestScore = 0;
