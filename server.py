@@ -229,6 +229,33 @@ def search_portal_cover(game_name):
     return None
 
 
+def cover_search_terms(game_name):
+    normalized = normalize_search_text(game_name)
+    if not normalized:
+        return []
+
+    aliases = {
+        "fnaf": ["Five Nights at Freddy's"],
+        "fnaf 3": ["Five Nights at Freddy's 3", "Five Nights at Freddy's"],
+        "fnaf 4": ["Five Nights at Freddy's 4", "Five Nights at Freddy's"],
+        "fnaf sister location": ["Five Nights at Freddy's Sister Location", "Five Nights at Freddy's"],
+        "flash sonic": ["Sonic the Hedgehog", "Sonic"],
+    }
+    if normalized in aliases:
+        return aliases[normalized]
+
+    if "subway surfers" in normalized:
+        return ["Subway Surfers"]
+    if "mario" in normalized:
+        return ["Super Mario"]
+    if "sonic" in normalized:
+        return ["Sonic the Hedgehog", "Sonic"]
+    if normalized.startswith("minecraft"):
+        return ["Minecraft"]
+
+    return [game_name]
+
+
 def find_automatic_cover(game_name):
     key = normalize_search_text(game_name)
     if not key:
@@ -236,7 +263,15 @@ def find_automatic_cover(game_name):
     cached = COVER_CACHE.get(key)
     if cached and time.time() - cached["time"] < COVER_CACHE_TTL:
         return cached["image"]
-    image = search_portal_cover(game_name)
+
+    image = None
+    for search_name in cover_search_terms(game_name):
+        image = search_portal_cover(search_name)
+        if image:
+            image["requested_name"] = game_name
+            image["searched_name"] = search_name
+            break
+
     COVER_CACHE[key] = {"time": time.time(), "image": image}
     return image
 
