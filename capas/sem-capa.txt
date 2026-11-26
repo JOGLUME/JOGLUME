@@ -6,7 +6,6 @@
 1.5
 1.8
 1.8 WASM
-10 minutes till dawn
 12 mini battles
 2048 cupcakes
 34027 flash game
@@ -20,7 +19,6 @@ age of defense 8
 ages of conflict
 animator
 animator 2
-backrooms
 bad ice cream 3 boysplaygame
 bad parenting
 bad piggies
@@ -49,7 +47,6 @@ commando 2 by miniclip
 coreball
 crazy cattle 3D
 cut the rope holiday gift
-death run 3D
 desktop tower defense
 dont shoot the puppy
 drift hunters pro
@@ -74,7 +71,6 @@ fnaf
 fnaf 3
 fnaf 4
 fnaf sister location
-free rider 3
 funny battle
 funny battle 2
 funny mad racing
@@ -93,7 +89,6 @@ idle dice
 interactive buddy
 kittytoy
 learn 2 fly
-learn to fly idle
 mad arrow
 madness interactive
 melon playground
@@ -108,7 +103,6 @@ ovo 3 dimensions
 pacman
 pandemic 2
 parking fury
-parking fury 2
 pc breakdown
 picos school
 pixel speedrun
@@ -123,7 +117,6 @@ riddle school 4
 riddle school transfer
 riddle school transfer 2
 riddle transfer
-riddle transfer 2
 run 2
 sand game
 showdown
@@ -155,7 +148,6 @@ truck loader 2
 truck loader 3
 turtle
 vex
-vex x3m 2
 volley random
 wheely 4
 wheely 5
