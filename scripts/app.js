@@ -16,7 +16,7 @@ const DIRECTORIES = [
         owner: "CleberDevOps",
         repo: "roms-gameboy-advanced",
         branch: "master",
-        category: "rpg",
+        category: "auto",
         platform: "gba",
         origin: "native"
     },
@@ -28,7 +28,7 @@ const DIRECTORIES = [
         branch: "master",
         path: "offline",
         url: "https://github.com/CoolDude2349/Offline-HTML-Games-Pack/tree/master/offline",
-        category: "acao",
+        category: "auto",
         platform: "html5",
         origin: "native"
     },
@@ -38,7 +38,7 @@ const DIRECTORIES = [
         owner: "AmmarSAA",
         repo: "flash-games-directory",
         branch: "main",
-        category: "acao",
+        category: "auto",
         platform: "flash",
         origin: "native"
     },
@@ -110,12 +110,9 @@ const PLATFORM_INFO = {
     flash: { label: "FLASH", extension: ["swf"], icon: "🎮" },
     html5: { label: "HTML5", extension: ["html", "htm"], icon: "🌐" },
     gba: { label: "GBA", extension: ["gba"], icon: "🎮" },
-    gbc: { label: "GBC", extension: ["gbc"], icon: "🎮" },
     gb: { label: "GB", extension: ["gb"], icon: "🎮" },
     nes: { label: "NES", extension: ["nes"], icon: "🎮" },
     snes: { label: "SNES", extension: ["sfc", "smc"], icon: "🎮" },
-    nds: { label: "NDS", extension: ["nds"], icon: "🎮" },
-    n64: { label: "N64", extension: ["z64", "n64", "v64"], icon: "🎮" },
     segaMD: { label: "MEGA DRIVE", extension: ["md", "gen", "bin"], icon: "🎮" },
     psx: { label: "PS1", extension: ["iso", "cue", "bin"], icon: "🎮" },
     arcade: { label: "ARCADE", extension: ["zip"], icon: "🕹️" },
@@ -124,12 +121,9 @@ const PLATFORM_INFO = {
 
 const EMULATOR_CORES = {
     gba: "gba",
-    gbc: "gbc",
     gb: "gb",
     nes: "nes",
     snes: "snes",
-    nds: "nds",
-    n64: "n64",
     segaMD: "segaMD",
     psx: "psx",
     arcade: "arcade",
@@ -148,12 +142,9 @@ const COVER_CONFIG = {
     baseURL: "https://thumbnails.libretro.com/",
     systems: {
         gba: "Nintendo - Game Boy Advance",
-        gbc: "Nintendo - Game Boy Color",
         gb: "Nintendo - Game Boy",
         nes: "Nintendo - Nintendo Entertainment System",
         snes: "Nintendo - Super Nintendo Entertainment System",
-        nds: "Nintendo - Nintendo DS",
-        n64: "Nintendo - Nintendo 64",
         segaMD: "Sega - Mega Drive - Genesis",
         psx: "Sony - PlayStation",
         psp: "Sony - PlayStation Portable",
@@ -382,33 +373,45 @@ function normalizeName(name) {
 }
 
 function guessCategory(name) {
-    const value = String(name || "").toLowerCase();
+    const value = String(name || "")
+        .normalize("NFKD")
+        .replace(/[\\u0300-\\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[_-]+/g, " ")
+        .replace(/\\.[^.]+$/, "")
+        .replace(/\\s+/g, " ")
+        .trim();
 
-    if (/soccer|football|futebol|penalty|goal|world cup|champion|kick|basketball/.test(value)) {
-        return "futebol";
-    }
-
-    if (/boxing|wrestling|fighter|fighting|smash|combat|brawl|street fighter|mortal kombat|super fighters/.test(value)) {
-        return "luta";
-    }
-
-    if (/racing|race|kart|drift|car|bike|motor|rally/.test(value)) {
-        return "corrida";
-    }
-
-    if (/rpg|quest|dungeon|warrior|sword|knight|adventure|zelda/.test(value)) {
-        return "aventura";
-    }
-
-    if (/minecraft|sandbox|world|open world|exploration|explore|motherload|stick rpg/.test(value)) {
+    if (/\\b(minecraft|grand theft auto|gta|terraria|roblox|lego worlds|sandbox|open world|survival|starbound|no man s sky|red dead redemption|motherload)\\b/.test(value)) {
         return "mundo-aberto";
     }
 
-    if (/sport|tennis|golf|skate|snowboard|surf|olympic|bowling|baseball/.test(value)) {
+    if (/\\b(fifa|pro evolution soccer|pes \\d*|winning eleven|international superstar soccer|iss deluxe|super soccer|sensible soccer|virtua striker|captain tsubasa|soccer|futebol|penalty shootout|world cup soccer|football manager)\\b/.test(value) ||
+        (/\\bfootball\\b/.test(value) && !/\\b(american football|college football|nfl|madden|ncaa|bill walsh)\\b/.test(value))) {
+        return "futebol";
+    }
+
+    if (/\\b(street fighter|mortal kombat|tekken|king of fighters|fatal fury|samurai shodown|killer instinct|virtua fighter|soul calibur|boxing|wrestling|fighter|fighting|smash|combat|brawl|super fighters)\\b/.test(value)) {
+        return "luta";
+    }
+
+    if (/\\b(racing|race|kart|drift|rally|grand prix|formula one|formula 1|f1|moto gp|motogp|motocross|motoracer|need for speed|top gear|road rash|excitebike|v rally|gt advance|diddy kong racing|mario kart|cruis n)\\b/.test(value)) {
+        return "corrida";
+    }
+
+    if (/\\b(final fantasy|chrono trigger|chrono cross|dragon quest|pokemon|fire emblem|golden sun|tales of|breath of fire|earthbound|mother 2|suikoden|secret of mana|sword of mana|lunar|wild arms|shining force|phantasy star|disgaea|rpg|role playing)\\b/.test(value)) {
+        return "rpg";
+    }
+
+    if (/\\b(basketball|tennis|golf|skate|snowboard|surf|olympic|bowling|baseball|hockey|volleyball|cricket|rugby|nfl|madden|american football|college football|bill walsh|nba|nhl|mlb|pga|tony hawk)\\b/.test(value)) {
         return "esportes";
     }
 
-    if (/sonic|mario|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense/.test(value)) {
+    if (/\\b(zelda|tomb raider|metroid|castlevania|indiana jones|monkey island|broken sword|another world|flashback|prince of persia|adventure)\\b/.test(value)) {
+        return "aventura";
+    }
+
+    if (/\\b(sonic|mario|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense|contra|metal slug|mega man|megaman|beat em up)\\b/.test(value)) {
         return "acao";
     }
 
@@ -554,7 +557,8 @@ function loadSavedGames() {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEYS.games) || "[]");
 
         if (Array.isArray(saved)) {
-            saved.forEach(game => addGame(game));
+            saved.forEach(game => addGame({ ...game, category: guessCategory(game.name) }));
+            saveGames();
         }
     } catch {
         localStorage.removeItem(STORAGE_KEYS.games);
@@ -639,12 +643,17 @@ async function restoreLocalGames() {
 
         const url = URL.createObjectURL(item.file);
 
+        const category = guessCategory(item.name);
+        if (item.category !== category) {
+            await databaseAction("games", "readwrite", store => store.put({ ...item, category }));
+        }
+
         addGame({
             id: item.id,
             name: item.name,
             url,
             type: item.type,
-            category: item.category,
+            category,
             source: "Arquivo local",
             origin: "local",
             local: true,
@@ -2067,7 +2076,7 @@ function addHTML5Options() {
     const uploadDescription = $("#upload-area span");
 
     if (uploadDescription) {
-        uploadDescription.textContent = "SWF, HTML, GBA, GBC, GB ou ZIP";
+        uploadDescription.textContent = "SWF, HTML, GBA, GB ou ZIP";
     }
 
     const filterButtons = $(".filter-buttons");
