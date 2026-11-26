@@ -2210,12 +2210,30 @@ function addHTML5Options() {
 
     const filterButtons = $(".filter-buttons");
 
-    if (filterButtons && !filterButtons.querySelector('[data-filter="html5"]')) {
-        const button = document.createElement("button");
-        button.className = "filter-button";
-        button.dataset.filter = "html5";
-        button.textContent = "HTML5";
-        filterButtons.appendChild(button);
+    if (filterButtons) {
+        const filterOrder = [
+            ["flash", "Flash"],
+            ["html5", "HTML5"],
+            ...Object.entries(PLATFORM_INFO).map(([type, info]) => [type, info.label])
+        ];
+        const allButton = filterButtons.querySelector('[data-filter="todos"]');
+
+        filterOrder.forEach(([type, label]) => {
+            let button = filterButtons.querySelector(`[data-filter="${type}"]`);
+
+            if (!button) {
+                button = document.createElement("button");
+                button.className = "filter-button";
+                button.dataset.filter = type;
+                button.textContent = label;
+            }
+
+            if (allButton) {
+                allButton.after(button);
+            } else {
+                filterButtons.appendChild(button);
+            }
+        });
     }
 }
 
