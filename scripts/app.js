@@ -2395,6 +2395,57 @@ async function autoUpdateSources() {
 
 /* INITIALIZATION */
 
+async function rebuildLibraryFromSources() {
+    const rebuildKey = "fm_library_rebuilt_from_sources_v1";
+    if (localStorage.getItem(rebuildKey) === "true") return false;
+
+    games = [];
+    favorites = [];
+    recentGames = [];
+
+    saveGames();
+    saveFavorites();
+    saveRecent();
+
+    if (db) {
+        await databaseAction("games", "readwrite", store => store.clear());
+    }
+
+    localStorage.removeItem(STORAGE_KEYS.lastUpdate);
+    renderAll();
+
+    const enabledSources = sources.filter(source => source.enabled);
+    let failed = 0;
+
+    for (let index = 0; index < enabledSources.length; index++) {
+        const source = enabledSources[index];
+        updateSourceProgress(
+            `Reconstruindo biblioteca: ${source.name}`,
+            `${index + 1}/${enabledSources.length}`,
+            enabledSources.length ? (index / enabledSources.length) * 100 : 100
+        );
+
+        await loadDirectory(source, { force: true });
+        if (source.status === "error") failed++;
+    }
+
+    saveGames();
+    saveFavorites();
+    saveRecent();
+    renderAll();
+    renderSourceManager();
+
+    if (failed === 0) {
+        localStorage.setItem(rebuildKey, "true");
+        showToast("Biblioteca reconstruída com os jogos das fontes ativas.");
+    } else {
+        showToast(`Biblioteca reconstruída parcialmente. ${failed} fonte(s) falharam; atualize-as para completar.`, "error");
+    }
+
+    setTimeout(hideSourceProgress, 1800);
+    return true;
+}
+
 async function initializeJoglume() {
     addHTML5Options();
     initializeEvents();
@@ -2407,13 +2458,16 @@ async function initializeJoglume() {
 
     try {
         await openDatabase();
-        await restoreLocalGames();
+        const rebuilt = await rebuildLibraryFromSources();
+        if (!rebuilt) await restoreLocalGames();
     } catch (error) {
         console.error("Banco de dados:", error);
-        showToast("Não foi possível restaurar alguns jogos locais.", "error");
+        showToast("Não foi possível reconstruir a biblioteca.", "error");
     }
 
     renderAll();
+
+    if (localStorage.getItem("fm_library_rebuilt_from_sources_v1") === "true") return;
 
     const lastUpdate = Number(localStorage.getItem(STORAGE_KEYS.lastUpdate) || 0);
     const shouldUpdate = !lastUpdate || Date.now() - lastUpdate >= CONFIG.autoUpdateInterval;
