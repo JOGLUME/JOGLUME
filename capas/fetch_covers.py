@@ -80,7 +80,7 @@ def sitemap_urls(root, markers):
                 locs = [node.text.strip() for node in doc.iter() if node.tag.endswith("loc") and node.text]
             except ET.ParseError:
                 text_content = content.decode("utf-8", "ignore")
-                locs = re.findall(r"https?://[^\\s<>]+", text_content)
+                locs = re.findall(r"https?://[^\s<>]+", text_content)
             sitemap_locs = [x for x in locs if re.search(r"\.(xml|xml\.gz)(?:$|\?)", urlparse(x).path, re.I)]
             if sitemap_locs:
                 pending.extend(sitemap_locs)
