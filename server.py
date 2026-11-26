@@ -303,13 +303,36 @@ def find_manual_cover(game_name):
 
     target_words = set(target.split())
     ranked = []
-    for entry in load_manual_covers():
-        candidate = normalize_search_text(entry["name"])
-        if not candidate:
-            continue
+    entries = load_manual_covers()
+    normalized_entries = [
+        (normalize_search_text(entry["name"]), entry)
+        for entry in entries
+    ]
+
+    for candidate, entry in normalized_entries:
         if candidate == target:
             return {"name": entry["name"], "url": entry["url"], "match": "exact"}
 
+    family_matches = [
+        (candidate, entry)
+        for candidate, entry in normalized_entries
+        if len(candidate) >= 5
+        and len(candidate.split()) >= 2
+        and target.startswith(candidate + " ")
+    ]
+    if family_matches:
+        candidate, entry = max(family_matches, key=lambda item: len(item[0]))
+        return {
+            "name": entry["name"],
+            "url": entry["url"],
+            "match": "series-fallback",
+            "matched_family": candidate
+        }
+
+    for entry in entries:
+        candidate = normalize_search_text(entry["name"])
+        if not candidate:
+            continue
         candidate_words = set(candidate.split())
         sequence_score = difflib.SequenceMatcher(None, target, candidate).ratio()
         if target_words and candidate_words:
