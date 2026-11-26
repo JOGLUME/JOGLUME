@@ -1,5 +1,5 @@
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs, quote, urlencode
+from urllib.parse import urlparse, parse_qs, quote, urlencode, unquote
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 import threading
@@ -132,6 +132,115 @@ def google_image_search(query):
     return results
 
 
+
+PORTAL_DOMAINS = [
+    "poki.com", "crazygames.com", "y8.com", "lagged.com",
+    "hackedfreegames.com", "gamedistribution.com", "gamemonetize.com",
+    "friv.com", "kongregate.com", "armorgames.com", "newgrounds.com",
+    "miniplay.com", "addictinggames.com", "gamepix.com", "gameflare.com",
+    "silvergames.com", "coolmathgames.com", "1001games.com", "pacogames.com",
+    "gamaverse.com", "roundgames.com", "numuki.com"
+]
+
+
+def extract_meta_image(page):
+    patterns = [
+        r'<meta[^>]+property=["\\']og:image["\\'][^>]+content=["\\']([^"\\']+)["\\']',
+        r'<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+property=["\\']og:image["\\']',
+        r'<meta[^>]+name=["\\']twitter:image["\\'][^>]+content=["\\']([^"\\']+)["\\']'
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, page, re.I)
+        if match:
+            image_url = html.unescape(match.group(1)).strip()
+            if image_url.startswith("//"):
+                image_url = "https:" + image_url
+            if image_url.startswith(("http://", "https://")):
+                return image_url
+    return None
+
+
+def validate_cover_image(image_url):
+    try:
+        request = Request(image_url, headers={
+            "User-Agent": USER_AGENT,
+            "Range": "bytes=0-2047"
+        })
+        with urlopen(request, timeout=10) as response:
+            content_type = response.headers.get("Content-Type", "").lower()
+            return response.status in (200, 206) and content_type.startswith("image/")
+    except Exception:
+        return False
+
+
+def search_portal_cover(game_name):
+    normalized = normalize_search_text(game_name)
+    if len(normalized) < 2:
+        return None
+
+    query = f'"{game_name}" game (' + " OR ".join(f"site:{domain}" for domain in PORTAL_DOMAINS) + ")"
+    search_url = "https://html.duckduckgo.com/html/?" + urlencode({"q": query})
+    try:
+        page = request_text(search_url)
+    except Exception:
+        return None
+
+    links = re.findall(r'<a[^>]+class=["\\'][^"\\']*result__a[^"\\']*["\\'][^>]+href=["\\']([^"\\']+)["\\']', page, re.I)
+    candidates = []
+    for raw_link in links:
+        link = html.unescape(raw_link)
+        if "uddg=" in link:
+            link = parse_qs(urlparse(link).query).get("uddg", [link])[0]
+        link = unquote(link)
+        parsed = urlparse(link)
+        host = (parsed.hostname or "").lower()
+        if parsed.scheme not in ("http", "https") or not any(host == domain or host.endswith("." + domain) for domain in PORTAL_DOMAINS):
+            continue
+        if link not in candidates:
+            candidates.append(link)
+
+    for page_url in candidates[:12]:
+        try:
+            page_html = request_text(page_url)
+            image_url = extract_meta_image(page_html)
+            if not image_url or not validate_cover_image(image_url):
+                continue
+            title_match = re.search(r'<meta[^>]+property=["\\']og:title["\\'][^>]+content=["\\']([^"\\']+)["\\']', page_html, re.I)
+            if not title_match:
+                title_match = re.search(r'<title[^>]*>(.*?)</title>', page_html, re.I | re.S)
+            page_title = html.unescape(re.sub(r"<[^>]+>", " ", title_match.group(1))).strip() if title_match else ""
+            title_normalized = normalize_search_text(page_title)
+            if title_normalized:
+                ratio = difflib.SequenceMatcher(None, normalized, title_normalized).ratio()
+                title_words = set(normalized.split())
+                page_words = set(title_normalized.split())
+                overlap = len(title_words & page_words) / max(1, len(title_words))
+                if ratio < 0.72 and overlap < 0.8:
+                    continue
+            return {
+                "name": game_name,
+                "url": image_url,
+                "match": "portal",
+                "source": urlparse(page_url).netloc,
+                "page": page_url
+            }
+        except Exception:
+            continue
+    return None
+
+
+def find_automatic_cover(game_name):
+    key = normalize_search_text(game_name)
+    if not key:
+        return None
+    cached = COVER_CACHE.get(key)
+    if cached and time.time() - cached["time"] < COVER_CACHE_TTL:
+        return cached["image"]
+    image = search_portal_cover(game_name)
+    COVER_CACHE[key] = {"time": time.time(), "image": image}
+    return image
+
+
 def load_manual_covers():
     covers_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "capas", "capa.txt")
     entries = []
@@ -198,7 +307,9 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             if not query:
                 return self.send_json({"image": None})
             cover = find_manual_cover(query)
-            return self.send_json({"image": cover, "query": query, "source": "capas/capa.txt"})
+            if not cover:
+                cover = find_automatic_cover(query)
+            return self.send_json({"image": cover, "query": query, "source": cover.get("source", "capas/capa.txt") if cover else None})
         return super().do_GET()
 
     def send_json(self, payload, status=200):
