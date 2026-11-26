@@ -18,8 +18,8 @@ HEADERS = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "Joglume-CoverCollector/1.0.2"})
 SOURCES = [
-    ("CoolDude2349/Offline-HTML-Games-Pack", "master", "offline/"),
-    ("AmmarSAA/flash-games-directory", "main", ""),
+    ("CoolDude2349/Offline-HTML-Games-Pack", "master", "offline/", "html5"),
+    ("AmmarSAA/flash-games-directory", "main", "", "flash"),
 ]
 
 def norm(value):
@@ -34,8 +34,8 @@ def get_json(url, headers=None):
     return r.json()
 
 def source_games():
-    found = {}
-    for repo, ref, prefix in SOURCES:
+    found = {"html5": {}, "flash": {}}
+    for repo, ref, prefix, platform in SOURCES:
         tree = get_json(f"https://api.github.com/repos/{repo}/git/trees/{ref}?recursive=1")
         for item in tree.get("tree", []):
             path = item.get("path", "")
@@ -56,7 +56,7 @@ def source_games():
             slug = norm(title)
             if len(slug) < 2 or slug in {"index", "player", "ruffle"}:
                 continue
-            found.setdefault(slug, title)
+            found[platform].setdefault(slug, title)
     return found
 
 def sitemap_urls(root, markers):
@@ -212,54 +212,75 @@ def put_file(path, content, sha, message):
     return r.json()
 
 def main():
-    games = source_games()
-    print(f"Jogos únicos encontrados: {len(games)}")
-    old, sha = github_file("capas/capa.txt")
-    entries = {}
-    for line in old.splitlines():
-        if ":" in line:
-            name, url = line.split(":", 1)
-            if url.strip().startswith("https://"):
-                entries[norm(name)] = (name.strip(), url.strip())
-    uncovered_games = {slug: title for slug, title in games.items() if slug not in entries}
-    print(f"Jogos que realmente precisam de capa: {len(uncovered_games)}")
-    sitemap = discover_catalog_urls(uncovered_games)
-    by_slug = {}
-    for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
-        slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
-        if slug:
-            by_slug.setdefault(slug, url)
-    matches = [(slug, title, by_slug[slug]) for slug, title in games.items() if slug in by_slug]
-    print(f"Correspondências exatas em todos os catálogos: {len(matches)}")
-    results = {}
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        jobs = {pool.submit(image_from_page, url): (slug, title) for slug, title, url in matches}
-        for future in as_completed(jobs):
-            slug, title = jobs[future]
-            image = future.result()
-            if image:
-                results[slug] = (title, image)
-    added = 0
-    for slug, (title, image) in results.items():
-        if slug not in entries or "jogos360.com.br" in entries[slug][1].lower():
-            entries[slug] = (title, image)
-            added += 1
-    new_content = "\n".join(f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())) + "\n"
-    if added:
-        put_file("capas/capa.txt", new_content, sha, f"Add {added} automatically verified game covers")
-    pending = sorted(title for slug, title in games.items() if slug not in entries)
-    try:
-        old_pending, pending_sha = github_file("capas/sem-capa.txt")
-    except Exception:
-        old_pending, pending_sha = "", None
-    pending_content = "# Jogos ainda sem capa verificada\n" + "\n".join(pending) + "\n"
-    if pending_content != old_pending:
-        if pending_sha:
-            put_file("capas/sem-capa.txt", pending_content, pending_sha, "Update games without verified covers")
-        else:
-            payload = {"message": "Add list of games without verified covers", "content": base64.b64encode(pending_content.encode()).decode(), "branch": BRANCH}
-            requests.put(f"{API}/contents/capas/sem-capa.txt", headers=HEADERS, json=payload, timeout=40).raise_for_status()
-    print(json.dumps({"games": len(games), "catalog_urls": len(sitemap), "exact_matches": len(matches), "verified_images": len(results), "new_covers": added, "without_cover": len(pending)}, ensure_ascii=False))
+    games_by_platform = source_games()
+    summary = {}
+
+    for platform, games in games_by_platform.items():
+        print(f"{platform}: {len(games)} jogos únicos encontrados")
+        cover_path = f"capas/{platform}/capa.txt"
+        pending_path = f"capas/{platform}/sem-capa.txt"
+        old, sha = github_file(cover_path)
+        entries = {}
+        for line in old.splitlines():
+            if ":" in line:
+                name, url = line.split(":", 1)
+                if url.strip().startswith("https://"):
+                    entries[norm(name)] = (name.strip(), url.strip())
+
+        uncovered_games = {slug: title for slug, title in games.items() if slug not in entries}
+        print(f"{platform}: {len(uncovered_games)} jogos que precisam de capa")
+        sitemap = discover_catalog_urls(uncovered_games)
+        by_slug = {}
+        for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
+            slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
+            if slug:
+                by_slug.setdefault(slug, url)
+
+        matches = [(slug, title, by_slug[slug]) for slug, title in games.items() if slug in by_slug]
+        results = {}
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            jobs = {pool.submit(image_from_page, url): (slug, title) for slug, title, url in matches}
+            for future in as_completed(jobs):
+                slug, title = jobs[future]
+                image = future.result()
+                if image:
+                    results[slug] = (title, image)
+
+        added = 0
+        for slug, (title, image) in results.items():
+            if slug not in entries or "jogos360.com.br" in entries[slug][1].lower():
+                entries[slug] = (title, image)
+                added += 1
+
+        new_content = "# Capas verificadas\n" + "\n".join(
+            f"{name}: {url}" for name, url in sorted(entries.values(), key=lambda x: x[0].lower())
+        ) + "\n"
+        if added:
+            put_file(cover_path, new_content, sha, f"Add {added} automatically verified {platform} game covers")
+
+        pending = sorted(title for slug, title in games.items() if slug not in entries)
+        try:
+            old_pending, pending_sha = github_file(pending_path)
+        except Exception:
+            old_pending, pending_sha = "", None
+        pending_content = "# Jogos ainda sem capa verificada\n" + "\n".join(pending) + "\n"
+        if pending_content != old_pending:
+            if pending_sha:
+                put_file(pending_path, pending_content, pending_sha, f"Update {platform} games without verified covers")
+            else:
+                payload = {"message": f"Add {platform} games without verified covers", "content": base64.b64encode(pending_content.encode()).decode(), "branch": BRANCH}
+                requests.put(f"{API}/contents/{pending_path}", headers=HEADERS, json=payload, timeout=40).raise_for_status()
+
+        summary[platform] = {
+            "games": len(games),
+            "catalog_urls": len(sitemap),
+            "exact_matches": len(matches),
+            "verified_images": len(results),
+            "new_covers": added,
+            "without_cover": len(pending)
+        }
+
+    print(json.dumps(summary, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
