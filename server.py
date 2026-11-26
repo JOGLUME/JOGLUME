@@ -458,7 +458,7 @@ def find_manual_cover(game_name, platform):
         return None
 
     def cover_key(value):
-        value = re.sub(r"\\([^)]*\\)|\\[[^]]*\\]", " ", str(value or ""))
+        value = re.sub(r"\([^)]*\)|\[[^]]*\]", " ", str(value or ""))
         return normalize_search_text(value)
 
     target_key = cover_key(game_name)
