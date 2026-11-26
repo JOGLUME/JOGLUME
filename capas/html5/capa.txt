@@ -1,4 +1,5 @@
-# Capas verificadas de jogos HTML5
+# Capas verificadas
+1 on 1 soccer: https://www2.minijuegosgratis.com/v3/games/thumbnails/7461_1.jpg
 10 minutes till dawn: https://www3.minijuegosgratis.com/v3/games/thumbnails/241376_1.jpg
 1v1.lol: https://imgs2.dab3games.com/1v1-lol-game30.png
 2048: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/cb8c967c-4a78-4ffa-8506-cbac69746f4f/2048-logo.png
@@ -125,6 +126,7 @@ fragger: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 free rider 3: https://www5.minijuegosgratis.com/v3/games/thumbnails/23743_1.jpg
 friday night funkin: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/0cd0c8bc4dc15c069dba7ccfb6809f6d/friday-night-funkin-logo.png
 fruit ninja: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/c4dc286c30b8fbde45a0b5d4fe6f2146/fruit-ninja-logo.png
+funny mad racing: https://www3.minijuegosgratis.com/v3/games/thumbnails/247473_1.jpg
 funny shooter 2: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/894abba63a6b23fed823f404831f444f/funny-shooter-2-logo.jpeg
 gemcraft: https://gamemedia.armorgames.com/1716/icn_heroimage.png
 geometry dash: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/a99ca47ce2baa9c0e44061445b430ba5/geometry-dash-logo.png
@@ -223,11 +225,13 @@ ragdoll hit: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,heigh
 ragdoll soccer: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/dd66aa2614cb92033592ea7314cc9a4c/ragdoll-soccer-logo.png
 raze: https://gamemedia.armorgames.com/5395/icn_heroimage.png
 raze 2: https://gamemedia.armorgames.com/12275/icn_heroimage.png
+red ball 4 vol 2: https://img.flashlegacy.com/game-icons/2MKqpWwLoY/320x180.webp
 red remover: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 retro bowl: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/ee9ca3764ef4289a48a1ebf457ef605441ed1f35a0f2eb12707a70d609e53686/retro-bowl-logo.png
 retro bowl college: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/d98547374c4129bf441b754d495e41aa/retro-bowl-college-logo.png
 retro highway: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/0813034b35951437f764d4fe8c6d1a22/retro-highway-logo.png
 retro ping pong: https://imgs2.dab3games.com/retro-ping-pong-4923582.png
+riddle school 2: https://www1.minijuegosgratis.com/v3/games/thumbnails/241190_1.jpg
 riddle school 3: https://www4.minijuegosgratis.com/v3/games/thumbnails/9881_1.jpg
 riddle school 5: https://www3.minijuegosgratis.com/v3/games/thumbnails/215722_1.jpg
 rocket soccer derby: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/e521bbbf13a6480b60d75421e7edc8d8d0e1edadaccd7d43438864b62a74088a/rocket-soccer-derby-logo.png
@@ -355,4 +359,3 @@ yohoho io: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=
 zombie rush: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/ce219d03b723f2d07e4d3c00d1cd104a/zombie-rush-logo.png
 zombotron: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 zrist: https://imgs2.dab3games.com/zrist2913.png
-red ball 4 vol 2: https://img.flashlegacy.com/game-icons/2MKqpWwLoY/320x180.webp
