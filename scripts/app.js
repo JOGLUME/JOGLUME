@@ -662,13 +662,14 @@ function loadSavedSources() {
         sources = getInitialSources().map(initial => {
             const savedSource = savedById.get(initial.id) || {};
             return {
-                ...initial,
                 ...savedSource,
-                url: initial.url,
-                ...(initial.path ? { path: initial.path } : {}),
+                ...initial,
                 enabled: savedSource.enabled ?? initial.enabled,
                 autoUpdate: savedSource.autoUpdate ?? initial.autoUpdate,
-                recursive: savedSource.recursive ?? initial.recursive
+                recursive: savedSource.recursive ?? initial.recursive,
+                lastUpdated: savedSource.lastUpdated ?? initial.lastUpdated,
+                gameCount: savedSource.gameCount ?? initial.gameCount,
+                status: savedSource.status ?? initial.status
             };
         });
 
