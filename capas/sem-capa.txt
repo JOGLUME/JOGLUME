@@ -67,9 +67,6 @@ flash sonic
 flood runner 2
 flood runner 3
 flood runner 4
-fnaf
-fnaf 3
-fnaf 4
 fnaf sister location
 funny battle
 funny battle 2
