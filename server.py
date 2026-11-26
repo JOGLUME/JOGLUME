@@ -423,8 +423,17 @@ def refresh_catalogs_forever():
 
 
 
-def load_manual_covers():
-    covers_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "capas", "capa.txt")
+def load_manual_covers(platform):
+    allowed_platforms = {"html5", "flash", "gba", "gbc", "gb", "nes", "snes", "nds", "n64", "segaMD", "psx", "arcade", "psp"}
+    if platform not in allowed_platforms:
+        return []
+
+    covers_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "capas",
+        platform,
+        "capa.txt"
+    )
     entries = []
     try:
         with open(covers_path, "r", encoding="utf-8-sig") as file:
@@ -443,14 +452,14 @@ def load_manual_covers():
     return entries
 
 
-def find_manual_cover(game_name):
+def find_manual_cover(game_name, platform):
     target = normalize_search_text(game_name)
     if not target:
         return None
 
     target_words = set(target.split())
     ranked = []
-    entries = load_manual_covers()
+    entries = load_manual_covers(platform)
     normalized_entries = [
         (normalize_search_text(entry["name"]), entry)
         for entry in entries
@@ -489,10 +498,11 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             query = parse_qs(parsed.query).get("q", [""])[0].strip()
             if not query:
                 return self.send_json({"image": None})
-            cover = find_manual_cover(query)
-            if not cover:
+            platform = parse_qs(parsed.query).get("platform", [""])[0].strip()
+            cover = find_manual_cover(query, platform)
+            if not cover and platform == "html5":
                 cover = find_automatic_cover(query)
-            return self.send_json({"image": cover, "query": query, "source": cover.get("source", "capas/capa.txt") if cover else None})
+            return self.send_json({"image": cover, "query": query, "platform": platform, "source": f"capas/{platform}/capa.txt" if cover else None})
         return super().do_GET()
 
     def do_POST(self):
