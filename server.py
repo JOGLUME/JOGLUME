@@ -145,9 +145,9 @@ PORTAL_DOMAINS = [
 
 def extract_meta_image(page):
     patterns = [
-        r'<meta[^>]+property=["\\']og:image["\\'][^>]+content=["\\']([^"\\']+)["\\']',
-        r'<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+property=["\\']og:image["\\']',
-        r'<meta[^>]+name=["\\']twitter:image["\\'][^>]+content=["\\']([^"\\']+)["\\']'
+        r"""<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']""",
+        r"""<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']""",
+        r"""<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']"""
     ]
     for pattern in patterns:
         match = re.search(pattern, page, re.I)
@@ -185,7 +185,7 @@ def search_portal_cover(game_name):
     except Exception:
         return None
 
-    links = re.findall(r'<a[^>]+class=["\\'][^"\\']*result__a[^"\\']*["\\'][^>]+href=["\\']([^"\\']+)["\\']', page, re.I)
+    links = re.findall(r"""<a[^>]+class=["'][^"']*result__a[^"']*["'][^>]+href=["']([^"']+)["']""", page, re.I)
     candidates = []
     for raw_link in links:
         link = html.unescape(raw_link)
@@ -205,7 +205,7 @@ def search_portal_cover(game_name):
             image_url = extract_meta_image(page_html)
             if not image_url or not validate_cover_image(image_url):
                 continue
-            title_match = re.search(r'<meta[^>]+property=["\\']og:title["\\'][^>]+content=["\\']([^"\\']+)["\\']', page_html, re.I)
+            title_match = re.search(r"""<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']""", page_html, re.I)
             if not title_match:
                 title_match = re.search(r'<title[^>]*>(.*?)</title>', page_html, re.I | re.S)
             page_title = html.unescape(re.sub(r"<[^>]+>", " ", title_match.group(1))).strip() if title_match else ""
