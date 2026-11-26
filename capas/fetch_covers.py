@@ -6,7 +6,7 @@ import base64
 import unicodedata
 import requests
 import xml.etree.ElementTree as ET
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs, unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 OWNER = "JOGLUME"
@@ -75,8 +75,12 @@ def sitemap_urls(root, markers):
             if current.lower().endswith(".gz") or r.headers.get("Content-Type", "").lower() in {"application/gzip", "application/x-gzip"}:
                 import gzip
                 content = gzip.decompress(content)
-            doc = ET.fromstring(content)
-            locs = [node.text.strip() for node in doc.iter() if node.tag.endswith("loc") and node.text]
+            try:
+                doc = ET.fromstring(content)
+                locs = [node.text.strip() for node in doc.iter() if node.tag.endswith("loc") and node.text]
+            except ET.ParseError:
+                text_content = content.decode("utf-8", "ignore")
+                locs = re.findall(r"https?://[^\\s<>]+", text_content)
             sitemap_locs = [x for x in locs if re.search(r"\.(xml|xml\.gz)(?:$|\?)", urlparse(x).path, re.I)]
             if sitemap_locs:
                 pending.extend(sitemap_locs)
@@ -86,7 +90,37 @@ def sitemap_urls(root, markers):
             print(f"Sitemap ignorado: {current}: {exc}")
     return urls
 
-def discover_catalog_urls():
+def search_seed_domains(games, candidate_domains):
+    def search_title(title):
+        try:
+            query = requests.utils.quote(f'"{title}" game')
+            response = SESSION.get(f"https://html.duckduckgo.com/html/?q={query}", timeout=20)
+            if response.status_code != 200:
+                return set()
+            links = re.findall(r'class="result__a"[^>]+href="([^"]+)"', response.text, re.I)
+            found = set()
+            for link in links:
+                link = unquote(link.replace("&amp;", "&"))
+                if "uddg=" in link:
+                    link = parse_qs(urlparse(link).query).get("uddg", [link])[0]
+                host = (urlparse(link).hostname or "").lower()
+                for domain in candidate_domains:
+                    if host == domain or host.endswith("." + domain):
+                        found.add(domain)
+            return found
+        except Exception:
+            return set()
+
+    titles = list(dict.fromkeys(games.values()))
+    found = set()
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        futures = [pool.submit(search_title, title) for title in titles]
+        for future in as_completed(futures):
+            found.update(future.result())
+    print(f"Fontes novas encontradas pesquisando os jogos pendentes: {', '.join(sorted(found)) or 'nenhuma'}")
+    return found
+
+def discover_catalog_urls(games):
     catalogs = [
         ("poki.com", ["/g/"], ["https://poki.com/br/sitemaps/index.xml"]),
         ("crazygames.com", ["/game/"], ["https://www.crazygames.com/sitemap-index.xml"]),
@@ -100,9 +134,23 @@ def discover_catalog_urls():
         ("armorgames.com", ["/play/"], ["https://armorgames.com/sitemap.xml", "https://armorgames.com/sitemap_index.xml"]),
         ("newgrounds.com", ["/portal/view/"], ["https://www.newgrounds.com/sitemap.xml"]),
         ("miniplay.com", ["/game/"], ["https://www.miniplay.com/sitemap.xml", "https://www.miniplay.com/sitemap_index.xml"]),
+        ("addictinggames.com", ["/game/"], ["https://www.addictinggames.com/sitemap.xml", "https://www.addictinggames.com/sitemap_index.xml"]),
+        ("gamepix.com", ["/game/"], ["https://www.gamepix.com/sitemap.xml", "https://www.gamepix.com/sitemap_index.xml"]),
+        ("gameflare.com", ["/game/"], ["https://www.gameflare.com/sitemap.xml", "https://www.gameflare.com/sitemap_index.xml"]),
+        ("silvergames.com", ["/game/"], ["https://www.silvergames.com/sitemap.xml", "https://www.silvergames.com/sitemap_index.xml"]),
+        ("coolmathgames.com", ["/games/"], ["https://www.coolmathgames.com/sitemap.xml", "https://www.coolmathgames.com/sitemap_index.xml"]),
+        ("1001games.com", ["/game/"], ["https://www.1001games.com/sitemap.xml", "https://www.1001games.com/sitemap_index.xml"]),
+        ("pacogames.com", ["/game/"], ["https://www.pacogames.com/sitemap.xml", "https://www.pacogames.com/sitemap_index.xml"]),
+        ("gamaverse.com", ["/game/"], ["https://gamaverse.com/sitemap.xml", "https://gamaverse.com/sitemap_index.xml"]),
+        ("roundgames.com", ["/game/"], ["https://www.roundgames.com/sitemap.xml", "https://www.roundgames.com/sitemap_index.xml"]),
+        ("numuki.com", ["/game/"], ["https://www.numuki.com/sitemap.xml", "https://www.numuki.com/sitemap_index.xml"]),
     ]
+    seeded_domains = search_seed_domains(games, {item[0] for item in catalogs[12:]})
     discovered = []
-    for domain, markers, fallbacks in catalogs:
+    for index, (domain, markers, fallbacks) in enumerate(catalogs):
+        if index >= 12 and domain not in seeded_domains:
+            print(f"{domain}: ignorado (nenhum jogo pendente encontrado na pesquisa)")
+            continue
         roots = []
         try:
             robots = SESSION.get(f"https://{domain}/robots.txt", timeout=20)
@@ -166,7 +214,7 @@ def put_file(path, content, sha, message):
 def main():
     games = source_games()
     print(f"Jogos únicos encontrados: {len(games)}")
-    sitemap = discover_catalog_urls()
+    sitemap = discover_catalog_urls(games)
     by_slug = {}
     for url in sorted(sitemap, key=lambda x: 0 if "poki.com" in x else 1):
         slug = norm(urlparse(url).path.rsplit("/", 1)[-1])
