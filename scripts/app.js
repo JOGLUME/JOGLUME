@@ -479,7 +479,7 @@ function normalizeName(name) {
         .replace(/[_-]/g, " ")
         .replace(/\s+/g, " ")
         .trim();
-    const minecraftVersion = cleaned.match(/^minecraft\s*(\d+(?:\.\d+){1,2})$/i);
+    const minecraftVersion = cleaned.match(/^(?:minecraft\s*)?(\d+(?:\.\d+){1,2})$/i);
     if (minecraftVersion) return `Minecraft — Versão ${minecraftVersion[1]}`;
     return cleaned.replace(/\b\w/g, letter => letter.toUpperCase());
 }
