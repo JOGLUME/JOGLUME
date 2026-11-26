@@ -215,13 +215,21 @@ def search_portal_cover(game_name):
                 title_match = re.search(r'<title[^>]*>(.*?)</title>', page_html, re.I | re.S)
             page_title = html.unescape(re.sub(r"<[^>]+>", " ", title_match.group(1))).strip() if title_match else ""
             title_normalized = normalize_search_text(page_title)
-            if title_normalized:
-                ratio = difflib.SequenceMatcher(None, normalized, title_normalized).ratio()
-                title_words = set(normalized.split())
-                page_words = set(title_normalized.split())
-                overlap = len(title_words & page_words) / max(1, len(title_words))
-                if ratio < 0.72 and overlap < 0.8:
+            if not title_normalized:
+                continue
+
+            title_words = set(normalized.split())
+            page_words = set(title_normalized.split())
+            meaningful_words = {word for word in title_words if len(word) > 1}
+            matched_words = meaningful_words & page_words
+            coverage = len(matched_words) / max(1, len(meaningful_words))
+
+            if len(meaningful_words) >= 2:
+                if len(matched_words) < 2 or coverage < 0.75:
                     continue
+            elif not meaningful_words.issubset(page_words):
+                continue
+
             return {
                 "name": game_name,
                 "url": image_url,
@@ -468,31 +476,7 @@ def find_manual_cover(game_name):
             "matched_family": candidate
         }
 
-    for entry in entries:
-        candidate = normalize_search_text(entry["name"])
-        if not candidate:
-            continue
-        candidate_words = set(candidate.split())
-        sequence_score = difflib.SequenceMatcher(None, target, candidate).ratio()
-        if target_words and candidate_words:
-            overlap = len(target_words & candidate_words)
-            word_score = (2 * overlap) / (len(target_words) + len(candidate_words))
-            coverage = overlap / len(target_words)
-            score = max(sequence_score, word_score * 0.85 + coverage * 0.15)
-        else:
-            score = sequence_score
-        ranked.append((score, entry))
-
-    if not ranked:
-        return None
-
-    ranked.sort(key=lambda item: item[0], reverse=True)
-    best_score, best = ranked[0]
-    second_score = ranked[1][0] if len(ranked) > 1 else 0
-    threshold = 0.68 if len(target_words) <= 1 else 0.60
-    if best_score < threshold or (best_score < 0.92 and best_score - second_score < 0.035):
-        return None
-    return {"name": best["name"], "url": best["url"], "match": "approximate", "score": round(best_score, 3)}
+    return None
 
 
 
