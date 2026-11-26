@@ -1,1 +1,280 @@
-# Capas verificadas de jogos NES
+# Capas por plataforma - nes
+10 Yard Fight: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/10%20Yard%20Fight.jpg
+1942: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/1942.jpg
+1943 The Battle Of Midway: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/1943%20The%20Battle%20Of%20Midway.jpg
+720: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/720.jpg
+8 Eyes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/8%20Eyes.jpg
+A Boy and His Blob: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/A%20Boy%20and%20His%20Blob.jpg
+Abadox: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Abadox.jpg
+Advanced Dungeons and Dragons Hillsfar: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Advanced%20Dungeons%20and%20Dragons%20Hillsfar.jpg
+Adventure Island 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Adventure%20Island%202.jpg
+Adventure Island 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Adventure%20Island%203.jpg
+Adventure Island: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Adventure%20Island.jpg
+Afterburner: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Afterburner.jpg
+Amagon: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Amagon.jpg
+Anticipation: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Anticipation.jpg
+Arch Rivals: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Arch%20Rivals.jpg
+Arkanoid: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Arkanoid.jpg
+Astyanax: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Astyanax.jpg
+Athena: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Athena.jpg
+Bad Dudes: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bad%20Dudes.jpg
+Bad News Baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bad%20News%20Baseball.jpg
+Balloon Fight: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Balloon%20Fight.jpg
+Baseball Stars: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Baseball%20Stars.jpg
+Baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Baseball.jpg
+Bases Loaded 4: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bases%20Loaded%204.jpg
+Bases Loaded: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bases%20Loaded.jpg
+Basewars: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Basewars.jpg
+Batman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Batman.jpg
+Battle Chess: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Battle%20Chess.jpg
+Battletoads: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Battletoads.jpg
+Big Foot: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Big%20Foot.jpg
+Bionic Commando: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bionic%20Commando.jpg
+Blades Of Steel: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Blades%20Of%20Steel.jpg
+Blaster Master: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Blaster%20Master.jpg
+Bomberman 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bomberman%202.jpg
+Bomberman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bomberman.jpg
+Boulder Dash: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Boulder%20Dash.jpg
+BreakThru: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/BreakThru.jpg
+Bubble Bobble Part 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bubble%20Bobble%20Part%202.jpg
+Bubble Bobble: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bubble%20Bobble.jpg
+Bucky O'Hare: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bucky%20O'Hare.jpg
+Bump 'N' Jump: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Bump%20'N'%20Jump.jpg
+Burgertime: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Burgertime.jpg
+Caesar's Palace: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Caesar's%20Palace.jpg
+Captain America And The Avengers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Captain%20America%20And%20The%20Avengers.jpg
+Captain Skyhawk: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Captain%20Skyhawk.jpg
+Castlevania II Simon's Quest: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Castlevania%20II%20Simon's%20Quest.jpg
+Castlevania III Dracula's Curse: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Castlevania%20III%20Dracula's%20Curse.jpg
+Castlevania: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Castlevania.jpg
+Caveman Games: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Caveman%20Games.jpg
+Championship Bowling: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Championship%20Bowling.jpg
+Chiller: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Chiller.jpg
+Chubby Cherub: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Chubby%20Cherub.jpg
+Circus Caper: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Circus%20Caper.jpg
+City Connection: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/City%20Connection.jpg
+Clu Clu Land: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Clu%20Clu%20Land.jpg
+Cobra Command: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Cobra%20Command.jpg
+Cobra Triangle: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Cobra%20Triangle.jpg
+Code Name Viper: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Code%20Name%20Viper.jpg
+Commando: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Commando.jpg
+Contra Force: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Contra%20Force.jpg
+Contra: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Contra.jpg
+Crystalis: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Crystalis.jpg
+Deadly Towers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Deadly%20Towers.jpg
+Defender 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Defender%202.jpg
+Deja Vu: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Deja%20Vu.jpg
+Destiny Of An Emperor: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Destiny%20Of%20An%20Emperor.jpg
+Disney's Adventures In The Magic Kingdom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Disney's%20Adventures%20In%20The%20Magic%20Kingdom.jpg
+Disney's Chip 'n Dale Rescue Rangers: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Disney's%20Chip%20'n%20Dale%20Rescue%20Rangers.jpg
+Disney's Darkwing Duck: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Disney's%20Darkwing%20Duck.jpg
+Disney's Duck Tales 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Disney's%20Duck%20Tales%202.jpg
+Disney's Duck Tales: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Disney's%20Duck%20Tales.jpg
+Donkey Kong 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Donkey%20Kong%203.jpg
+Donkey Kong Classics: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Donkey%20Kong%20Classics.jpg
+Donkey Kong Jr.: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Donkey%20Kong%20Jr..jpg
+Donkey Kong: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Donkey%20Kong.jpg
+Double Dare: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Double%20Dare.jpg
+Double Dragon II: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Double%20Dragon%20II.jpg
+Double Dragon III: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Double%20Dragon%20III.jpg
+Double Dribble: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Double%20Dribble.jpg
+Dr. Mario: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Dr.%20Mario.jpg
+Dragon Warrior: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Dragon%20Warrior.jpg
+Duck Hunt: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Duck%20Hunt.jpg
+Elevator Action: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Elevator%20Action.jpg
+Excitebike: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Excitebike.jpg
+Exodus: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Exodus.jpg
+Family Feud: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Family%20Feud.jpg
+Faxanadu: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Faxanadu.jpg
+Felix The Cat: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Felix%20The%20Cat.jpg
+Final Fantasy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Final%20Fantasy.jpg
+Fire N Ice: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Fire%20N%20Ice.jpg
+Friday The 13th: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Friday%20The%2013th.jpg
+G.I. Joe The Atlantis Factor: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/G.I.%20Joe%20The%20Atlantis%20Factor.jpg
+Galaga: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Galaga.jpg
+Gargoyle's Quest II The Demon Darkness: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gargoyle's%20Quest%20II%20The%20Demon%20Darkness.jpg
+Gauntlet: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gauntlet.jpg
+Ghostbusters 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ghostbusters%202.jpg
+Ghostbusters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ghostbusters.jpg
+Ghosts and Goblins: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ghosts%20and%20Goblins.jpg
+Golf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Golf.jpg
+Goonies 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Goonies%202.jpg
+Gradius: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gradius.jpg
+Guerilla War: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Guerilla%20War.jpg
+Gum Shoe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gum%20Shoe.jpg
+Gun Nac: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gun%20Nac.jpg
+Gunsmoke: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gunsmoke.jpg
+Gyromite: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gyromite.jpg
+Gyruss: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Gyruss.jpg
+Hogan's Alley: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Hogan's%20Alley.jpg
+Hollywood Squares: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Hollywood%20Squares.jpg
+Hydlide: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Hydlide.jpg
+Ice Climber: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ice%20Climber.jpg
+Ice Hockey: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ice%20Hockey.jpg
+Ikari Warriors: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ikari%20Warriors.jpg
+Indiana Jones and The Temple Of Doom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Indiana%20Jones%20and%20The%20Temple%20Of%20Doom.jpg
+Iron Tank: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Iron%20Tank.jpg
+Jackal: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Jackal.jpg
+Jaws: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Jaws.jpg
+Jeopardy! 25th Anniversary: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Jeopardy!%2025th%20Anniversary.jpg
+Jordan vs. Bird One on One: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Jordan%20vs.%20Bird%20One%20on%20One.jpg
+Journey To Silius: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Journey%20To%20Silius.jpg
+Joust: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Joust.jpg
+Kabuki Quantum Fighter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Kabuki%20Quantum%20Fighter.jpg
+Karate Champ: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Karate%20Champ.jpg
+Karnov: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Karnov.jpg
+Kid Icarus: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Kid%20Icarus.jpg
+King's Quest 5: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/King's%20Quest%205.jpg
+Kirby's Adventure: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Kirby's%20Adventure.jpg
+Klax: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Klax.jpg
+Knight Rider: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Knight%20Rider.jpg
+Kung Fu: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Kung%20Fu.jpg
+Legendary Wings: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Legendary%20Wings.jpg
+Lemmings: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Lemmings.jpg
+Life Force: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Life%20Force.jpg
+Little League Baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Little%20League%20Baseball.jpg
+Little Nemo The Dream Master: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Little%20Nemo%20The%20Dream%20Master.jpg
+Lode Runner: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Lode%20Runner.jpg
+LoopZ: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/LoopZ.jpg
+Low 'G' Man: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Low%20'G'%20Man.jpg
+Lunar Pool: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Lunar%20Pool.jpg
+Mach Rider: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mach%20Rider.jpg
+Magic Darts: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Magic%20Darts.jpg
+Major League Baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Major%20League%20Baseball.jpg
+Maniac Mansion: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Maniac%20Mansion.jpg
+Marble Madness: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Marble%20Madness.jpg
+Mario Bros.: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mario%20Bros..jpg
+Marvel's X-Men: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Marvel's%20X-Men.jpg
+Mega Man II: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man%20II.jpg
+Mega Man III: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man%20III.jpg
+Mega Man IV: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man%20IV.jpg
+Mega Man V: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man%20V.jpg
+Mega Man VI: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man%20VI.jpg
+Mega Man: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mega%20Man.jpg
+Metal Gear: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Metal%20Gear.jpg
+Metal Storm: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Metal%20Storm.jpg
+Metroid: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Metroid.jpg
+Mike Tyson's Punch Out!!: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mike%20Tyson's%20Punch%20Out!!.jpg
+Millipede: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Millipede.jpg
+Monopoly: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Monopoly.jpg
+Monster Truck Rally: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Monster%20Truck%20Rally.jpg
+Ms. Pac-Man: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ms.%20Pac-Man.jpg
+Mystery Quest: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Mystery%20Quest.jpg
+NES Open Tournament Golf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/NES%20Open%20Tournament%20Golf.jpg
+NES Play Action Football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/NES%20Play%20Action%20Football.jpg
+NFL Football: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/NFL%20Football.jpg
+Ninja Gaiden II The Dark Sword Of Chaos: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ninja%20Gaiden%20II%20The%20Dark%20Sword%20Of%20Chaos.jpg
+Ninja Gaiden III The Ancient Ship Of Doom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ninja%20Gaiden%20III%20The%20Ancient%20Ship%20Of%20Doom.jpg
+Ninja Gaiden: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Ninja%20Gaiden.jpg
+North And South: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/North%20And%20South.jpg
+Operation Wolf: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Operation%20Wolf.jpg
+Orb 3D: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Orb%203D.jpg
+Othello: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Othello.jpg
+Pac-Man: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Pac-Man.jpg
+Paperboy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Paperboy.jpg
+Pinball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Pinball.jpg
+Pipe Dream: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Pipe%20Dream.jpg
+Popeye: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Popeye.jpg
+Power Blade: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Power%20Blade.jpg
+Prince Of Persia: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Prince%20Of%20Persia.jpg
+Princess Tomato In The Salad Kingdom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Princess%20Tomato%20In%20The%20Salad%20Kingdom.jpg
+Pro Wrestling: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Pro%20Wrestling.jpg
+Punch-Out!!: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Punch-Out!!.jpg
+Punisher: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Punisher.jpg
+Puzzle: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Puzzle.jpg
+QBert: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/QBert.jpg
+R.B.I. Baseball 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/R.B.I.%20Baseball%202.jpg
+R.C. Pro-Am Racing 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/R.C.%20Pro-Am%20Racing%202.jpg
+Rad Racer 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rad%20Racer%202.jpg
+Rad Racer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rad%20Racer.jpg
+Raid On Bungeling Bay: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Raid%20On%20Bungeling%20Bay.jpg
+Rampage: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rampage.jpg
+Renegade: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Renegade.jpg
+River City Ransom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/River%20City%20Ransom.jpg
+Road Runner: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Road%20Runner.jpg
+Rolling Thunder: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rolling%20Thunder.jpg
+Rush N Attack: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rush%20N%20Attack.jpg
+Rygar: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Rygar.jpg
+Section Z: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Section%20Z.jpg
+Shadowgate: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Shadowgate.jpg
+Shatterhand: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Shatterhand.jpg
+Shinobi: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Shinobi.jpg
+Side Pocket: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Side%20Pocket.jpg
+Silent Assault: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Silent%20Assault.jpg
+Silent Service: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Silent%20Service.jpg
+Silk Worm: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Silk%20Worm.jpg
+Silver Surfer: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Silver%20Surfer.jpg
+Slalom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Slalom.jpg
+Smash TV: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Smash%20TV.jpg
+Snake Rattle 'n' Roll: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Snake%20Rattle%20'n'%20Roll.jpg
+Snow Bros.: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Snow%20Bros..jpg
+Solar Jetman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Solar%20Jetman.jpg
+Solitaire: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Solitaire.jpg
+Solomon's Key: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Solomon's%20Key.jpg
+Solstice: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Solstice.jpg
+Spiderman Return of The Sinister Six: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Spiderman%20Return%20of%20The%20Sinister%20Six.jpg
+Spy Hunter: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Spy%20Hunter.jpg
+Spy vs. Spy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Spy%20vs.%20Spy.jpg
+Stack-Up: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Stack-Up.jpg
+Star Voyager: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Star%20Voyager.jpg
+StarTropics II Zoda's Revenge: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/StarTropics%20II%20Zoda's%20Revenge.jpg
+StarTropics: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/StarTropics.jpg
+Stinger: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Stinger.jpg
+Street Fighter 2010: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Street%20Fighter%202010.jpg
+Strider: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Strider.jpg
+Super C: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Super%20C.jpg
+Super Dodge Ball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Super%20Dodge%20Ball.jpg
+Super Mario Bros. 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Super%20Mario%20Bros.%202.jpg
+Super Spike V'Ball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Super%20Spike%20V'Ball.jpg
+Super Sprint: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Super%20Sprint.jpg
+Tale Spin: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tale%20Spin.jpg
+Tecmo Baseball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tecmo%20Baseball.jpg
+Tecmo Bowl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tecmo%20Bowl.jpg
+Tecmo Super Bowl: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tecmo%20Super%20Bowl.jpg
+Teenage Mutant Ninja Turtles 2 The Arcade Game: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Teenage%20Mutant%20Ninja%20Turtles%202%20The%20Arcade%20Game.jpg
+Teenage Mutant Ninja Turtles 3 The Turtles Take Manhattan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Teenage%20Mutant%20Ninja%20Turtles%203%20The%20Turtles%20Take%20Manhattan.jpg
+Teenage Mutant Ninja Turtles Tournament Fighters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Teenage%20Mutant%20Ninja%20Turtles%20Tournament%20Fighters.jpg
+Teenage Mutant Ninja Turtles: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Teenage%20Mutant%20Ninja%20Turtles.jpg
+Tetris (Tengen): https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tetris%20(Tengen).jpg
+Tetris 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tetris%202.jpg
+The Adventures Of Bayou Billy: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Adventures%20Of%20Bayou%20Billy.jpg
+The Adventures Of Dino Riki: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Adventures%20Of%20Dino%20Riki.jpg
+The Adventures Of Lolo 2: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Adventures%20Of%20Lolo%202.jpg
+The Adventures Of Lolo 3: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Adventures%20Of%20Lolo%203.jpg
+The Adventures Of Lolo: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Adventures%20Of%20Lolo.jpg
+The Battle Of Olympus: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Battle%20Of%20Olympus.jpg
+The Harlem Globetrotters: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Harlem%20Globetrotters.jpg
+The Immortal: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Immortal.jpg
+The Legend Of Kage: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Legend%20Of%20Kage.jpg
+The Legend Of Zelda: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Legend%20Of%20Zelda.jpg
+The Lone Ranger: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Lone%20Ranger.jpg
+The Simpsons Bart Meets Radioactive Man: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Simpsons%20Bart%20Meets%20Radioactive%20Man.jpg
+The Simpsons Bart Vs. The World: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/The%20Simpsons%20Bart%20Vs.%20The%20World.jpg
+Tiger Heli: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Tiger%20Heli.jpg
+Toobin': https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Toobin'.jpg
+Top Gun II The Second Mission: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Top%20Gun%20II%20The%20Second%20Mission.jpg
+Top Gun: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Top%20Gun.jpg
+Track and Field II: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Track%20and%20Field%20II.jpg
+Track and Field: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Track%20and%20Field.jpg
+Trog: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Trog.jpg
+Trojan: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Trojan.jpg
+Uninvited: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Uninvited.jpg
+Urban Champion: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Urban%20Champion.jpg
+Vice Project Doom: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Vice%20Project%20Doom.jpg
+Volleyball: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Volleyball.jpg
+Wario's Woods: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wario's%20Woods.jpg
+Wheel Of Fortune Family Edition: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wheel%20Of%20Fortune%20Family%20Edition.jpg
+Who Framed Roger Rabbit: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Who%20Framed%20Roger%20Rabbit.jpg
+Wild Gunman: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wild%20Gunman.jpg
+Willow: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Willow.jpg
+Winter Games: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Winter%20Games.jpg
+Wizards and Warriors II Ironsword: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wizards%20and%20Warriors%20II%20Ironsword.jpg
+Wizards and Warriors III-Kuros Visions Of Power: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wizards%20and%20Warriors%20III-Kuros%20Visions%20Of%20Power.jpg
+Wizards and Warriors: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wizards%20and%20Warriors.jpg
+Wrecking Crew: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Wrecking%20Crew.jpg
+Xenophobe: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Xenophobe.jpg
+Xevious: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Xevious.jpg
+Yo! Noid: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Yo!%20Noid.jpg
+Zanac: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Zanac.jpg
+Zelda II The Adventure Of Link: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Zelda%20II%20The%20Adventure%20Of%20Link.jpg
+Zen Intergalactic Ninja: https://raw.githubusercontent.com/ramiabraham/cover-art-collection/master/nes/Zen%20Intergalactic%20Ninja.jpg
