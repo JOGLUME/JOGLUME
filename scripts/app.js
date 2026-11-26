@@ -382,6 +382,21 @@ async function loadGameCover(game, cover, skipCache = false) {
     } catch {
     }
 
+    try {
+        const response = await fetch("/api/covers?q=" + encodeURIComponent(game.name), {
+            headers: { Accept: "application/json" },
+            cache: "no-store"
+        });
+        if (response.ok) {
+            const data = await response.json();
+            if (data.image && await showImage(data.image)) {
+                game.coverUrl = data.image.url;
+                return;
+            }
+        }
+    } catch {
+    }
+
     coverFallback(cover);
     cover.dataset.coverLoaded = "false";
 }
