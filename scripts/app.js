@@ -479,8 +479,13 @@ function normalizeName(name) {
         .replace(/[_-]/g, " ")
         .replace(/\s+/g, " ")
         .trim();
-    const minecraftVersion = cleaned.match(/^(?:minecraft\s*)?(\d+(?:\.\d+){1,2})$/i);
-    if (minecraftVersion) return `Minecraft — Versão ${minecraftVersion[1]}`;
+    const minecraftVersion = cleaned.match(/^(?:minecraft\s*)?(\d+(?:\.\d+){1,2})(\s+wasm)?$/i);
+    if (minecraftVersion) return `Minecraft — Versão ${minecraftVersion[1]}${minecraftVersion[2] ? " WASM" : ""}`;
+    const minecraftAlpha = cleaned.match(/^alpha\s*(\d+(?:\.\d+){1,2})$/i);
+    if (minecraftAlpha) return `Minecraft — Alpha ${minecraftAlpha[1]}`;
+    const minecraftBeta = cleaned.match(/^beta\s*(\d+(?:\.\d+){1,2})$/i);
+    if (minecraftBeta) return `Minecraft — Beta ${minecraftBeta[1]}`;
+    if (/^indev$/i.test(cleaned)) return "Minecraft — Indev";
     return cleaned.replace(/\b\w/g, letter => letter.toUpperCase());
 }
 
