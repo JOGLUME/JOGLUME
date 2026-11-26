@@ -395,7 +395,7 @@ function guessCategory(name) {
         return "luta";
     }
 
-    if (/\b(racing|race|kart|drift|rally|grand prix|formula one|formula 1|f1|moto gp|motogp|motocross|motoracer|need for speed|top gear|road rash|excitebike|v rally|gt advance|diddy kong racing|mario kart|cruis n)\b/.test(value)) {
+    if (/\b(racing|race|kart|drift|rally|grand prix|formula one|formula 1|f1|f zero|moto gp|motogp|motocross|motoracer|need for speed|top gear|road rash|excitebike|v rally|gt advance|diddy kong racing|mario kart|micro machines|super off road|stunt race|rock n roll racing|biker mice from mars|cruis n)\b/.test(value)) {
         return "corrida";
     }
 
@@ -411,7 +411,7 @@ function guessCategory(name) {
         return "aventura";
     }
 
-    if (/\b(sonic|mario|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense|contra|metal slug|mega man|megaman|beat em up)\b/.test(value)) {
+    if (/\b(sonic|mario|kirby|donkey kong|yoshi|rayman|crash bandicoot|platform|run|action|ninja|shooter|shoot|gun|war|zombie|defense|contra|metal slug|mega man|megaman|battletoads|teenage mutant ninja turtles|captain commando|beat em up)\b/.test(value)) {
         return "acao";
     }
 
