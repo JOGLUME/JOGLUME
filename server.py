@@ -11,8 +11,12 @@ import time
 import os
 import unicodedata
 import difflib
+import hashlib
 
 COVER_CACHE = {}
+CATALOG_CACHE = {}
+CATALOG_CACHE_TTL = 6 * 60 * 60
+CATALOG_LOCK = threading.RLock()
 COVER_CACHE_TTL = 60 * 60 * 12
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
@@ -276,6 +280,111 @@ def find_automatic_cover(game_name):
     return image
 
 
+def fetch_json(url, headers=None, timeout=25):
+    request_headers = {
+        "User-Agent": "Joglume/1.0 (+https://joglume-production.up.railway.app)",
+        "Accept": "application/json"
+    }
+    if headers:
+        request_headers.update(headers)
+    request = Request(url, headers=request_headers)
+    with urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read(25_000_000).decode("utf-8", errors="ignore"))
+
+
+def catalog_cache_key(source):
+    identity = {
+        "owner": str(source.get("owner", "")).lower(),
+        "repo": str(source.get("repo", "")).lower(),
+        "branch": source.get("branch") or "",
+        "path": (source.get("path") or "").strip("/"),
+        "recursive": source.get("recursive") is not False
+    }
+    return hashlib.sha256(json.dumps(identity, sort_keys=True).encode("utf-8")).hexdigest()
+
+
+def fetch_catalog_from_source(source):
+    owner = str(source.get("owner", "")).strip()
+    repo = str(source.get("repo", "")).strip()
+    branch = str(source.get("branch") or "").strip()
+    directory = str(source.get("path") or "").strip("/")
+    recursive = source.get("recursive") is not False
+
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+", owner) or not re.fullmatch(r"[A-Za-z0-9_.-]+", repo):
+        raise ValueError("Fonte inválida.")
+
+    if not branch:
+        repo_data = fetch_json(f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}")
+        branch = repo_data.get("default_branch") or "main"
+
+    prefix = directory + "/" if directory else ""
+    jsdelivr_url = f"https://data.jsdelivr.com/v1/package/gh/{quote(owner)}/{quote(repo)}@{quote(branch, safe='')}/flat"
+
+    try:
+        data = fetch_json(jsdelivr_url)
+        paths = []
+        sizes = {}
+        for item in data.get("files", []):
+            path = str(item.get("name", "")).lstrip("/")
+            if not path or (prefix and not (path.startswith(prefix) or path == directory)):
+                continue
+            relative = path[len(prefix):] if prefix and path.startswith(prefix) else path
+            if not recursive and "/" in relative:
+                continue
+            paths.append(path)
+            sizes[path] = item.get("size")
+        provider = "jsdelivr"
+    except Exception:
+        tree_url = f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}/git/trees/{quote(branch, safe='')}?recursive=1"
+        data = fetch_json(tree_url, {"Accept": "application/vnd.github+json"})
+        if data.get("truncated"):
+            raise RuntimeError("A lista desta fonte é grande demais para uma única consulta. Será necessário paginar a leitura.")
+        paths = []
+        sizes = {}
+        for item in data.get("tree", []):
+            if item.get("type") != "blob":
+                continue
+            path = str(item.get("path", ""))
+            if prefix and not (path.startswith(prefix) or path == directory):
+                continue
+            relative = path[len(prefix):] if prefix and path.startswith(prefix) else path
+            if not recursive and "/" in relative:
+                continue
+            paths.append(path)
+            sizes[path] = item.get("size")
+        provider = "github-api"
+
+    return {
+        "branch": branch,
+        "files": paths,
+        "sizes": sizes,
+        "provider": provider,
+        "updatedAt": int(time.time() * 1000)
+    }
+
+
+def get_source_catalog(source, force=False):
+    key = catalog_cache_key(source)
+    now = time.time()
+    with CATALOG_LOCK:
+        cached = CATALOG_CACHE.get(key)
+        if cached and not force and now - cached["cachedAt"] < CATALOG_CACHE_TTL:
+            return {**cached["data"], "cached": True, "stale": False}
+
+    try:
+        data = fetch_catalog_from_source(source)
+        with CATALOG_LOCK:
+            CATALOG_CACHE[key] = {"data": data, "cachedAt": time.time()}
+        return {**data, "cached": False, "stale": False}
+    except Exception as error:
+        with CATALOG_LOCK:
+            cached = CATALOG_CACHE.get(key)
+        if cached:
+            return {**cached["data"], "cached": True, "stale": True, "warning": str(error)}
+        raise
+
+
+
 def load_manual_covers():
     covers_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "capas", "capa.txt")
     entries = []
@@ -360,6 +469,8 @@ def find_manual_cover(game_name):
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/catalog":
+            return self.send_json({"error": "Use POST para consultar o catálogo."}, 405)
         if parsed.path == "/api/covers":
             query = parse_qs(parsed.query).get("q", [""])[0].strip()
             if not query:
@@ -370,12 +481,29 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             return self.send_json({"image": cover, "query": query, "source": cover.get("source", "capas/capa.txt") if cover else None})
         return super().do_GET()
 
+    def do_POST(self):
+        parsed = urlparse(self.path)
+        if parsed.path != "/api/catalog":
+            return self.send_json({"error": "Endpoint não encontrado."}, 404)
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+            if length <= 0 or length > 100_000:
+                return self.send_json({"error": "Solicitação inválida."}, 400)
+            payload = json.loads(self.rfile.read(length).decode("utf-8"))
+            source = payload.get("source") if isinstance(payload, dict) else None
+            if not isinstance(source, dict):
+                return self.send_json({"error": "Fonte inválida."}, 400)
+            catalog = get_source_catalog(source, force=bool(payload.get("force")))
+            return self.send_json(catalog)
+        except Exception as error:
+            return self.send_json({"error": str(error)}, 502)
+
     def send_json(self, payload, status=200):
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Cache-Control", "no-store")
+        self.send_header("Cache-Control", "public, max-age=60")
         self.end_headers()
         self.wfile.write(data)
 
