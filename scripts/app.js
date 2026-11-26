@@ -945,21 +945,28 @@ async function loadDirectory(source, options = {}) {
     updateDirectoryStatus(source, "Carregando...", "#ffb347");
 
     try {
-        let branch = source.branch;
-        if (!branch) {
-            const repositoryURL = `${CONFIG.githubAPI}${source.owner}/${source.repo}`;
-            const repoInfo = await githubFetch(repositoryURL);
-            branch = repoInfo.default_branch;
+        const catalogResponse = await fetch("/api/catalog", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                source: {
+                    owner: source.owner,
+                    repo: source.repo,
+                    branch: source.branch || "",
+                    path: source.path || "",
+                    recursive: source.recursive !== false
+                },
+                force: options.refresh === true
+            })
+        });
+
+        const catalog = await catalogResponse.json();
+        if (!catalogResponse.ok) {
+            throw new Error(catalog.error || `Falha ao consultar catálogo (${catalogResponse.status}).`);
         }
 
-        const files = await getRepositoryFiles(
-            source.owner,
-            source.repo,
-            branch,
-            source.path || "",
-            source.recursive !== false
-        );
-
+        const branch = catalog.branch;
+        const files = Array.isArray(catalog.files) ? catalog.files : [];
         const supportedFiles = files
             .filter(path => {
                 const extension = String(path).split(".").pop().toLowerCase();
@@ -1041,12 +1048,14 @@ async function loadDirectory(source, options = {}) {
         source.gameCount = supportedFiles.length;
         source.lastUpdated = Date.now();
         source.status = "active";
-        source.lastError = "";
+        source.catalogProvider = catalog.provider || "server-cache";
+        source.catalogStale = Boolean(catalog.stale);
+        source.lastError = catalog.stale ? (catalog.warning || "Catálogo temporariamente desatualizado.") : "";
 
         updateDirectoryStatus(
             source,
-            `${supportedFiles.length} jogos`,
-            "#58d69a"
+            `${supportedFiles.length} jogos${catalog.stale ? " · cache" : ""}`,
+            catalog.stale ? "#ffb347" : "#58d69a"
         );
 
         saveSources();
@@ -1094,7 +1103,7 @@ async function loadAllDirectories() {
                 enabledSources.length ? (index / enabledSources.length) * 100 : 100
             );
 
-            total += await loadDirectory(source);
+            total += await loadDirectory(source, { refresh: true });
         }
 
         localStorage.setItem(STORAGE_KEYS.lastUpdate, String(Date.now()));
@@ -1122,6 +1131,7 @@ async function refreshSource(sourceId) {
 
     const added = await loadDirectory(source, {
         force: true,
+        refresh: true,
         showError: true
     });
 
