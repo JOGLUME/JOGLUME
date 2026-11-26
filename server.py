@@ -458,7 +458,15 @@ def find_manual_cover(game_name, platform):
         return None
 
     def cover_key(value):
-        value = re.sub(r"\([^)]*\)|\[[^]]*\]", " ", str(value or ""))
+        value = str(value or "")
+        value = re.sub(r"\s*\((?:U|E|J|W)\)\s*", " ", value, flags=re.I)
+        value = re.sub(
+            r"\s*\((?=[^)]*\b(?:PAL|USA|Europe|Japan|World|Australia|Korea|Brazil|Canada|En|Fr|De|Es|It|Nl|Sv|Da|Pt|Rev(?:ision)?|V\d+(?:\.\d+)*|Beta|Alpha)\b)[^)]*\)",
+            " ",
+            value,
+            flags=re.I
+        )
+        value = re.sub(r"\s*\[(?:!|a|b|h|t|o|p|f|x|\?|\s*)\]\s*", " ", value, flags=re.I)
         return normalize_search_text(value)
 
     target_key = cover_key(game_name)
