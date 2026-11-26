@@ -3,16 +3,16 @@
 const SOURCE_KEY = "fm_sources_v3";
 const GAMES_KEY = "fm_games_v3";
 const SOURCE_DEFAULTS = [
-    { id: "gba-roms", name: "Game Boy Advance ROMs", owner: "CleberDevOps", repo: "roms-gameboy-advanced", branch: "master", category: "rpg", platform: "gba", origin: "native" },
-    { id: "offline-html-games", name: "Offline HTML Games Pack", owner: "CoolDude2349", repo: "Offline-HTML-Games-Pack", branch: "master", category: "acao", platform: "html5", origin: "native" },
-    { id: "flash-games-directory", name: "Flash Games Directory", owner: "AmmarSAA", repo: "flash-games-directory", branch: "main", category: "acao", platform: "flash", origin: "native" },
+    { id: "gba-roms", name: "Game Boy Advance ROMs", owner: "CleberDevOps", repo: "roms-gameboy-advanced", branch: "master", category: "auto", platform: "gba", origin: "native" },
+    { id: "offline-html-games", name: "Offline HTML Games Pack", owner: "CoolDude2349", repo: "Offline-HTML-Games-Pack", branch: "master", category: "auto", platform: "html5", origin: "native" },
+    { id: "flash-games-directory", name: "Flash Games Directory", owner: "AmmarSAA", repo: "flash-games-directory", branch: "main", category: "auto", platform: "flash", origin: "native" },
     { id: "snes-dolchi21", name: "SNES ROMs · Dolchi21", owner: "dolchi21-retroarch", repo: "snes-roms", branch: "master", category: "auto", platform: "snes", extensions: ["zip"], required: true, origin: "native" },
     { id: "snes-coop", name: "SNES Co-op Retro Games", owner: "hacan359", repo: "co-op-retro-games", branch: "main", path: "roms/snes", url: "https://github.com/hacan359/co-op-retro-games/tree/main/roms/snes", category: "auto", platform: "snes", extensions: ["zip", "sfc", "smc"], required: true, origin: "native" },
     { id: "megadrive-homebrew", name: "Mega Drive Homebrew · RetroBrews", owner: "retrobrews", repo: "md-games", branch: "", category: "auto", platform: "segaMD", extensions: ["bin", "md", "gen", "smd"], required: true, origin: "native" }
 ];
 const EXTENSIONS = {
-    flash: ["swf"], html5: ["html", "htm"], gba: ["gba"], gbc: ["gbc"], gb: ["gb"], nes: ["nes"],
-    snes: ["sfc", "smc"], nds: ["nds"], n64: ["z64", "n64", "v64"], segaMD: ["md", "gen", "bin"],
+    flash: ["swf"], html5: ["html", "htm"], gba: ["gba"], gb: ["gb"], nes: ["nes"],
+    snes: ["sfc", "smc"], segaMD: ["md", "gen", "bin"],
     psx: ["chd", "cue", "iso", "pbp"], arcade: ["zip"], psp: ["iso", "cso", "pbp"]
 };
 const $ = id => document.getElementById(id);
