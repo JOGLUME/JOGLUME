@@ -245,6 +245,7 @@ function startEmulator(rom) {
     window.EJS_language = "pt-BR";
     window.EJS_backgroundColor = "#08090d";
     window.EJS_gameID = "flashmania-gba";
+    window.JoglumeSaveCloud?.configureEmulator(rom, "gba");
 
     emulatorScript = document.createElement("script");
     emulatorScript.src = `${GBA_CONFIG.dataPath}loader.js`;
