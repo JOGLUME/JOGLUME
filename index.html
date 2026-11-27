@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/semantic.css">
 
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script src="scripts/save-cloud.js" defer></script>
     <script src="scripts/app.js" defer></script>
 <script src="scripts/navigation.js" defer></script>
 </head>
@@ -776,6 +777,19 @@
                     </p>
                 </div>
 
+
+                <section class="save-cloud-panel">
+                    <div class="section-heading">
+                        <div><span class="section-subtitle">PROGRESSO DOS JOGOS</span><h2>Joglume Save Cloud</h2><p>Seus saves dos emuladores sincronizados automaticamente.</p></div>
+                        <button class="secondary-button" id="save-cloud-export" type="button">Exportar backups ZIP</button>
+                    </div>
+                    <div class="save-cloud-account">
+                        <div><strong>Identidade</strong><p id="save-cloud-status">Carregando sua sessão...</p></div>
+                        <div id="save-cloud-google"></div>
+                    </div>
+                    <div class="save-cloud-list" id="save-cloud-list"><p class="save-cloud-note">Carregando saves...</p></div>
+                    <p class="save-cloud-note">Visitante: os saves ficam vinculados a este navegador. Entre com Google para recuperar o progresso em outros dispositivos. O login associa os saves do visitante à sua conta.</p>
+                </section>
 
                 <div class="backup-grid">
 
