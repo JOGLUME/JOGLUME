@@ -18,6 +18,7 @@ import hmac
 import io
 import secrets
 import sqlite3
+from contextlib import contextmanager
 import zipfile
 from http.cookies import SimpleCookie
 from datetime import datetime, timezone
@@ -36,12 +37,20 @@ SAVE_DB = save_db_path()
 SAVE_DB_LOCK = threading.RLock()
 SAVE_COOKIE = "joglume_session"
 
+@contextmanager
 def save_db():
     connection = sqlite3.connect(SAVE_DB, timeout=20)
     connection.row_factory = sqlite3.Row
     connection.execute("PRAGMA journal_mode=WAL")
     connection.execute("PRAGMA foreign_keys=ON")
-    return connection
+    try:
+        yield connection
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
 
 def init_save_db():
     folder = os.path.dirname(SAVE_DB)
