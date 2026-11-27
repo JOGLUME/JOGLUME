@@ -650,6 +650,9 @@ def find_manual_cover(game_name, platform):
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/rom-proxy":
+            target = parse_qs(parsed.query).get("url", [""])[0]
+            return self.handle_rom_proxy(target)
         if parsed.path == "/api/save-cloud/session": return self.handle_save_session()
         if parsed.path == "/api/save-cloud/saves": return self.handle_save_list()
         if parsed.path == "/api/save-cloud/export": return self.handle_save_export()
@@ -666,6 +669,63 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
                 cover = find_automatic_cover(query)
             return self.send_json({"image": cover, "query": query, "platform": platform, "source": f"capas/{platform}/capa.txt" if cover else None})
         return super().do_GET()
+
+    def handle_rom_proxy(self, target):
+        parsed = urlparse(target)
+        host = (parsed.hostname or "").lower()
+        allowed = (
+            host == "raw.githubusercontent.com"
+            or host == "github.com"
+            or host == "objects.githubusercontent.com"
+            or host.endswith(".githubusercontent.com")
+            or host == "archive.org"
+            or host.endswith(".archive.org")
+        )
+        if parsed.scheme != "https" or not allowed or parsed.username or parsed.password:
+            return self.send_json({"error": "A fonte da ROM não é permitida pelo proxy."}, 403)
+
+        headers = {
+            "User-Agent": "Joglume/1.0",
+            "Accept": "*/*"
+        }
+        byte_range = self.headers.get("Range")
+        if byte_range:
+            headers["Range"] = byte_range
+        try:
+            response = urlopen(Request(target, headers=headers), timeout=90)
+            final = urlparse(response.geturl())
+            final_host = (final.hostname or "").lower()
+            final_allowed = (
+                final_host == "raw.githubusercontent.com"
+                or final_host == "github.com"
+                or final_host == "objects.githubusercontent.com"
+                or final_host.endswith(".githubusercontent.com")
+                or final_host == "archive.org"
+                or final_host.endswith(".archive.org")
+            )
+            if final.scheme != "https" or not final_allowed:
+                response.close()
+                return self.send_json({"error": "A fonte redirecionou para um endereço não permitido."}, 403)
+
+            self.send_response(response.status)
+            self.send_header("Content-Type", response.headers.get("Content-Type", "application/octet-stream"))
+            for header in ("Content-Length", "Content-Range", "Accept-Ranges", "Last-Modified", "ETag"):
+                value = response.headers.get(header)
+                if value:
+                    self.send_header(header, value)
+            self.send_header("Cache-Control", "private, max-age=300")
+            self.send_header("Content-Disposition", "inline")
+            self.end_headers()
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
+            response.close()
+        except HTTPError as error:
+            return self.send_json({"error": f"A fonte recusou o arquivo (HTTP {error.code})."}, error.code)
+        except (URLError, TimeoutError, OSError) as error:
+            return self.send_json({"error": "Não foi possível buscar a ROM na fonte informada."}, 502)
 
     def do_POST(self):
         parsed = urlparse(self.path)
