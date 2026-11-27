@@ -650,6 +650,8 @@ def find_manual_cover(game_name, platform):
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/ps2" or parsed.path.startswith("/ps2/"):
+            return self.handle_ps2_proxy(parsed.path, parsed.query)
         if parsed.path == "/api/rom-proxy":
             target = parse_qs(parsed.query).get("url", [""])[0]
             return self.handle_rom_proxy(target)
@@ -726,6 +728,42 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
             return self.send_json({"error": f"A fonte recusou o arquivo (HTTP {error.code})."}, error.code)
         except (URLError, TimeoutError, OSError) as error:
             return self.send_json({"error": "Não foi possível buscar a ROM na fonte informada."}, 502)
+
+    def handle_ps2_proxy(self, path, query):
+        suffix = path[len("/ps2"):].lstrip("/")
+        target = "https://tabstationtoo.github.io/TabStationToo/"
+        if suffix:
+            target += suffix
+        if query:
+            target += "?" + query
+        try:
+            headers = {"User-Agent": "Joglume/1.0", "Accept": "*/*"}
+            byte_range = self.headers.get("Range")
+            if byte_range:
+                headers["Range"] = byte_range
+            response = urlopen(Request(target, headers=headers), timeout=90)
+            final = urlparse(response.geturl())
+            if final.scheme != "https" or final.hostname != "tabstationtoo.github.io":
+                response.close()
+                return self.send_json({"error": "Não foi possível carregar o emulador PS2."}, 502)
+            self.send_response(response.status)
+            self.send_header("Content-Type", response.headers.get("Content-Type", "application/octet-stream"))
+            for header in ("Content-Length", "Content-Range", "Accept-Ranges", "Last-Modified", "ETag"):
+                value = response.headers.get(header)
+                if value:
+                    self.send_header(header, value)
+            self.send_header("Cache-Control", "public, max-age=300")
+            self.end_headers()
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
+            response.close()
+        except HTTPError as error:
+            return self.send_json({"error": f"O emulador PS2 respondeu com HTTP {error.code}."}, error.code)
+        except (URLError, TimeoutError, OSError):
+            return self.send_json({"error": "Não foi possível conectar ao emulador PS2."}, 502)
 
     def do_POST(self):
         parsed = urlparse(self.path)
@@ -864,7 +902,7 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
         self.wfile.write(data)
 
     def end_headers(self):
-        if self.path.split("?", 1)[0] in ("/paginas/psp.html", "/paginas/ps2.html"):
+        if self.path.split("?", 1)[0] in ("/paginas/psp.html", "/paginas/ps2.html") or self.path.split("?", 1)[0] == "/ps2" or self.path.split("?", 1)[0].startswith("/ps2/"):
             self.send_header("Cross-Origin-Opener-Policy", "same-origin")
             self.send_header("Cross-Origin-Embedder-Policy", "credentialless")
         super().end_headers()
