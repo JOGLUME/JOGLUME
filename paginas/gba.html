@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/semantic.css?v=20261127-2">
+<link rel="stylesheet" href="../css/semantic.css?v=20261127-3">
 <script src="../scripts/save-cloud.js" defer></script>
     <script src="../scripts/gba.js" defer></script>
 <script src="../scripts/navigation.js" defer></script>
@@ -111,6 +111,15 @@
       <div class="key-group"><span class="key">A</span><span class="key">S</span><small>L / R</small></div>
       <div class="key-group"><span class="key wide">Enter</span><span class="key wide">Shift</span><small>Start / Select</small></div>
       <p>No celular, o EmulatorJS disponibiliza controles de toque na tela quando suportados pelo dispositivo.</p>
+    </div>
+  </section>
+  <section class="content-section save-cloud-section" aria-labelledby="save-cloud-heading">
+    <div class="section-heading"><div><span class="section-subtitle">SINCRONIZAÇÃO E SEGURANÇA</span><h2 id="save-cloud-heading">Save Cloud</h2><p>Seus saves compatíveis ficam associados ao seu navegador. Entre com Google para levar seu progresso entre dispositivos.</p></div></div>
+    <div class="save-cloud-card">
+      <div class="save-cloud-card-top"><span class="save-cloud-icon">☁</span><div><strong>Armazenamento na nuvem</strong><p id="save-cloud-status" role="status">Conectando ao Save Cloud...</p></div></div>
+      <div id="save-cloud-google" class="save-cloud-google"></div>
+      <div id="save-cloud-list" class="save-cloud-list"><p class="save-cloud-note">Carregando seus saves...</p></div>
+      <button type="button" class="secondary-button" id="save-cloud-export">Exportar backup ZIP</button>
     </div>
   </section>
   <footer class="footer"><div><strong>JOGLUME</strong><span>Seu universo de jogos clássicos.</span></div><span>© 2026 JOGLUME</span></footer>
