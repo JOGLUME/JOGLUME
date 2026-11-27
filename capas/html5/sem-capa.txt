@@ -86,7 +86,6 @@ tetrominoes
 there is no g
 time shooter 3
 volley random
-wheely 4
 wheely 5
 worlds hardest game 2
 worlds hardest game 3
