@@ -1536,6 +1536,8 @@ function loadEmulatorGame(game, content) {
     }
 
     const core = EMULATOR_CORES[game.type];
+    const saveId = window.JoglumeSaveCloud ? window.JoglumeSaveCloud.gameId(game, game.type) : "jgl_" + String(game.id || game.name || "game").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 50);
+    const saveNumericId = parseInt(saveId.replace(/^jgl_/, "").slice(0, 8), 16) || 1;
 
     if (!core) {
         showToast("Este console não possui um núcleo configurado.", "error");
@@ -1583,8 +1585,41 @@ function loadEmulatorGame(game, content) {
                 window.EJS_gameUrl = ${JSON.stringify(game.url)};
                 window.EJS_pathtodata = ${JSON.stringify(CONFIG.emulatorData)};
                 window.EJS_gameName = ${JSON.stringify(game.name)};
+                window.EJS_gameID = ${saveNumericId};
+                window.EJS_fixedSaveInterval = 10000;
                 window.EJS_color = "#ff7043";
                 window.EJS_startOnLoaded = true;
+                window.EJS_onSaveUpdate = async function(event) {
+                    if (!event || !event.save) return;
+                    try {
+                        await fetch("/api/save-cloud/saves/" + ${JSON.stringify(saveId)}, {
+                            method: "PUT",
+                            credentials: "same-origin",
+                            headers: {
+                                "Content-Type": "application/octet-stream",
+                                "X-Game-Name": encodeURIComponent(${JSON.stringify(game.name)}),
+                                "X-Game-Platform": ${JSON.stringify(game.type)},
+                                "X-Save-Filename": ${JSON.stringify(saveId + ".srm")}
+                            },
+                            body: event.save
+                        });
+                    } catch (error) {}
+                };
+                window.EJS_ready = async function() {
+                    try {
+                        const response = await fetch("/api/save-cloud/saves/" + ${JSON.stringify(saveId)} + "/file", { credentials: "same-origin", cache: "no-store" });
+                        if (response.ok) {
+                            const bytes = new Uint8Array(await response.arrayBuffer());
+                            const manager = window.EJS_emulator && window.EJS_emulator.gameManager;
+                            const path = manager && manager.getSaveFilePath && manager.getSaveFilePath();
+                            if (manager && manager.FS && path) {
+                                manager.FS.writeFile(path, bytes);
+                                await new Promise(resolve => manager.FS.syncfs(false, resolve));
+                                if (manager.loadSaveFiles) manager.loadSaveFiles();
+                            }
+                        }
+                    } catch (error) {}
+                };
             <\/script>
             <script src="${CONFIG.emulatorData}loader.js"><\/script>
         </body>
