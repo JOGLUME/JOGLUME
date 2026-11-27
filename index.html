@@ -10,9 +10,11 @@
     <title>Joglume - Jogos Online</title>
 
     <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/semantic.css">
 
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script src="scripts/app.js" defer></script>
+<script src="scripts/navigation.js" defer></script>
 </head>
 
 <body>
@@ -21,12 +23,12 @@
 
         <aside class="sidebar" id="sidebar">
 
-            <div class="logo">
+            <div class="logo" aria-label="Joglume — página inicial">
                 <span class="logo-icon">J</span>
                 <span class="logo-text">JOG<span>LUME</span></span>
             </div>
 
-            <nav class="navigation">
+            <nav class="navigation" aria-label="Navegação principal">
 
                 <div class="nav-section">
                     <span class="nav-title">MENU PRINCIPAL</span>
@@ -162,7 +164,7 @@
         </aside>
 
 
-        <main class="main-content">
+        <main class="main-content" id="conteudo-principal">
 
             <header class="topbar">
 
@@ -373,7 +375,7 @@
             </section>
 
 
-            <section class="page" id="page-library">
+            <section class="page" id="page-library"><span id="biblioteca" class="anchor-target" aria-hidden="true"></span>
 
                 <div class="page-header">
                     <span class="section-subtitle">SUA COLEÇÃO</span>
