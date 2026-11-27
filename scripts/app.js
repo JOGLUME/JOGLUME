@@ -1639,8 +1639,24 @@ function loadEmulatorGame(game, content) {
 }
 
 function closePlayer() {
-    $("#player-modal").classList.add("hidden");
-    $("#player-content").innerHTML = "";
+    const modal = $("#player-modal");
+    const content = $("#player-content");
+    const emulatorFrame = content.querySelector("iframe");
+    modal.classList.add("hidden");
+
+    if (emulatorFrame) {
+        try {
+            const manager = emulatorFrame.contentWindow.EJS_emulator?.gameManager;
+            manager?.saveSaveFiles?.();
+        } catch {}
+        setTimeout(() => {
+            if (modal.classList.contains("hidden") && content.contains(emulatorFrame)) {
+                content.innerHTML = "";
+            }
+        }, 1800);
+    } else {
+        content.innerHTML = "";
+    }
 
     if (currentObjectURL) {
         URL.revokeObjectURL(currentObjectURL);
