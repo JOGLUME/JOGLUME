@@ -13,6 +13,144 @@ import unicodedata
 import difflib
 import hashlib
 
+import base64
+import hmac
+import io
+import secrets
+import sqlite3
+import zipfile
+from http.cookies import SimpleCookie
+from datetime import datetime, timezone
+
+def save_db_path():
+    configured = os.environ.get("SAVE_DB_PATH")
+    if configured:
+        return configured
+    if os.path.isdir("/data") and os.access("/data", os.W_OK):
+        return "/data/joglume-save-cloud.sqlite3"
+    folder = os.path.join(os.path.dirname(__file__), "data")
+    os.makedirs(folder, exist_ok=True)
+    return os.path.join(folder, "save-cloud.sqlite3")
+
+SAVE_DB = save_db_path()
+SAVE_DB_LOCK = threading.RLock()
+SAVE_COOKIE = "joglume_session"
+
+def save_db():
+    connection = sqlite3.connect(SAVE_DB, timeout=20)
+    connection.row_factory = sqlite3.Row
+    connection.execute("PRAGMA journal_mode=WAL")
+    connection.execute("PRAGMA foreign_keys=ON")
+    return connection
+
+def init_save_db():
+    folder = os.path.dirname(SAVE_DB)
+    if folder:
+        os.makedirs(folder, exist_ok=True)
+    with SAVE_DB_LOCK, save_db() as db:
+        db.executescript("""
+            CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS users (
+                id TEXT PRIMARY KEY, provider TEXT NOT NULL, provider_sub TEXT UNIQUE,
+                email TEXT, display_name TEXT, created_at INTEGER NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS saves (
+                user_id TEXT NOT NULL, game_id TEXT NOT NULL, game_name TEXT NOT NULL,
+                platform TEXT NOT NULL, filename TEXT NOT NULL, data BLOB NOT NULL,
+                updated_at INTEGER NOT NULL, PRIMARY KEY (user_id, game_id),
+                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+            );
+            CREATE TABLE IF NOT EXISTS save_versions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT NOT NULL,
+                game_id TEXT NOT NULL, filename TEXT NOT NULL, data BLOB NOT NULL,
+                created_at INTEGER NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS save_versions_lookup ON save_versions(user_id, game_id, created_at DESC);
+        """)
+        db.execute("INSERT OR IGNORE INTO settings(key, value) VALUES('session_secret', ?)", (secrets.token_urlsafe(48),))
+
+def session_secret():
+    with SAVE_DB_LOCK, save_db() as db:
+        return db.execute("SELECT value FROM settings WHERE key='session_secret'").fetchone()["value"]
+
+def make_session_cookie(user_id, max_age=2592000):
+    expires = int(time.time()) + max_age
+    payload = f"{user_id}.{expires}"
+    signature = hmac.new(session_secret().encode(), payload.encode(), hashlib.sha256).hexdigest()
+    return f"{payload}.{signature}"
+
+def read_session_cookie(handler):
+    cookie = SimpleCookie()
+    try:
+        cookie.load(handler.headers.get("Cookie", ""))
+        user_id, expires, signature = cookie[SAVE_COOKIE].value.rsplit(".", 2)
+        payload = f"{user_id}.{expires}"
+        expected = hmac.new(session_secret().encode(), payload.encode(), hashlib.sha256).hexdigest()
+        if int(expires) < int(time.time()) or not hmac.compare_digest(signature, expected):
+            return None
+        return user_id
+    except Exception:
+        return None
+
+def create_guest():
+    user_id = "guest_" + secrets.token_urlsafe(24)
+    with SAVE_DB_LOCK, save_db() as db:
+        db.execute("INSERT INTO users(id, provider, created_at) VALUES(?, 'guest', ?)", (user_id, int(time.time())))
+    return user_id
+
+def ensure_user(handler):
+    user_id = read_session_cookie(handler)
+    if user_id:
+        with SAVE_DB_LOCK, save_db() as db:
+            exists = db.execute("SELECT id FROM users WHERE id=?", (user_id,)).fetchone()
+        if exists:
+            return user_id
+    user_id = create_guest()
+    handler._save_cookie = make_session_cookie(user_id)
+    return user_id
+
+def check_same_origin(handler):
+    origin = handler.headers.get("Origin")
+    return not origin or urlparse(origin).netloc.lower() == handler.headers.get("Host", "").lower()
+
+def safe_game_id(value):
+    value = str(value or "").strip().lower()
+    return value if re.fullmatch(r"[a-z0-9_-]{3,90}", value) else None
+
+def google_identity(credential):
+    client_id = os.environ.get("GOOGLE_CLIENT_ID", "").strip()
+    if not client_id:
+        raise ValueError("Login do Google ainda não foi configurado no Joglume.")
+    if not isinstance(credential, str) or len(credential) > 12000:
+        raise ValueError("Credencial do Google inválida.")
+    info = fetch_json("https://oauth2.googleapis.com/tokeninfo?" + urlencode({"id_token": credential}), timeout=12)
+    if info.get("aud") != client_id or info.get("iss") not in ("accounts.google.com", "https://accounts.google.com"):
+        raise ValueError("Credencial Google inválida para este aplicativo.")
+    if int(info.get("exp", "0")) <= int(time.time()) or info.get("email_verified") not in ("true", True):
+        raise ValueError("A identidade Google expirou ou não foi verificada.")
+    subject = str(info.get("sub") or "")
+    if not subject:
+        raise ValueError("Não foi possível identificar a conta Google.")
+    return {"id": "google_" + hashlib.sha256(subject.encode()).hexdigest()[:40], "sub": subject,
+            "email": str(info.get("email") or "")[:254], "name": str(info.get("name") or "Conta Google")[:120]}
+
+def merge_guest_saves(db, guest_id, google_id):
+    if not guest_id or not guest_id.startswith("guest_") or guest_id == google_id:
+        return
+    rows = db.execute("SELECT * FROM saves WHERE user_id=?", (guest_id,)).fetchall()
+    for row in rows:
+        current = db.execute("SELECT updated_at FROM saves WHERE user_id=? AND game_id=?", (google_id, row["game_id"])).fetchone()
+        if not current or row["updated_at"] > current["updated_at"]:
+            db.execute("""INSERT INTO saves(user_id, game_id, game_name, platform, filename, data, updated_at)
+                VALUES(?, ?, ?, ?, ?, ?, ?) ON CONFLICT(user_id, game_id) DO UPDATE SET
+                game_name=excluded.game_name, platform=excluded.platform, filename=excluded.filename,
+                data=excluded.data, updated_at=excluded.updated_at""",
+                (google_id, row["game_id"], row["game_name"], row["platform"], row["filename"], row["data"], row["updated_at"]))
+    db.execute("INSERT INTO save_versions(user_id, game_id, filename, data, created_at) SELECT ?, game_id, filename, data, created_at FROM save_versions WHERE user_id=?", (google_id, guest_id))
+    db.execute("DELETE FROM users WHERE id=?", (guest_id,))
+
+init_save_db()
+
 COVER_CACHE = {}
 CATALOG_CACHE = {}
 CATALOG_CACHE_TTL = 6 * 60 * 60
@@ -503,6 +641,10 @@ def find_manual_cover(game_name, platform):
 class JoglumeHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/save-cloud/session": return self.handle_save_session()
+        if parsed.path == "/api/save-cloud/saves": return self.handle_save_list()
+        if parsed.path == "/api/save-cloud/export": return self.handle_save_export()
+        if parsed.path.startswith("/api/save-cloud/saves/") and parsed.path.endswith("/file"): return self.handle_save_file(parsed.path)
         if parsed.path == "/api/catalog":
             return self.send_json({"error": "Use POST para consultar o catálogo."}, 405)
         if parsed.path == "/api/covers":
@@ -518,6 +660,7 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/save-cloud/google": return self.handle_google_login()
         if parsed.path != "/api/catalog":
             return self.send_json({"error": "Endpoint não encontrado."}, 404)
         try:
@@ -533,12 +676,121 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
         except Exception as error:
             return self.send_json({"error": str(error)}, 502)
 
+    def do_PUT(self):
+        parsed = urlparse(self.path)
+        if not parsed.path.startswith("/api/save-cloud/saves/") or parsed.path.endswith("/file"):
+            return self.send_json({"error": "Endpoint não encontrado."}, 404)
+        if not check_same_origin(self): return self.send_json({"error": "Origem não autorizada."}, 403)
+        try:
+            game_id = safe_game_id(parsed.path.rsplit("/", 1)[-1])
+            if not game_id: return self.send_json({"error": "Identificador de jogo inválido."}, 400)
+            length = int(self.headers.get("Content-Length", "0"))
+            if length <= 0 or length > 16 * 1024 * 1024: return self.send_json({"error": "Arquivo de save inválido ou maior que 16 MB."}, 413)
+            data = self.rfile.read(length)
+            user_id = ensure_user(self)
+            game_name = unquote(self.headers.get("X-Game-Name", "Jogo"))[:160]
+            platform = self.headers.get("X-Game-Platform", "unknown")[:32]
+            filename = self.headers.get("X-Save-Filename", "save.srm")[:120]
+            if not re.fullmatch(r"[A-Za-z0-9_.-]+", filename): filename = "save.srm"
+            now = int(time.time())
+            with SAVE_DB_LOCK, save_db() as db:
+                previous = db.execute("SELECT data, filename FROM saves WHERE user_id=? AND game_id=?", (user_id, game_id)).fetchone()
+                if previous and bytes(previous["data"]) != data:
+                    db.execute("INSERT INTO save_versions(user_id, game_id, filename, data, created_at) VALUES(?, ?, ?, ?, ?)", (user_id, game_id, previous["filename"], previous["data"], now))
+                    db.execute("DELETE FROM save_versions WHERE user_id=? AND game_id=? AND id NOT IN (SELECT id FROM save_versions WHERE user_id=? AND game_id=? ORDER BY created_at DESC LIMIT 5)", (user_id, game_id, user_id, game_id))
+                db.execute("""INSERT INTO saves(user_id, game_id, game_name, platform, filename, data, updated_at)
+                    VALUES(?, ?, ?, ?, ?, ?, ?) ON CONFLICT(user_id, game_id) DO UPDATE SET
+                    game_name=excluded.game_name, platform=excluded.platform, filename=excluded.filename,
+                    data=excluded.data, updated_at=excluded.updated_at""",
+                    (user_id, game_id, game_name, platform, filename, sqlite3.Binary(data), now))
+            return self.send_json({"saved": True, "gameId": game_id, "updatedAt": now})
+        except Exception as error:
+            return self.send_json({"error": str(error)}, 500)
+
+    def handle_save_session(self):
+        user_id = ensure_user(self)
+        with SAVE_DB_LOCK, save_db() as db:
+            user = db.execute("SELECT provider, email, display_name FROM users WHERE id=?", (user_id,)).fetchone()
+        return self.send_json({"userId": user_id, "identity": user["provider"] if user else "guest",
+            "email": user["email"] if user else None, "displayName": user["display_name"] if user else None,
+            "googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""),
+            "googleConfigured": bool(os.environ.get("GOOGLE_CLIENT_ID", "").strip())})
+
+    def handle_google_login(self):
+        if not check_same_origin(self): return self.send_json({"error": "Origem não autorizada."}, 403)
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+            if length <= 0 or length > 20000: return self.send_json({"error": "Solicitação inválida."}, 400)
+            payload = json.loads(self.rfile.read(length).decode("utf-8"))
+            identity = google_identity(payload.get("credential") if isinstance(payload, dict) else None)
+            guest_id = ensure_user(self)
+            now = int(time.time())
+            with SAVE_DB_LOCK, save_db() as db:
+                db.execute("""INSERT INTO users(id, provider, provider_sub, email, display_name, created_at)
+                    VALUES(?, 'google', ?, ?, ?, ?) ON CONFLICT(id) DO UPDATE SET email=excluded.email, display_name=excluded.display_name""",
+                    (identity["id"], identity["sub"], identity["email"], identity["name"], now))
+                merge_guest_saves(db, guest_id, identity["id"])
+            self._save_cookie = make_session_cookie(identity["id"])
+            return self.send_json({"signedIn": True, "identity": "google", "email": identity["email"], "displayName": identity["name"]})
+        except Exception as error:
+            return self.send_json({"error": str(error)}, 400)
+
+    def handle_save_list(self):
+        user_id = ensure_user(self)
+        with SAVE_DB_LOCK, save_db() as db:
+            rows = db.execute("SELECT game_id, game_name, platform, filename, length(data) AS size, updated_at FROM saves WHERE user_id=? ORDER BY updated_at DESC", (user_id,)).fetchall()
+        return self.send_json({"saves": [dict(row) for row in rows]})
+
+    def handle_save_file(self, path):
+        user_id = ensure_user(self)
+        parts = path.strip("/").split("/")
+        game_id = safe_game_id(parts[-2] if len(parts) >= 2 else "")
+        if not game_id: return self.send_json({"error": "Identificador inválido."}, 400)
+        with SAVE_DB_LOCK, save_db() as db:
+            row = db.execute("SELECT data, filename FROM saves WHERE user_id=? AND game_id=?", (user_id, game_id)).fetchone()
+        if not row: return self.send_json({"error": "Nenhum save na nuvem."}, 404)
+        data = bytes(row["data"])
+        self.send_response(200)
+        self.send_header("Content-Type", "application/octet-stream")
+        self.send_header("Content-Disposition", "attachment; filename=" + row["filename"])
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        if getattr(self, "_save_cookie", None):
+            secure = "; Secure" if "up.railway.app" in self.headers.get("Host", "") else ""
+            self.send_header("Set-Cookie", f"{SAVE_COOKIE}={self._save_cookie}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000{secure}")
+        self.end_headers()
+        self.wfile.write(data)
+
+    def handle_save_export(self):
+        user_id = ensure_user(self)
+        with SAVE_DB_LOCK, save_db() as db:
+            rows = db.execute("SELECT game_id, game_name, platform, filename, data, updated_at FROM saves WHERE user_id=? ORDER BY platform, game_name", (user_id,)).fetchall()
+        output = io.BytesIO()
+        manifest = []
+        with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
+            for row in rows:
+                filename = re.sub(r"[^A-Za-z0-9_.-]+", "_", row["filename"] or "save.srm")
+                archive.writestr(f"saves/{row['platform']}/{row['game_id']}/{filename}", bytes(row["data"]))
+                manifest.append({"gameId": row["game_id"], "game": row["game_name"], "platform": row["platform"], "filename": filename, "updatedAt": row["updated_at"], "bytes": len(row["data"])})
+            archive.writestr("manifest.json", json.dumps({"app": "Joglume Save Cloud", "exportedAt": datetime.now(timezone.utc).isoformat(), "saves": manifest}, ensure_ascii=False, indent=2))
+        data = output.getvalue()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/zip")
+        self.send_header("Content-Disposition", 'attachment; filename="joglume-saves.zip"')
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(data)
+
     def send_json(self, payload, status=200):
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Cache-Control", "public, max-age=60")
+        self.send_header("Cache-Control", "no-store" if self.path.startswith("/api/save-cloud/") else "public, max-age=60")
+        if getattr(self, "_save_cookie", None):
+            secure = "; Secure" if self.headers.get("X-Forwarded-Proto") == "https" or "up.railway.app" in self.headers.get("Host", "") else ""
+            self.send_header("Set-Cookie", f"{SAVE_COOKIE}={self._save_cookie}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000{secure}")
         self.end_headers()
         self.wfile.write(data)
 
