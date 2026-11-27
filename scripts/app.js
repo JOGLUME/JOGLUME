@@ -1605,20 +1605,24 @@ function loadEmulatorGame(game, content) {
                         });
                     } catch (error) {}
                 };
-                window.EJS_ready = async function() {
+                window.EJS_onGameStart = async function() {
+                    const emulator = window.EJS_emulator;
+                    const manager = emulator && emulator.gameManager;
+                    if (!manager || !manager.FS) return;
+                    emulator.pause();
                     try {
                         const response = await fetch("/api/save-cloud/saves/" + ${JSON.stringify(saveId)} + "/file", { credentials: "same-origin", cache: "no-store" });
                         if (response.ok) {
                             const bytes = new Uint8Array(await response.arrayBuffer());
-                            const manager = window.EJS_emulator && window.EJS_emulator.gameManager;
-                            const path = manager && manager.getSaveFilePath && manager.getSaveFilePath();
-                            if (manager && manager.FS && path) {
+                            const path = manager.getSaveFilePath && manager.getSaveFilePath();
+                            if (path) {
                                 manager.FS.writeFile(path, bytes);
-                                await new Promise(resolve => manager.FS.syncfs(false, resolve));
+                                await new Promise((resolve, reject) => manager.FS.syncfs(false, error => error ? reject(error) : resolve()));
                                 if (manager.loadSaveFiles) manager.loadSaveFiles();
                             }
                         }
                     } catch (error) {}
+                    emulator.play();
                 };
             <\/script>
             <script src="${CONFIG.emulatorData}loader.js"><\/script>
