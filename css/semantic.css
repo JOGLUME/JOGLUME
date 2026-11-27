@@ -262,3 +262,24 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .save-cloud-row span{font-size:.8rem;color:#8dd9b2;white-space:nowrap;}
 #save-cloud-export:disabled{opacity:.55;cursor:wait;}
 @media(max-width:620px){.save-cloud-panel{padding:16px}.save-cloud-row{align-items:flex-start;flex-direction:column}.save-cloud-account{align-items:flex-start;flex-direction:column}}
+
+
+/* Save Cloud compartilhado */
+.save-cloud-section{margin-top:38px}
+.save-cloud-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;padding:22px;background:linear-gradient(135deg,#171e31,#111827);border:1px solid var(--border);border-radius:16px;box-shadow:var(--surface-glow)}
+.save-cloud-card-top{display:flex;align-items:center;gap:14px;min-width:0}
+.save-cloud-icon{width:46px;height:46px;display:grid;place-items:center;flex-shrink:0;border-radius:13px;background:#8b83ff20;color:#aaa4ff;font-size:25px}
+.save-cloud-card-top strong{display:block;color:var(--text);font-size:14px}
+.save-cloud-card-top p,.save-cloud-note{margin:6px 0 0;color:var(--text-secondary);font-size:11px;line-height:1.6}
+.save-cloud-google{grid-column:1/-1;min-height:1px}
+.save-cloud-google:empty{display:none}
+.save-cloud-list{grid-column:1/-1;display:grid;gap:8px;max-height:230px;overflow:auto}
+.save-cloud-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 13px;background:#0b1020;border:1px solid var(--border);border-radius:10px;min-width:0}
+.save-cloud-row>div{min-width:0}
+.save-cloud-row strong{display:block;color:var(--text);font-size:11px;overflow-wrap:anywhere}
+.save-cloud-row small{display:block;margin-top:4px;color:var(--text-secondary);font-size:9px}
+.save-cloud-row>span{flex-shrink:0;color:var(--green);font-size:9px;font-weight:700}
+.save-cloud-card>#save-cloud-export{justify-self:start;grid-column:1/-1}
+.save-cloud-card>#save-cloud-export:disabled{opacity:.55;cursor:wait}
+.save-cloud-google .save-cloud-note{padding:10px 0}
+@media(max-width:650px){.save-cloud-card{grid-template-columns:1fr;padding:16px}.save-cloud-card>#save-cloud-export{width:100%}.save-cloud-row{align-items:flex-start;flex-direction:column;gap:6px}}
