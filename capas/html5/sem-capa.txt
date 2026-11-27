@@ -9,16 +9,15 @@
 2048 cupcakes
 8 ball classic
 9007199254740992
-Alpha 1.2.6
-Beta 1.3
-Indev
 agar io lite
 ages of conflict
+Alpha 1.2.6
 bad parenting
 bad piggies
 bad time simulator
 baseball bros
 basket bros
+Beta 1.3
 big neon tower tiny square
 bit planes
 bitlife
@@ -56,9 +55,11 @@ google dino
 granny 2
 ice dodo
 idle dice
+Indev
 kittytoy
 melon playground
 moto x3m 3
+moto x3m winter
 noob miner
 openTTD
 ovo 2
@@ -92,4 +93,3 @@ wheely 4
 wheely 5
 worlds hardest game 2
 worlds hardest game 3
-
