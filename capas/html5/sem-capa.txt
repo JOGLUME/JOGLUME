@@ -64,11 +64,8 @@ noob miner
 openTTD
 ovo 2
 ovo 3 dimensions
-parking fury
 picos school
 pixel speedrun
-red ball 4 vol 1
-red ball 4 vol 3
 riddle school
 riddle school 4
 riddle transfer
