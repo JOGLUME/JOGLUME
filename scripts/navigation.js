@@ -22,6 +22,11 @@
     return '<a class="nav-item'+(active?' active':'')+'" href="'+href+'"'+(active?' aria-current="page"':'')+'><span aria-hidden="true">'+icon+'</span>'+label+'</a>';
   }
   function setup() {
+    const skip = document.createElement("a");
+    skip.className = "skip-link";
+    skip.href = "#conteudo-principal";
+    skip.textContent = "Pular para o conteúdo";
+    document.body.prepend(skip);
     const sidebar = document.getElementById("sidebar");
     const logo = sidebar?.querySelector(".logo");
     if (logo && logo.tagName !== "A") {
@@ -61,6 +66,11 @@
     if (page && !page.id && path !== "index.html") page.id = "conteudo-pagina";
     const toggle = document.getElementById("menu-toggle");
     toggle?.setAttribute("aria-label","Abrir ou fechar menu");
+    if (!inPages && location.hash === "#biblioteca") {
+      window.addEventListener("load", () => {
+        document.querySelector('[data-page="library"]')?.click();
+      }, { once: true });
+    }
     document.querySelectorAll('a[target="_blank"]').forEach(a => {
       if (!a.rel.includes("noopener")) a.rel = (a.rel+" noopener noreferrer").trim();
     });
