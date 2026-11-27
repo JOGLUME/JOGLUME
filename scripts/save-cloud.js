@@ -4,7 +4,7 @@
     let ready = null;
 
     function gameId(game, platform) {
-        const source = String(game && (game.url || game.persistUrl || game.id || game.name) || "game");
+        const source = String(game && (game.id || game.persistUrl || (game.url && !game.url.startsWith("blob:") ? game.url : "") || game.name) || "game");
         const input = String(platform || (game && game.type) || "unknown") + "|" + source;
         let hash = 2166136261;
         for (let i = 0; i < input.length; i++) { hash ^= input.charCodeAt(i); hash = Math.imul(hash, 16777619); }
