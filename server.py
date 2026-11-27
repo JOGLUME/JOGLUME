@@ -902,9 +902,10 @@ class JoglumeHandler(SimpleHTTPRequestHandler):
         self.wfile.write(data)
 
     def end_headers(self):
-        if self.path.split("?", 1)[0] in ("/paginas/psp.html", "/paginas/ps2.html") or self.path.split("?", 1)[0] == "/ps2" or self.path.split("?", 1)[0].startswith("/ps2/"):
+        path = self.path.split("?", 1)[0]
+        if path in ("/paginas/psp.html", "/paginas/ps2.html") or path == "/ps2" or path.startswith("/ps2/"):
             self.send_header("Cross-Origin-Opener-Policy", "same-origin")
-            self.send_header("Cross-Origin-Embedder-Policy", "credentialless")
+            self.send_header("Cross-Origin-Embedder-Policy", "require-corp" if path == "/ps2" or path.startswith("/ps2/") else "credentialless")
         super().end_headers()
 
 
