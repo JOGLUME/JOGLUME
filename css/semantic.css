@@ -249,3 +249,4 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .skip-link { position: fixed; z-index: 1000; top: 10px; left: 10px; padding: 11px 15px; border-radius: 9px; background: var(--accent); color: #fff; font-weight: 800; transform: translateY(-160%); transition: transform .2s; }
 .skip-link:focus { transform: translateY(0); }
 .anchor-target { display: block; position: relative; top: -90px; visibility: hidden; }
+
