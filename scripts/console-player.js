@@ -112,7 +112,7 @@ function startEmulator(game) {
     if (SYSTEM.key === "psp" && !window.crossOriginIsolated) {
         setStatus("ISOLAMENTO NECESSÁRIO");
         $("#psp-isolation-warning").hidden = false;
-        toast("Para iniciar o PSP, abra o Joglume pelo INICIAR-JOGLUME.bat. O servidor ativa os cabeçalhos COOP/COEP exigidos pelo PPSSPP.", true);
+        toast("O navegador não recebeu o isolamento COOP/COEP necessário ao PSP. Atualize a página e tente novamente.", true);
         return;
     }
     stopEmulator(game.url);
