@@ -106,7 +106,7 @@ function stopEmulator(preserveUrl = null) {
 function startEmulator(game) {
     if (!game || !game.url) return;
     const sourceUrl = game.url;
-    if (!sourceUrl.startsWith("blob:") && new URL(sourceUrl, location.href).origin !== location.origin) {
+    if (!sourceUrl.startsWith("blob:") && extensionOf(sourceUrl) !== "cue" && new URL(sourceUrl, location.href).origin !== location.origin) {
         game = { ...game, url: `/api/rom-proxy?url=${encodeURIComponent(sourceUrl)}`, persistUrl: `/api/rom-proxy?url=${encodeURIComponent(sourceUrl)}` };
     }
     if (SYSTEM.key === "psp" && !window.crossOriginIsolated) {
