@@ -215,6 +215,7 @@ function startEmulator(game) {
     window.EJS_language = "pt-BR";
     window.EJS_backgroundColor = "#08090d";
     window.EJS_gameID = `flashmania-${SYSTEM.key}`;
+    window.JoglumeSaveCloud?.configureEmulator(game, SYSTEM.key);
 
     loaderScript = document.createElement("script");
     loaderScript.src = `${DATA_PATH}loader.js`;
