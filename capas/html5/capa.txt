@@ -47,7 +47,7 @@ bouncy motors: https://imgs2.dab3games.com/bouncy-motors-ft72.png
 boxhead the zombie wars: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 boxing random: https://imgs2.dab3games.com/boxing-random-game43.png
 breaking the bank: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/0f80f3388aabb6153981b749df08c7fc6048d5234a40e9e88d7afc73178b451e/breaking-the-bank-logo.png
-bubble shooter: https://imgs2.dab3games.com/bubble-shooter-game-m3poz.jpg
+bubble shooter: https://tcf.admeen.org/game/500/307/80x80/bubble-shooter.avif
 bubble tanks 2: https://gamemedia.armorgames.com/1920/icn_heroimage.png
 bubble tanks: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 build the bridge: https://www2.minijuegosgratis.com/v3/games/thumbnails/208906_1.jpg
@@ -116,7 +116,7 @@ fireblob: https://www1.minijuegosgratis.com/v3/games/thumbnails/238309_1.jpg
 fireboy and watergirl 2: https://imgs2.dab3games.com/fireboy-watergirl-2-game-ft.png
 fireboy and watergirl 3: https://imgs2.dab3games.com/fireboy-and-watergirl-3-game.jpg
 fireboy and watergirl 4: https://imgs2.dab3games.com/fireboy-watergirl-kiss-new.png
-fireboy and watergirl: https://imgs2.dab3games.com/fireboy-watergirl-first.png
+fireboy and watergirl: https://tcf.admeen.org/game/13000/12674/80x80/fireboy-and-watergirl-1-forest-temple.avif
 flappy bird: https://imgs2.dab3games.com/flappy-birds-game.jpg
 fleeing the complex: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/4e0cead7fe859cc9ce2a80ea46dd16c8c9be25f574ed2d0b82f27cb911d81b36/fleeing-the-complex-logo.png
 fnaf 2: https://imgs2.dab3games.com/fnaf-2-game7.png
@@ -182,10 +182,10 @@ monster slayers: https://cache.armorgames.com/images/ag3/sharing-is-caring.png
 monster tracks: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/41c7ae4db13e7d7596bb0528f40a4012/monster-tracks-logo.png
 motherload: https://www1.minijuegosgratis.com/v3/games/thumbnails/3091_1.jpg
 moto x3m 2: https://www1.minijuegosgratis.com/v3/games/thumbnails/213509_1.jpg
-moto x3m pool party: https://cdn.jogos360.com.br/mo/to/moto-x3m-5-pool-party-d.jpg?height=200&width=200
-moto x3m spooky land: https://cdn.jogos360.com.br/mo/to/moto-x3m-spooky-land-d.jpg?height=200&width=200
+moto x3m pool party: https://tcf.admeen.org/game/17500/17004/200x123/moto-x3m-pool-party.jpg
+moto x3m spooky land: https://tcf.admeen.org/game/17500/17153/200x123/moto-x3m-6-spooky-land.jpg
 moto x3m winter: https://cdn.jogos360.com.br/mo/to/moto-x3m-4-winter-d.jpg?height=200&width=200
-moto x3m: https://cdn.jogos360.com.br/mo/to/moto-3xm-d.jpg?height=200&width=200
+moto x3m: https://tcf.admeen.org/game/15500/15014/80x80/moto-x3m.avif
 murder: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/baccf9660bfb476fe2c8ae9f5a2ec4d2/murder-logo.png
 noitcelfer: https://gamemedia.armorgames.com/13095/icn_heroimage.png
 opposite day: https://www1.minijuegosgratis.com/v3/games/thumbnails/249687_1.jpg
@@ -210,7 +210,6 @@ papas wingeria: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,he
 paper io 2: https://imgs2.dab3games.com/site-image.png
 parking fury 2: https://www3.minijuegosgratis.com/v3/games/thumbnails/217856_1.jpg
 parking fury 3: https://imgs2.dab3games.com/parking-fury-3-game.jpg
-penalty shooters 2: https://cdn.jogos360.com.br/pe/na/penalty-shooters-2-d.jpg?height=200&width=200
 penguin diner 2: https://imgs2.dab3games.com/penguin-diner-27625.png
 penguin diner: https://imgs2.dab3games.com/penguin-diner8948.png
 ping pong chaos: https://www2.minijuegosgratis.com/v3/games/thumbnails/221909_1.jpg
