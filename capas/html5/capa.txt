@@ -184,7 +184,6 @@ motherload: https://www1.minijuegosgratis.com/v3/games/thumbnails/3091_1.jpg
 moto x3m 2: https://www1.minijuegosgratis.com/v3/games/thumbnails/213509_1.jpg
 moto x3m pool party: https://tcf.admeen.org/game/17500/17004/200x123/moto-x3m-pool-party.jpg
 moto x3m spooky land: https://tcf.admeen.org/game/17500/17153/200x123/moto-x3m-6-spooky-land.jpg
-moto x3m winter: https://cdn.jogos360.com.br/mo/to/moto-x3m-4-winter-d.jpg?height=200&width=200
 moto x3m: https://tcf.admeen.org/game/15500/15014/80x80/moto-x3m.avif
 murder: https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/baccf9660bfb476fe2c8ae9f5a2ec4d2/murder-logo.png
 noitcelfer: https://gamemedia.armorgames.com/13095/icn_heroimage.png
